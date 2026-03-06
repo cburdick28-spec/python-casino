@@ -38,6 +38,8 @@ users=db["users"]
 
 # ---------------- SESSION ----------------
 
+# ---------------- SESSION ----------------
+
 defaults={
 "username":None,
 "money":500,
@@ -46,6 +48,7 @@ defaults={
 "bj_player":[],
 "bj_dealer":[],
 "bj_active":False,
+"bj_result":None,
 "jackpot_odds":6
 }
 
