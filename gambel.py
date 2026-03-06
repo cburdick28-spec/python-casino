@@ -335,72 +335,111 @@ if game=="Dice":
 # ------------------------
 # BLACKJACK (FIXED)
 # ------------------------
+# ------------------------
+# BLACKJACK WITH CARD IMAGES
+# ------------------------
+
+cards = {
+"A":"🂡","2":"🂢","3":"🂣","4":"🂤","5":"🂥","6":"🂦","7":"🂧","8":"🂨","9":"🂩","10":"🂪",
+"J":"🂫","Q":"🂭","K":"🂮"
+}
+
+values = {
+"A":11,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9,"10":10,
+"J":10,"Q":10,"K":10
+}
+
+deck = list(cards.keys())
 
 def draw_card():
-    return random.randint(1,11)
+    return random.choice(deck)
 
-def hand_total(hand):
-    return sum(hand)
+def hand_value(hand):
 
-if game=="Blackjack":
+    total = sum(values[c] for c in hand)
+    aces = hand.count("A")
+
+    while total > 21 and aces:
+        total -= 10
+        aces -= 1
+
+    return total
+
+
+if game == "Blackjack":
 
     st.header("🃏 Blackjack")
 
+    # DEAL
     if st.button("Deal") and not st.session_state.bj_active:
 
-        st.session_state.bj_player=[draw_card(),draw_card()]
-        st.session_state.bj_dealer=[draw_card(),draw_card()]
-        st.session_state.bj_active=True
+        st.session_state.bj_player = [draw_card(), draw_card()]
+        st.session_state.bj_dealer = [draw_card(), draw_card()]
+        st.session_state.bj_active = True
+
 
     if st.session_state.bj_active:
 
-        player_total=hand_total(st.session_state.bj_player)
+        player = st.session_state.bj_player
+        dealer = st.session_state.bj_dealer
 
-        st.write("Your cards:",st.session_state.bj_player,"Total:",player_total)
-        st.write("Dealer shows:",st.session_state.bj_dealer[0])
+        player_total = hand_value(player)
 
-        col1,col2=st.columns(2)
+        st.subheader("Your Hand")
+        st.markdown(" ".join(cards[c] for c in player))
+        st.write("Total:", player_total)
 
+        st.subheader("Dealer Shows")
+        st.markdown(cards[dealer[0]])
+
+        col1,col2 = st.columns(2)
+
+        # HIT
         with col1:
             if st.button("Hit"):
-                st.session_state.bj_player.append(draw_card())
 
-                if hand_total(st.session_state.bj_player)>21:
+                player.append(draw_card())
 
+                if hand_value(player) > 21:
+
+                    st.markdown(" ".join(cards[c] for c in player))
                     st.error("Bust! Lose -"+str(bet))
-                    st.session_state.money-=bet
-                    st.session_state.bj_active=False
+                    st.session_state.money -= bet
+
+                    st.session_state.bj_active = False
                     save_progress()
                     st.rerun()
 
+        # STAND
         with col2:
             if st.button("Stand"):
 
-                while hand_total(st.session_state.bj_dealer)<17:
-                    st.session_state.bj_dealer.append(draw_card())
+                while hand_value(dealer) < 17:
+                    dealer.append(draw_card())
 
-                dealer_total=hand_total(st.session_state.bj_dealer)
-                player_total=hand_total(st.session_state.bj_player)
+                dealer_total = hand_value(dealer)
+                player_total = hand_value(player)
 
-                st.write("Dealer:",st.session_state.bj_dealer,dealer_total)
+                st.subheader("Dealer Hand")
+                st.markdown(" ".join(cards[c] for c in dealer))
+                st.write("Dealer Total:", dealer_total)
 
-                if dealer_total>21 or player_total>dealer_total:
+                if dealer_total > 21 or player_total > dealer_total:
 
                     st.success("Win +"+str(bet))
-                    st.session_state.money+=bet
+                    st.session_state.money += bet
 
-                elif player_total<dealer_total:
+                elif player_total < dealer_total:
 
                     st.error("Lose -"+str(bet))
-                    st.session_state.money-=bet
+                    st.session_state.money -= bet
 
                 else:
                     st.info("Push")
 
-                st.session_state.bj_active=False
+                st.session_state.bj_active = False
                 save_progress()
                 st.rerun()
-
 # ------------------------
 # ROULETTE
 # ------------------------
