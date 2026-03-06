@@ -4,9 +4,9 @@ import time
 
 st.set_page_config(page_title="Python Casino", page_icon="🎰")
 
-# ------------------------------------------------
+# =====================================================
 # PLAYER DATA
-# ------------------------------------------------
+# =====================================================
 
 if "money" not in st.session_state:
     st.session_state.money = 500
@@ -18,18 +18,11 @@ if "bj_active" not in st.session_state:
     st.session_state.dealer = []
     st.session_state.bet = 0
 
-# ------------------------------------------------
+# =====================================================
 # CARD SYSTEM
-# ------------------------------------------------
+# =====================================================
 
-suits = ["spades","hearts","diamonds","clubs"]
-suit_symbols = {
-    "spades":"♠",
-    "hearts":"♥",
-    "diamonds":"♦",
-    "clubs":"♣"
-}
-
+suits = ["spades", "hearts", "diamonds", "clubs"]
 ranks = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
 
 deck = [(r,s) for r in ranks for s in suits]
@@ -60,6 +53,7 @@ def hand_value(hand):
 
 
 def card_image(card):
+
     rank, suit = card
 
     rank_map = {
@@ -74,9 +68,9 @@ def card_image(card):
     return f"https://raw.githubusercontent.com/hayeah/playing-cards-assets/master/png/{r}_of_{suit}.png"
 
 
-# ------------------------------------------------
+# =====================================================
 # HEADER
-# ------------------------------------------------
+# =====================================================
 
 st.title("🎰 Python Casino")
 st.write(f"## 💰 Balance: ${st.session_state.money}")
@@ -86,9 +80,9 @@ game = st.sidebar.selectbox(
     ["Slots","Blackjack","Roulette"]
 )
 
-# =================================================
-# SLOTS
-# =================================================
+# =====================================================
+# SLOT MACHINE
+# =====================================================
 
 if game == "Slots":
 
@@ -108,6 +102,7 @@ if game == "Slots":
         slot_area = st.empty()
 
         for i in range(15):
+
             spin = [random.choice(symbols) for _ in range(3)]
             slot_area.markdown(f"# {spin[0]} {spin[1]} {spin[2]}")
             time.sleep(0.05)
@@ -132,17 +127,13 @@ if game == "Slots":
             st.error(f"You lost ${bet}")
 
 
-# =================================================
+# =====================================================
 # BLACKJACK
-# =================================================
+# =====================================================
 
 if game == "Blackjack":
 
     st.header("🃏 Blackjack")
-
-    # -------------------------
-    # START ROUND
-    # -------------------------
 
     if not st.session_state.bj_active and not st.session_state.round_over:
 
@@ -161,10 +152,6 @@ if game == "Blackjack":
             st.session_state.bj_active = True
             st.rerun()
 
-    # -------------------------
-    # ACTIVE GAME
-    # -------------------------
-
     if st.session_state.bj_active:
 
         st.subheader("Your Hand")
@@ -172,7 +159,7 @@ if game == "Blackjack":
         cols = st.columns(len(st.session_state.player))
 
         for i,card in enumerate(st.session_state.player):
-            cols[i].image(card_image(card), width=120)
+            cols[i].image(card_image(card), width=110)
 
         player_total = hand_value(st.session_state.player)
 
@@ -180,11 +167,12 @@ if game == "Blackjack":
 
         st.subheader("Dealer Shows")
 
-        st.image(card_image(st.session_state.dealer[0]), width=120)
+        st.image(card_image(st.session_state.dealer[0]), width=110)
 
+        # PLAYER BUST
         if player_total > 21:
 
-            st.error("Bust! You lose")
+            st.error("💥 Bust! You lose")
 
             st.session_state.money -= st.session_state.bet
             st.session_state.bj_active = False
@@ -210,18 +198,18 @@ if game == "Blackjack":
             cols = st.columns(len(st.session_state.dealer))
 
             for i,card in enumerate(st.session_state.dealer):
-                cols[i].image(card_image(card), width=120)
+                cols[i].image(card_image(card), width=110)
 
             st.write("Dealer Total:",dealer_total)
 
             if dealer_total > 21 or player_total > dealer_total:
 
-                st.success("You win!")
+                st.success("🎉 You win!")
                 st.session_state.money += st.session_state.bet
 
             elif dealer_total == player_total:
 
-                st.warning("Push")
+                st.warning("Push (Tie)")
 
             else:
 
@@ -230,10 +218,6 @@ if game == "Blackjack":
 
             st.session_state.bj_active = False
             st.session_state.round_over = True
-
-    # -------------------------
-    # PLAY AGAIN
-    # -------------------------
 
     if st.session_state.round_over:
 
@@ -245,9 +229,9 @@ if game == "Blackjack":
             st.rerun()
 
 
-# =================================================
+# =====================================================
 # ROULETTE
-# =================================================
+# =====================================================
 
 if game == "Roulette":
 
@@ -272,7 +256,7 @@ if game == "Roulette":
 
         wheel = st.empty()
 
-        for i in range(20):
+        for i in range(25):
 
             wheel.markdown(f"# 🎡 {random.randint(0,36)}")
             time.sleep(0.05)
@@ -327,9 +311,9 @@ if game == "Roulette":
                 st.error("You lost")
 
 
-# =================================================
+# =====================================================
 # RESET
-# =================================================
+# =====================================================
 
 st.sidebar.markdown("---")
 
