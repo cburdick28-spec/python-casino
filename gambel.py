@@ -27,6 +27,7 @@ def save_users(users):
 def hash_password(p):
     return hashlib.sha256(p.encode()).hexdigest()
 
+
 # ------------------------
 # LOAD USERS
 # ------------------------
@@ -41,39 +42,45 @@ for u in users:
     users[u].setdefault("last_daily","")
     users[u].setdefault("dev",False)
 
+
 # ------------------------
 # DEV ACCOUNTS
 # ------------------------
 
 devpass = hash_password("Dev")
 
-users["Dev1"]={
-    "password":devpass,
-    "money":999999999,
-    "wins":0,
-    "losses":0,
-    "last_daily":"",
-    "dev":True
-}
+if "Dev1" not in users:
+    users["Dev1"]={
+        "password":devpass,
+        "money":999999999,
+        "wins":0,
+        "losses":0,
+        "last_daily":"",
+        "dev":True
+    }
 
-users["Dev2"]={
-    "password":devpass,
-    "money":999999999,
-    "wins":0,
-    "losses":0,
-    "last_daily":"",
-    "dev":True
-}
+if "Dev2" not in users:
+    users["Dev2"]={
+        "password":devpass,
+        "money":999999999,
+        "wins":0,
+        "losses":0,
+        "last_daily":"",
+        "dev":True
+    }
 
-users["Dev3"]={
-    "password":devpass,
-    "money":999999999,
-    "wins":0,
-    "losses":0,
-    "last_daily":"",
-    "dev":True
-}
+if "Dev3" not in users:
+    users["Dev3"]={
+        "password":devpass,
+        "money":999999999,
+        "wins":0,
+        "losses":0,
+        "last_daily":"",
+        "dev":True
+    }
+
 save_users(users)
+
 
 # ------------------------
 # SESSION STATE
@@ -91,7 +98,6 @@ if "wins" not in st.session_state:
 if "losses" not in st.session_state:
     st.session_state.losses=0
 
-# Blackjack session data
 if "bj_player" not in st.session_state:
     st.session_state.bj_player=[]
 
@@ -100,8 +106,10 @@ if "bj_dealer" not in st.session_state:
 
 if "bj_active" not in st.session_state:
     st.session_state.bj_active=False
+
+
 # ------------------------
-# AUTO LOGIN FROM URL
+# AUTO LOGIN (DEV)
 # ------------------------
 
 params = st.query_params
@@ -109,33 +117,35 @@ params = st.query_params
 if st.session_state.username is None and "user" in params:
 
     auto_user = params["user"]
-
     users = load_users()
 
-    if auto_user in users and users[auto_user].get("dev", False):
+    if auto_user in users and users[auto_user].get("dev",False):
 
         st.session_state.username = auto_user
         st.session_state.money = users[auto_user]["money"]
         st.session_state.wins = users[auto_user]["wins"]
         st.session_state.losses = users[auto_user]["losses"]
+
+
 # ------------------------
 # SAVE PROGRESS
 # ------------------------
 
 def save_progress():
 
-    users=load_users()
+    users = load_users()
 
     if st.session_state.username in users:
 
         if users[st.session_state.username].get("dev",False):
-            st.session_state.money=999999999
+            st.session_state.money = 999999999
 
-        users[st.session_state.username]["money"]=st.session_state.money
-        users[st.session_state.username]["wins"]=st.session_state.wins
-        users[st.session_state.username]["losses"]=st.session_state.losses
+        users[st.session_state.username]["money"] = st.session_state.money
+        users[st.session_state.username]["wins"] = st.session_state.wins
+        users[st.session_state.username]["losses"] = st.session_state.losses
 
     save_users(users)
+
 
 # ------------------------
 # LOGIN
@@ -145,29 +155,25 @@ if st.session_state.username is None:
 
     st.title("🎰 Ultimate Casino")
 
-    tab1,tab2=st.tabs(["Login","Register"])
-
-    users=load_users()
+    tab1, tab2 = st.tabs(["Login","Register"])
+    users = load_users()
 
     with tab1:
 
-        user=st.text_input("Username")
-        pw=st.text_input("Password",type="password")
+        user = st.text_input("Username")
+        pw = st.text_input("Password", type="password")
 
         if st.button("Login"):
 
-        if user in users and users[user]["password"]==hash_password(pw):
+            if user in users and users[user]["password"] == hash_password(pw):
 
-            st.session_state.username=user
-            st.session_state.money=users[user]["money"]
-            st.session_state.wins=users[user]["wins"]
-            st.session_state.losses=users[user]["losses"]
+                st.session_state.username = user
+                st.session_state.money = users[user]["money"]
+                st.session_state.wins = users[user]["wins"]
+                st.session_state.losses = users[user]["losses"]
 
-# persist dev login
-if users[user].get("dev", False):
-    st.query_params["user"] = user
-
-st.rerun()
+                if users[user].get("dev",False):
+                    st.query_params["user"] = user
 
                 st.rerun()
 
@@ -176,8 +182,8 @@ st.rerun()
 
     with tab2:
 
-        newu=st.text_input("New Username")
-        newp=st.text_input("New Password",type="password")
+        newu = st.text_input("New Username")
+        newp = st.text_input("New Password", type="password")
 
         if st.button("Register"):
 
@@ -199,17 +205,16 @@ st.rerun()
                 }
 
                 save_users(users)
-
                 st.success("Account created")
 
     st.stop()
+
 
 # ------------------------
 # SIDEBAR
 # ------------------------
 
 st.sidebar.title("🎰 Casino")
-
 st.sidebar.write("User:",st.session_state.username)
 st.sidebar.write("Money:",st.session_state.money)
 st.sidebar.write("Wins:",st.session_state.wins)
@@ -219,6 +224,7 @@ if st.sidebar.button("Logout"):
     st.session_state.username=None
     st.query_params.clear()
     st.rerun()
+
 
 # ------------------------
 # DAILY REWARD
@@ -239,6 +245,7 @@ if users[st.session_state.username]["last_daily"]!=today:
 
         st.sidebar.success("Daily claimed")
 
+
 # ------------------------
 # LEADERBOARD
 # ------------------------
@@ -253,6 +260,7 @@ top=sorted(users.items(),key=lambda x:x[1].get("money",0),reverse=True)
 for u in top[:10]:
     st.sidebar.write(u[0],"$"+str(u[1].get("money",0)))
 
+
 # ------------------------
 # DEV PANEL
 # ------------------------
@@ -266,17 +274,21 @@ if users[st.session_state.username].get("dev",False):
     amount=st.sidebar.number_input("Give Money",0,1000000)
 
     if st.sidebar.button("Give Money"):
+
         users[target]["money"]+=amount
         save_users(users)
         st.sidebar.success("Money added")
 
     if st.sidebar.button("Reset Database"):
+
         for u in users:
             users[u]["money"]=500
             users[u]["wins"]=0
             users[u]["losses"]=0
+
         save_users(users)
         st.sidebar.success("Database reset")
+
 
 # ------------------------
 # GAME SELECT
@@ -287,6 +299,7 @@ st.title("🎰 Casino Games")
 game=st.selectbox("Game",["Slots","Dice","Blackjack","Roulette"])
 
 bet=st.number_input("Bet",1,max(1,st.session_state.money),10)
+
 
 # ------------------------
 # SLOTS
@@ -326,6 +339,7 @@ if game=="Slots":
 
         save_progress()
 
+
 # ------------------------
 # DICE
 # ------------------------
@@ -364,69 +378,39 @@ if game=="Dice":
 
         save_progress()
 
-# ------------------------
-# CARD DISPLAY FUNCTION
-# ------------------------
 
-def render_cards(hand):
-
-    html = ""
-
-    for c in hand:
-
-        if c in ["♥","♦"]:
-            color = "red"
-        else:
-            color = "black"
-
-        html += f"""
-        <div style="
-            display:inline-block;
-            width:90px;
-            height:130px;
-            border-radius:10px;
-            border:2px solid #333;
-            margin:6px;
-            font-size:60px;
-            text-align:center;
-            line-height:120px;
-            background:white;
-            color:{color};
-            box-shadow:3px 3px 8px rgba(0,0,0,0.3);
-        ">
-        {c}
-        </div>
-        """
-
-    st.markdown(html, unsafe_allow_html=True)
 # ------------------------
 # BLACKJACK
 # ------------------------
 
-suits = ["♠","♥","♦","♣"]
-ranks = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+suits=["♠","♥","♦","♣"]
+ranks=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
 
 def draw_card():
-    return random.choice(ranks) + random.choice(suits)
+    return random.choice(ranks)+random.choice(suits)
 
 def card_value(card):
-    r = card[:-1]
+
+    r=card[:-1]
+
     if r in ["J","Q","K"]:
         return 10
-    if r == "A":
+
+    if r=="A":
         return 11
+
     return int(r)
 
 def hand_value(hand):
-    total = sum(card_value(c) for c in hand)
-    aces = sum(1 for c in hand if c.startswith("A"))
 
-    while total > 21 and aces:
-        total -= 10
-        aces -= 1
+    total=sum(card_value(c) for c in hand)
+    aces=sum(1 for c in hand if c.startswith("A"))
+
+    while total>21 and aces:
+        total-=10
+        aces-=1
 
     return total
-
 
 def render_cards(hand):
 
@@ -434,103 +418,89 @@ def render_cards(hand):
 
     for card in hand:
 
-        suit = card[-1]
-        rank = card[:-1]
+        suit=card[-1]
+        rank=card[:-1]
 
-        color = "red" if suit in ["♥","♦"] else "black"
+        color="red" if suit in ["♥","♦"] else "black"
 
-        html += f"""
-        <div style="
-        display:inline-block;
-        width:110px;
-        height:150px;
-        border-radius:10px;
-        border:2px solid #333;
-        margin:6px;
-        text-align:center;
-        background:white;
-        color:{color};
-        box-shadow:3px 3px 8px rgba(0,0,0,0.3);
-        ">
+        html+=f"""
+        <div style="display:inline-block;width:110px;height:150px;border-radius:10px;border:2px solid #333;margin:6px;text-align:center;background:white;color:{color};">
         <div style="font-size:26px">{rank}</div>
         <div style="font-size:50px">{suit}</div>
         </div>
         """
 
-    st.markdown(html, unsafe_allow_html=True)
+    st.markdown(html,unsafe_allow_html=True)
 
-
-if game == "Blackjack":
+if game=="Blackjack":
 
     st.header("🃏 Blackjack")
 
     if not st.session_state.bj_active:
 
-        if st.button("Deal", key="bj_deal"):
+        if st.button("Deal"):
 
-            st.session_state.bj_player = [draw_card(), draw_card()]
-            st.session_state.bj_dealer = [draw_card(), draw_card()]
-            st.session_state.bj_active = True
+            st.session_state.bj_player=[draw_card(),draw_card()]
+            st.session_state.bj_dealer=[draw_card(),draw_card()]
+            st.session_state.bj_active=True
+
             st.rerun()
-
 
     if st.session_state.bj_active:
 
-        player = st.session_state.bj_player
-        dealer = st.session_state.bj_dealer
+        player=st.session_state.bj_player
+        dealer=st.session_state.bj_dealer
 
         st.subheader("Your Hand")
         render_cards(player)
-        st.write("Total:", hand_value(player))
+        st.write("Total:",hand_value(player))
 
         st.subheader("Dealer Shows")
         render_cards([dealer[0]])
 
-        col1, col2 = st.columns(2)
+        col1,col2=st.columns(2)
 
         with col1:
-            if st.button("Hit", key="bj_hit"):
+
+            if st.button("Hit"):
 
                 st.session_state.bj_player.append(draw_card())
 
-                if hand_value(st.session_state.bj_player) > 21:
+                if hand_value(st.session_state.bj_player)>21:
 
-                    st.error("Bust! Lose -" + str(bet))
-                    st.session_state.money -= bet
-                    st.session_state.bj_active = False
+                    st.error("Bust! Lose -"+str(bet))
+                    st.session_state.money-=bet
+                    st.session_state.bj_active=False
                     save_progress()
 
                 st.rerun()
 
         with col2:
-            if st.button("Stand", key="bj_stand"):
 
-                while hand_value(dealer) < 17:
+            if st.button("Stand"):
+
+                while hand_value(dealer)<17:
                     dealer.append(draw_card())
 
-                player_total = hand_value(player)
-                dealer_total = hand_value(dealer)
+                pt=hand_value(player)
+                dt=hand_value(dealer)
 
-                st.subheader("Dealer Hand")
                 render_cards(dealer)
-                st.write("Dealer Total:", dealer_total)
 
-                if dealer_total > 21 or player_total > dealer_total:
-
-                    st.success("Win +" + str(bet))
-                    st.session_state.money += bet
-
-                elif player_total < dealer_total:
-
-                    st.error("Lose -" + str(bet))
-                    st.session_state.money -= bet
-
+                if dt>21 or pt>dt:
+                    st.success("Win +"+str(bet))
+                    st.session_state.money+=bet
+                elif pt<dt:
+                    st.error("Lose -"+str(bet))
+                    st.session_state.money-=bet
                 else:
                     st.info("Push")
 
-                st.session_state.bj_active = False
+                st.session_state.bj_active=False
                 save_progress()
                 st.rerun()
+
+
 # ------------------------
 # ROULETTE
 # ------------------------
@@ -540,6 +510,7 @@ if game=="Roulette":
     choice=st.selectbox("Bet on",["Red","Black","Number"])
 
     num=None
+
     if choice=="Number":
         num=st.number_input("Pick 0-36",0,36)
 
@@ -584,6 +555,7 @@ if game=="Roulette":
             st.session_state.money-=bet
 
         save_progress()
+
 
 # ------------------------
 # BANKRUPT
