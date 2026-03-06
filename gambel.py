@@ -303,22 +303,20 @@ if game=="Dice":
 
 # ---------------- BLACKJACK ----------------
 
+# ---------------- BLACKJACK ----------------
+
 suits=["♠","♥","♦","♣"]
 ranks=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
 
-def draw():
+def draw_card():
     return random.choice(ranks)+random.choice(suits)
 
 def value(card):
-
     r=card[:-1]
-
     if r in ["J","Q","K"]:
         return 10
-
     if r=="A":
         return 11
-
     return int(r)
 
 def total(hand):
@@ -365,12 +363,14 @@ def render(hand):
 
 if game=="Blackjack":
 
+    st.header("🃏 Blackjack")
+
     if not st.session_state.bj_active:
 
         if st.button("Deal"):
 
-            st.session_state.bj_player=[draw(),draw()]
-            st.session_state.bj_dealer=[draw(),draw()]
+            st.session_state.bj_player=[draw_card(),draw_card()]
+            st.session_state.bj_dealer=[draw_card(),draw_card()]
             st.session_state.bj_active=True
 
             st.rerun()
@@ -386,13 +386,13 @@ if game=="Blackjack":
 
         st.write("Dealer Shows:",d[0])
 
-        c1,c2=st.columns(2)
+        col1,col2=st.columns(2)
 
-        with c1:
+        with col1:
 
             if st.button("Hit"):
 
-                p.append(draw())
+                p.append(draw_card())
 
                 if total(p)>21:
 
@@ -403,12 +403,12 @@ if game=="Blackjack":
 
                 st.rerun()
 
-        with c2:
+        with col2:
 
             if st.button("Stand"):
 
                 while total(d)<17:
-                    d.append(draw())
+                    d.append(draw_card())
 
                 st.write("Dealer Hand")
                 render(d)
