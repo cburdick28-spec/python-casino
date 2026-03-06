@@ -156,7 +156,7 @@ if st.session_state.username is None:
 
         if st.button("Login"):
 
-            if user in users and users[user]["password"]==hash_password(pw):
+        if user in users and users[user]["password"]==hash_password(pw):
 
             st.session_state.username=user
             st.session_state.money=users[user]["money"]
