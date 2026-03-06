@@ -158,10 +158,10 @@ if st.session_state.username is None:
 
             if user in users and users[user]["password"]==hash_password(pw):
 
-                st.session_state.username=user
-                st.session_state.money=users[user]["money"]
-                st.session_state.wins=users[user]["wins"]
-                st.session_state.losses=users[user]["losses"]
+            st.session_state.username=user
+            st.session_state.money=users[user]["money"]
+            st.session_state.wins=users[user]["wins"]
+            st.session_state.losses=users[user]["losses"]
 
 # persist dev login
 if users[user].get("dev", False):
