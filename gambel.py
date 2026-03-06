@@ -65,6 +65,14 @@ users["Dev2"]={
     "dev":True
 }
 
+users["Dev3"]={
+    "password":devpass,
+    "money":999999999,
+    "wins":0,
+    "losses":0,
+    "last_daily":"",
+    "dev":True
+}
 save_users(users)
 
 # ------------------------
