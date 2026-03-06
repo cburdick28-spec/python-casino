@@ -367,7 +367,77 @@ def render_cards(hand):
         """
 
     st.markdown(html, unsafe_allow_html=True)
+# ------------------------
+# BLACKJACK CARD SYSTEM
+# ------------------------
 
+import random
+
+suits = ["♠","♥","♦","♣"]
+ranks = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
+
+def draw_card():
+    return random.choice(ranks) + random.choice(suits)
+
+def card_value(card):
+
+    rank = card[:-1]
+
+    if rank in ["J","Q","K"]:
+        return 10
+    if rank == "A":
+        return 11
+
+    return int(rank)
+
+def hand_value(hand):
+
+    total = sum(card_value(c) for c in hand)
+    aces = sum(1 for c in hand if c.startswith("A"))
+
+    while total > 21 and aces:
+        total -= 10
+        aces -= 1
+
+    return total
+
+
+# ------------------------
+# CARD DISPLAY
+# ------------------------
+
+def render_cards(hand):
+
+    html=""
+
+    for card in hand:
+
+        suit = card[-1]
+        rank = card[:-1]
+
+        color = "red" if suit in ["♥","♦"] else "black"
+
+        html += f"""
+        <div style="
+        display:inline-block;
+        width:100px;
+        height:140px;
+        border-radius:10px;
+        border:2px solid #333;
+        margin:6px;
+        font-size:40px;
+        text-align:center;
+        line-height:60px;
+        background:white;
+        color:{color};
+        box-shadow:3px 3px 8px rgba(0,0,0,0.3);
+        ">
+        <div style="font-size:22px">{rank}</div>
+        <div style="font-size:40px">{suit}</div>
+        </div>
+        """
+
+    st.markdown(html, unsafe_allow_html=True)
 # ------------------------
 # BLACKJACK DISPLAY
 # ------------------------
