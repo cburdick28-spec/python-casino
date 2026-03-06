@@ -6,35 +6,35 @@ import hashlib
 import datetime
 import time
 
-DB_FILE="casino_users.json"
+DB_FILE="casino_db.json"
+
+DEV_ACCOUNTS=["Dev1","Dev2","Dev3"]
 
 # ---------------- DATABASE ----------------
 
 if not os.path.exists(DB_FILE):
-    with open(DB_FILE,"w") as f:
-        json.dump({},f)
 
-def load_users():
+    db={
+        "users":{},
+        "jackpot":1000
+    }
+
+    with open(DB_FILE,"w") as f:
+        json.dump(db,f)
+
+def load_db():
     with open(DB_FILE,"r") as f:
         return json.load(f)
 
-def save_users(users):
+def save_db(db):
     with open(DB_FILE,"w") as f:
-        json.dump(users,f,indent=4)
+        json.dump(db,f,indent=4)
 
 def hash_password(p):
     return hashlib.sha256(p.encode()).hexdigest()
 
-users=load_users()
-
-for u in users:
-    users[u].setdefault("password","")
-    users[u].setdefault("money",500)
-    users[u].setdefault("wins",0)
-    users[u].setdefault("losses",0)
-    users[u].setdefault("last_daily","")
-
-save_users(users)
+db=load_db()
+users=db["users"]
 
 # ---------------- SESSION ----------------
 
@@ -46,7 +46,7 @@ defaults={
 "bj_player":[],
 "bj_dealer":[],
 "bj_active":False,
-"bj_result":None
+"jackpot_odds":6
 }
 
 for k,v in defaults.items():
@@ -57,15 +57,13 @@ for k,v in defaults.items():
 
 def save_progress():
 
-    users=load_users()
+    db=load_db()
 
-    if st.session_state.username in users:
+    if st.session_state.username in db["users"]:
 
-        users[st.session_state.username]["money"]=st.session_state.money
-        users[st.session_state.username]["wins"]=st.session_state.wins
-        users[st.session_state.username]["losses"]=st.session_state.losses
+        db["users"][st.session_state.username]["money"]=st.session_state.money
 
-    save_users(users)
+    save_db(db)
 
 # ---------------- LOGIN ----------------
 
@@ -74,7 +72,9 @@ if st.session_state.username is None:
     st.title("🎰 Ultimate Casino")
 
     tab1,tab2=st.tabs(["Login","Register"])
-    users=load_users()
+
+    db=load_db()
+    users=db["users"]
 
     with tab1:
 
@@ -87,8 +87,6 @@ if st.session_state.username is None:
 
                 st.session_state.username=user
                 st.session_state.money=users[user]["money"]
-                st.session_state.wins=users[user]["wins"]
-                st.session_state.losses=users[user]["losses"]
 
                 st.rerun()
 
@@ -102,23 +100,21 @@ if st.session_state.username is None:
 
         if st.button("Register"):
 
-            if newu=="" or newp=="":
-                st.error("Fill all fields")
+            if newu in users:
 
-            elif newu in users:
                 st.error("User exists")
 
             else:
 
                 users[newu]={
-                "password":hash_password(newp),
-                "money":500,
-                "wins":0,
-                "losses":0,
-                "last_daily":""
+                    "password":hash_password(newp),
+                    "money":500,
+                    "last_daily":""
                 }
 
-                save_users(users)
+                db["users"]=users
+                save_db(db)
+
                 st.success("Account created")
 
     st.stop()
@@ -127,75 +123,106 @@ if st.session_state.username is None:
 
 st.sidebar.title("🎰 Casino")
 
-st.sidebar.write("User:",st.session_state.username)
+user=st.session_state.username
+db=load_db()
+users=db["users"]
+
+# dev infinite money
+if user in DEV_ACCOUNTS:
+    st.session_state.money=999999999
+
+st.sidebar.write("User:",user)
 st.sidebar.write("Money:",st.session_state.money)
 
 if st.sidebar.button("Logout"):
     st.session_state.username=None
     st.rerun()
 
+# ---------------- DEV PANEL ----------------
+
+if user in DEV_ACCOUNTS:
+
+    st.sidebar.markdown("---")
+    st.sidebar.header("👑 Dev Panel")
+
+    target=st.sidebar.selectbox("Select User",list(users.keys()))
+    give=st.sidebar.number_input("Give Money",0,1000000)
+
+    if st.sidebar.button("Give Money"):
+
+        users[target]["money"]+=give
+        db["users"]=users
+        save_db(db)
+
+        st.sidebar.success("Money given")
+
+    if st.sidebar.button("Reset All Money"):
+
+        for u in users:
+            users[u]["money"]=500
+
+        db["users"]=users
+        save_db(db)
+
+        st.sidebar.success("All balances reset")
+
+    new_odds=st.sidebar.slider("Slot Jackpot Multiplier",2,20,st.session_state.jackpot_odds)
+
+    st.session_state.jackpot_odds=new_odds
+
 # ---------------- DAILY ----------------
 
-users=load_users()
 today=str(datetime.date.today())
 
-if users[st.session_state.username]["last_daily"]!=today:
+if users[user]["last_daily"]!=today:
 
     if st.sidebar.button("Claim $100 Daily"):
 
         st.session_state.money+=100
-        users[st.session_state.username]["last_daily"]=today
+        users[user]["last_daily"]=today
 
-        save_users(users)
+        db["users"]=users
+        save_db(db)
+
         save_progress()
-
-        st.sidebar.success("Daily claimed")
 
 # ---------------- LEADERBOARD ----------------
 
 st.sidebar.markdown("---")
 st.sidebar.header("Leaderboard")
 
-users=load_users()
-
-top=sorted(users.items(),key=lambda x:x[1].get("money",0),reverse=True)
+top=sorted(users.items(),key=lambda x:x[1]["money"],reverse=True)
 
 for u in top[:10]:
-    st.sidebar.write(u[0],"$"+str(u[1].get("money",0)))
+    st.sidebar.write(u[0],"$"+str(u[1]["money"]))
 
-# ---------------- GAME SELECT ----------------
+# ---------------- JACKPOT DISPLAY ----------------
 
 st.title("🎰 Casino Games")
 
+st.header(f"💰 Progressive Jackpot: ${db['jackpot']}")
+
 game=st.selectbox("Game",["Slots","Dice","Blackjack","Roulette"])
 
-money = st.session_state.money
+money=st.session_state.money
 
 # ---------------- BANKRUPTCY ----------------
 
-if money <= 0:
+if money<=0:
 
-    users = load_users()
-    last = users[st.session_state.username]["last_daily"]
-
-    st.error("💀 You went bankrupt!")
-
-    if last == today:
+    if users[user]["last_daily"]==today:
 
         if st.button("Play Again ($250)"):
-            st.session_state.money = 250
+            st.session_state.money=250
             save_progress()
             st.rerun()
 
     else:
-        st.warning("Claim your daily reward in the sidebar.")
+        st.warning("Claim daily reward in sidebar")
 
     st.stop()
 
-max_bet = money
-default_bet = min(10,max_bet)
-
-bet=st.number_input("Bet",1,max_bet,default_bet)
+bet=st.number_input("Bet",1,money,min(10,money))
 
 # ---------------- SLOTS ----------------
 
@@ -208,19 +235,28 @@ if game=="Slots":
     if st.button("Spin"):
 
         for i in range(15):
+
             r=[random.choice(symbols) for _ in range(3)]
             display.write(" | ".join(r))
             time.sleep(0.05)
 
         r=[random.choice(symbols) for _ in range(3)]
-
         display.write(" | ".join(r))
+
+        jackpot=db["jackpot"]
 
         if r[0]==r[1]==r[2]:
 
-            win=bet*6
-            st.success(f"JACKPOT +{win}")
+            win=bet*st.session_state.jackpot_odds
+
+            st.success(f"🎰 JACKPOT +{win}")
             st.session_state.money+=win
+
+            st.success(f"💰 Progressive Jackpot Won: ${jackpot}")
+
+            st.session_state.money+=jackpot
+
+            db["jackpot"]=1000
 
         elif r[0]==r[1] or r[1]==r[2]:
 
@@ -233,35 +269,28 @@ if game=="Slots":
             st.error(f"Lose -{bet}")
             st.session_state.money-=bet
 
+            db["jackpot"]+=int(bet*0.25)
+
+        save_db(db)
         save_progress()
 
 # ---------------- DICE ----------------
 
 if game=="Dice":
 
-    display=st.empty()
-
     if st.button("Roll"):
 
-        for i in range(10):
+        p=random.randint(1,6)
+        h=random.randint(1,6)
 
-            p=random.randint(1,6)
-            h=random.randint(1,6)
+        st.write("You:",p,"House:",h)
 
-            display.write(f"You:{p} House:{h}")
-            time.sleep(0.05)
-
-        player=random.randint(1,6)
-        house=random.randint(1,6)
-
-        display.write(f"You:{player} House:{house}")
-
-        if player>house:
+        if p>h:
 
             st.success(f"Win +{bet}")
             st.session_state.money+=bet
 
-        elif player<house:
+        elif p<h:
 
             st.error(f"Lose -{bet}")
             st.session_state.money-=bet
@@ -277,10 +306,10 @@ if game=="Dice":
 suits=["♠","♥","♦","♣"]
 ranks=["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
 
-def draw_card():
+def draw():
     return random.choice(ranks)+random.choice(suits)
 
-def card_value(card):
+def value(card):
 
     r=card[:-1]
 
@@ -292,35 +321,25 @@ def card_value(card):
 
     return int(r)
 
-def hand_value(hand):
+def total(hand):
 
-    total=sum(card_value(c) for c in hand)
+    t=sum(value(c) for c in hand)
     aces=sum(1 for c in hand if c.startswith("A"))
 
-    while total>21 and aces:
-        total-=10
+    while t>21 and aces:
+        t-=10
         aces-=1
 
-    return total
+    return t
 
-# card graphics
-def render_cards(hand, hide_second=False):
+def render(hand):
 
     html=""
 
-    for i,card in enumerate(hand):
+    for c in hand:
 
-        if hide_second and i==1:
-
-            html+=f"""
-            <div style="display:inline-block;width:90px;height:130px;
-            border-radius:10px;border:2px solid #333;margin:6px;
-            background:#444;"></div>
-            """
-            continue
-
-        suit=card[-1]
-        rank=card[:-1]
+        suit=c[-1]
+        rank=c[:-1]
 
         color="red" if suit in ["♥","♦"] else "black"
 
@@ -346,81 +365,60 @@ def render_cards(hand, hide_second=False):
 
 if game=="Blackjack":
 
-    st.header("🃏 Blackjack")
-
     if not st.session_state.bj_active:
 
         if st.button("Deal"):
 
-            # animated dealing
-            placeholder=st.empty()
-
-            p=[draw_card()]
-            d=[draw_card()]
-
-            placeholder.write("Dealing cards...")
-            time.sleep(0.5)
-
-            p.append(draw_card())
-            time.sleep(0.5)
-
-            d.append(draw_card())
-
-            st.session_state.bj_player=p
-            st.session_state.bj_dealer=d
+            st.session_state.bj_player=[draw(),draw()]
+            st.session_state.bj_dealer=[draw(),draw()]
             st.session_state.bj_active=True
 
             st.rerun()
 
     if st.session_state.bj_active:
 
-        player=st.session_state.bj_player
-        dealer=st.session_state.bj_dealer
+        p=st.session_state.bj_player
+        d=st.session_state.bj_dealer
 
-        st.subheader("Your Hand")
-        render_cards(player)
-        st.write("Total:",hand_value(player))
+        st.write("Your Hand")
+        render(p)
+        st.write("Total:",total(p))
 
-        st.subheader("Dealer")
-        render_cards(dealer,hide_second=True)
+        st.write("Dealer Shows:",d[0])
 
-        col1,col2=st.columns(2)
+        c1,c2=st.columns(2)
 
-        with col1:
+        with c1:
 
             if st.button("Hit"):
 
-                new=draw_card()
-                player.append(new)
+                p.append(draw())
 
-                if hand_value(player)>21:
+                if total(p)>21:
 
-                    st.error(f"You busted with {new}")
+                    st.error("Bust!")
                     st.session_state.money-=bet
                     st.session_state.bj_active=False
                     save_progress()
 
                 st.rerun()
 
-        with col2:
+        with c2:
 
             if st.button("Stand"):
 
-                while hand_value(dealer)<17:
-                    dealer.append(draw_card())
+                while total(d)<17:
+                    d.append(draw())
 
-                st.subheader("Dealer Final Hand")
-                render_cards(dealer)
+                st.write("Dealer Hand")
+                render(d)
 
-                pt=hand_value(player)
-                dt=hand_value(dealer)
-
-                if dt>21 or pt>dt:
+                if total(d)>21 or total(p)>total(d):
 
                     st.success("You win!")
                     st.session_state.money+=bet
 
-                elif pt<dt:
+                elif total(p)<total(d):
 
                     st.error("Dealer wins")
                     st.session_state.money-=bet
@@ -445,13 +443,7 @@ if game=="Roulette":
     if choice=="Number":
         num=int(st.number_input("Pick 0-36",0,36))
 
-    display=st.empty()
-
     if st.button("Spin"):
-
-        for i in range(20):
-            display.write("Spinning "+str(random.randint(0,36)))
-            time.sleep(0.03)
 
         spin=random.randint(0,36)
 
@@ -462,28 +454,19 @@ if game=="Roulette":
         else:
             color="Black"
 
-        display.write(f"Result {spin} {color}")
-
-        win=False
-
-        if choice=="Red" and color=="Red":
-            win=True
-
-        if choice=="Black" and color=="Black":
-            win=True
+        st.write("Result:",spin,color)
 
         if choice=="Number" and spin==num:
 
-            st.success("Mega Win!")
+            st.success("Big Win!")
             st.session_state.money+=bet*12
-            win=None
 
-        if win is True:
+        elif choice==color:
 
             st.success(f"Win +{bet}")
             st.session_state.money+=bet
 
-        elif win is False:
+        else:
 
             st.error(f"Lose -{bet}")
             st.session_state.money-=bet
