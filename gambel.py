@@ -100,7 +100,24 @@ if "bj_dealer" not in st.session_state:
 
 if "bj_active" not in st.session_state:
     st.session_state.bj_active=False
+# ------------------------
+# AUTO LOGIN FROM URL
+# ------------------------
 
+params = st.query_params
+
+if st.session_state.username is None and "user" in params:
+
+    auto_user = params["user"]
+
+    users = load_users()
+
+    if auto_user in users and users[auto_user].get("dev", False):
+
+        st.session_state.username = auto_user
+        st.session_state.money = users[auto_user]["money"]
+        st.session_state.wins = users[auto_user]["wins"]
+        st.session_state.losses = users[auto_user]["losses"]
 # ------------------------
 # SAVE PROGRESS
 # ------------------------
@@ -145,6 +162,12 @@ if st.session_state.username is None:
                 st.session_state.money=users[user]["money"]
                 st.session_state.wins=users[user]["wins"]
                 st.session_state.losses=users[user]["losses"]
+
+# persist dev login
+if users[user].get("dev", False):
+    st.query_params["user"] = user
+
+st.rerun()
 
                 st.rerun()
 
@@ -194,6 +217,7 @@ st.sidebar.write("Losses:",st.session_state.losses)
 
 if st.sidebar.button("Logout"):
     st.session_state.username=None
+    st.query_params.clear()
     st.rerun()
 
 # ------------------------
