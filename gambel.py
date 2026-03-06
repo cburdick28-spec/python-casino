@@ -35,19 +35,6 @@ for u in users:
     users[u].setdefault("last_daily","")
     users[u].setdefault("dev",False)
 
-devpass=hash_password("Dev")
-
-for dev in ["Dev1","Dev2","Dev3"]:
-    if dev not in users:
-        users[dev]={
-            "password":devpass,
-            "money":999999999,
-            "wins":0,
-            "losses":0,
-            "last_daily":"",
-            "dev":True
-        }
-
 save_users(users)
 
 # ---------------- SESSION ----------------
@@ -74,9 +61,6 @@ def save_progress():
     users=load_users()
 
     if st.session_state.username in users:
-
-        if users[st.session_state.username].get("dev",False):
-            st.session_state.money=999999999
 
         users[st.session_state.username]["money"]=st.session_state.money
         users[st.session_state.username]["wins"]=st.session_state.wins
@@ -187,8 +171,37 @@ st.title("🎰 Casino Games")
 
 game=st.selectbox("Game",["Slots","Dice","Blackjack","Roulette"])
 
-max_bet=max(1,st.session_state.money)
-bet=st.number_input("Bet",1,max_bet,10)
+money = st.session_state.money
+
+# ---------------- BANKRUPTCY HANDLING ----------------
+
+if money <= 0:
+
+    users = load_users()
+    today = str(datetime.date.today())
+    last = users[st.session_state.username]["last_daily"]
+
+    st.error("💀 You went bankrupt!")
+
+    # If daily already claimed
+    if last == today:
+
+        if st.button("Play Again ($250)"):
+
+            st.session_state.money = 250
+            save_progress()
+            st.success("You received $250!")
+            st.rerun()
+
+    else:
+        st.warning("Claim your daily reward in the sidebar to continue.")
+
+    st.stop()
+
+max_bet = money
+default_bet = min(10,max_bet)
+
+bet=st.number_input("Bet",1,max_bet,default_bet)
 
 # ---------------- SLOTS ----------------
 
@@ -296,55 +309,9 @@ def hand_value(hand):
 
     return total
 
-def render_cards(hand):
-
-    html=""
-
-    for card in hand:
-
-        suit=card[-1]
-        rank=card[:-1]
-
-        color="red" if suit in ["♥","♦"] else "black"
-
-        html+=f"""
-        <div style="
-        display:inline-block;
-        width:100px;
-        height:140px;
-        border-radius:10px;
-        border:2px solid #333;
-        margin:6px;
-        text-align:center;
-        background:white;
-        color:{color};
-        font-size:24px;
-        padding-top:10px;">
-        <div>{rank}</div>
-        <div style="font-size:40px">{suit}</div>
-        </div>
-        """
-
-    st.markdown(html,unsafe_allow_html=True)
-
 if game=="Blackjack":
 
     st.header("🃏 Blackjack")
-
-    if st.session_state.bj_result:
-
-        r,amt,msg=st.session_state.bj_result
-
-        if r=="win":
-            st.success(f"{msg} +{amt}")
-
-        elif r=="lose":
-            st.error(f"{msg} -{amt}")
-
-        else:
-            st.info("Push")
-
-        st.session_state.bj_result=None
 
     if not st.session_state.bj_active:
 
@@ -361,12 +328,8 @@ if game=="Blackjack":
         player=st.session_state.bj_player
         dealer=st.session_state.bj_dealer
 
-        st.subheader("Your Hand")
-        render_cards(player)
-        st.write("Total:",hand_value(player))
-
-        st.subheader("Dealer Shows")
-        render_cards([dealer[0]])
+        st.write("Your Hand:",player,"Total:",hand_value(player))
+        st.write("Dealer Shows:",dealer[0])
 
         col1,col2=st.columns(2)
 
@@ -374,19 +337,13 @@ if game=="Blackjack":
 
             if st.button("Hit"):
 
-                new_card=draw_card()
-                player.append(new_card)
+                new=draw_card()
+                player.append(new)
 
                 if hand_value(player)>21:
 
+                    st.error(f"You busted with {new}!")
                     st.session_state.money-=bet
-
-                    st.session_state.bj_result=(
-                        "lose",
-                        bet,
-                        f"You busted with {new_card}"
-                    )
-
                     st.session_state.bj_active=False
                     save_progress()
 
@@ -399,25 +356,19 @@ if game=="Blackjack":
                 while hand_value(dealer)<17:
                     dealer.append(draw_card())
 
-                st.subheader("Dealer Final")
-                render_cards(dealer)
-
                 pt=hand_value(player)
                 dt=hand_value(dealer)
 
                 if dt>21 or pt>dt:
-
+                    st.success("You win!")
                     st.session_state.money+=bet
-                    st.session_state.bj_result=("win",bet,"You win!")
 
                 elif pt<dt:
-
+                    st.error("Dealer wins")
                     st.session_state.money-=bet
-                    st.session_state.bj_result=("lose",bet,"Dealer wins")
 
                 else:
-
-                    st.session_state.bj_result=("push",0,"Push")
+                    st.info("Push")
 
                 st.session_state.bj_active=False
                 save_progress()
