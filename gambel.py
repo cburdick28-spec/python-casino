@@ -333,49 +333,54 @@ if game=="Dice":
         save_progress()
 
 # ------------------------
-# BLACKJACK (FIXED)
-# ------------------------
-# ------------------------
-# BLACKJACK WITH CARD IMAGES
+# CARD DISPLAY FUNCTION
 # ------------------------
 
-cards = {
-"A":"🂡","2":"🂢","3":"🂣","4":"🂤","5":"🂥","6":"🂦","7":"🂧","8":"🂨","9":"🂩","10":"🂪",
-"J":"🂫","Q":"🂭","K":"🂮"
-}
+def render_cards(hand):
 
-values = {
-"A":11,"2":2,"3":3,"4":4,"5":5,"6":6,"7":7,"8":8,"9":9,"10":10,
-"J":10,"Q":10,"K":10
-}
+    html = ""
 
-deck = list(cards.keys())
+    for c in hand:
 
-def draw_card():
-    return random.choice(deck)
+        if c in ["♥","♦"]:
+            color = "red"
+        else:
+            color = "black"
 
-def hand_value(hand):
+        html += f"""
+        <div style="
+            display:inline-block;
+            width:90px;
+            height:130px;
+            border-radius:10px;
+            border:2px solid #333;
+            margin:6px;
+            font-size:60px;
+            text-align:center;
+            line-height:120px;
+            background:white;
+            color:{color};
+            box-shadow:3px 3px 8px rgba(0,0,0,0.3);
+        ">
+        {c}
+        </div>
+        """
 
-    total = sum(values[c] for c in hand)
-    aces = hand.count("A")
+    st.markdown(html, unsafe_allow_html=True)
 
-    while total > 21 and aces:
-        total -= 10
-        aces -= 1
-
-    return total
-
+# ------------------------
+# BLACKJACK DISPLAY
+# ------------------------
 
 if game == "Blackjack":
 
     st.header("🃏 Blackjack")
 
-    # DEAL
     if st.button("Deal") and not st.session_state.bj_active:
 
-        st.session_state.bj_player = [draw_card(), draw_card()]
-        st.session_state.bj_dealer = [draw_card(), draw_card()]
-        st.session_state.bj_active = True
+        st.session_state.bj_player=[draw_card(),draw_card()]
+        st.session_state.bj_dealer=[draw_card(),draw_card()]
+        st.session_state.bj_active=True
 
 
     if st.session_state.bj_active:
@@ -383,18 +388,15 @@ if game == "Blackjack":
         player = st.session_state.bj_player
         dealer = st.session_state.bj_dealer
 
-        player_total = hand_value(player)
-
         st.subheader("Your Hand")
-        st.markdown(" ".join(cards[c] for c in player))
-        st.write("Total:", player_total)
+        render_cards(player)
+        st.write("Total:",hand_value(player))
 
         st.subheader("Dealer Shows")
-        st.markdown(cards[dealer[0]])
+        render_cards([dealer[0]])
 
         col1,col2 = st.columns(2)
 
-        # HIT
         with col1:
             if st.button("Hit"):
 
@@ -402,34 +404,30 @@ if game == "Blackjack":
 
                 if hand_value(player) > 21:
 
-                    st.markdown(" ".join(cards[c] for c in player))
+                    render_cards(player)
                     st.error("Bust! Lose -"+str(bet))
                     st.session_state.money -= bet
 
-                    st.session_state.bj_active = False
+                    st.session_state.bj_active=False
                     save_progress()
                     st.rerun()
 
-        # STAND
         with col2:
             if st.button("Stand"):
 
                 while hand_value(dealer) < 17:
                     dealer.append(draw_card())
 
-                dealer_total = hand_value(dealer)
-                player_total = hand_value(player)
-
                 st.subheader("Dealer Hand")
-                st.markdown(" ".join(cards[c] for c in dealer))
-                st.write("Dealer Total:", dealer_total)
+                render_cards(dealer)
+                st.write("Dealer Total:",hand_value(dealer))
 
-                if dealer_total > 21 or player_total > dealer_total:
+                if hand_value(dealer) > 21 or hand_value(player) > hand_value(dealer):
 
                     st.success("Win +"+str(bet))
                     st.session_state.money += bet
 
-                elif player_total < dealer_total:
+                elif hand_value(player) < hand_value(dealer):
 
                     st.error("Lose -"+str(bet))
                     st.session_state.money -= bet
@@ -437,7 +435,7 @@ if game == "Blackjack":
                 else:
                     st.info("Push")
 
-                st.session_state.bj_active = False
+                st.session_state.bj_active=False
                 save_progress()
                 st.rerun()
 # ------------------------
