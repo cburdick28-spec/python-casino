@@ -376,10 +376,23 @@ def render_cards(hand):
 
     st.markdown(html, unsafe_allow_html=True)
 # ------------------------
-# BLACKJACK CARD SYSTEM
+# BLACKJACK (STABLE VERSION)
 # ------------------------
 
-import random
+# initialize state
+if "bj_player" not in st.session_state:
+    st.session_state.bj_player = []
+
+if "bj_dealer" not in st.session_state:
+    st.session_state.bj_dealer = []
+
+if "bj_active" not in st.session_state:
+    st.session_state.bj_active = False
+
+
+# ------------------------
+# CARD SYSTEM
+# ------------------------
 
 suits = ["♠","♥","♦","♣"]
 ranks = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"]
@@ -389,14 +402,14 @@ def draw_card():
 
 def card_value(card):
 
-    rank = card[:-1]
+    r = card[:-1]
 
-    if rank in ["J","Q","K"]:
+    if r in ["J","Q","K"]:
         return 10
-    if rank == "A":
+    if r == "A":
         return 11
 
-    return int(rank)
+    return int(r)
 
 def hand_value(hand):
 
@@ -409,6 +422,121 @@ def hand_value(hand):
 
     return total
 
+
+# ------------------------
+# CARD DISPLAY
+# ------------------------
+
+def render_cards(hand):
+
+    html=""
+
+    for card in hand:
+
+        suit = card[-1]
+        rank = card[:-1]
+
+        color = "red" if suit in ["♥","♦"] else "black"
+
+        html += f"""
+        <div style="
+        display:inline-block;
+        width:100px;
+        height:140px;
+        border-radius:10px;
+        border:2px solid #333;
+        margin:6px;
+        text-align:center;
+        background:white;
+        color:{color};
+        box-shadow:3px 3px 8px rgba(0,0,0,0.3);
+        ">
+        <div style="font-size:22px">{rank}</div>
+        <div style="font-size:42px">{suit}</div>
+        </div>
+        """
+
+    st.markdown(html, unsafe_allow_html=True)
+
+
+# ------------------------
+# GAME UI
+# ------------------------
+
+if game == "Blackjack":
+
+    st.header("🃏 Blackjack")
+
+    # DEAL BUTTON
+    if not st.session_state.bj_active:
+
+        if st.button("Deal"):
+
+            st.session_state.bj_player = [draw_card(), draw_card()]
+            st.session_state.bj_dealer = [draw_card(), draw_card()]
+            st.session_state.bj_active = True
+            st.rerun()
+
+    # GAME ACTIVE
+    if st.session_state.bj_active:
+
+        player = st.session_state.bj_player
+        dealer = st.session_state.bj_dealer
+
+        st.subheader("Your Hand")
+        render_cards(player)
+        st.write("Total:", hand_value(player))
+
+        st.subheader("Dealer Shows")
+        render_cards([dealer[0]])
+
+        col1, col2 = st.columns(2)
+
+        # HIT
+        with col1:
+            if st.button("Hit", key="hit_btn"):
+
+                st.session_state.bj_player.append(draw_card())
+
+                if hand_value(st.session_state.bj_player) > 21:
+
+                    st.error("Bust! Lose -" + str(bet))
+                    st.session_state.money -= bet
+                    st.session_state.bj_active = False
+                    save_progress()
+
+                st.rerun()
+
+        # STAND
+        with col2:
+            if st.button("Stand", key="stand_btn"):
+
+                while hand_value(dealer) < 17:
+                    dealer.append(draw_card())
+
+                player_total = hand_value(player)
+                dealer_total = hand_value(dealer)
+
+                st.subheader("Dealer Hand")
+                render_cards(dealer)
+                st.write("Dealer Total:", dealer_total)
+
+                if dealer_total > 21 or player_total > dealer_total:
+
+                    st.success("Win +" + str(bet))
+                    st.session_state.money += bet
+
+                elif player_total < dealer_total:
+
+                    st.error("Lose -" + str(bet))
+                    st.session_state.money -= bet
+
+                else:
+                    st.info("Push")
+
+                st.session_state.bj_active = False
+                save_progress()
+                st.rerun()
 
 # ------------------------
 # CARD DISPLAY
