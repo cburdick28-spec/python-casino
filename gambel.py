@@ -129,6 +129,16 @@ st.sidebar.title("🎰 Casino")
 user=st.session_state.username
 db=load_db()
 users=db["users"]
+# ---------------- TIMEOUT CHECK ----------------
+now = time.time()
+
+if "timeout" in users[user] and users[user]["timeout"] > now:
+    remaining = int(users[user]["timeout"] - now)
+    minutes = remaining // 60
+    seconds = remaining % 60
+
+    st.error(f"⏳ You are timed out for {minutes}m {seconds}s")
+    st.stop()
 
 # dev infinite money
 if user in DEV_ACCOUNTS:
