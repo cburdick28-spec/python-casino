@@ -172,6 +172,24 @@ if user in DEV_ACCOUNTS:
     new_odds=st.sidebar.slider("Slot Jackpot Multiplier",2,20,st.session_state.jackpot_odds)
 
     st.session_state.jackpot_odds=new_odds
+st.sidebar.subheader("⏳ Timeout Player")
+
+timeout_user=st.sidebar.selectbox(
+    "Player to timeout",
+    list(users.keys()),
+    key="timeout_select"
+)
+
+timeout_minutes=st.sidebar.number_input(
+    "Timeout minutes",
+    1, 10000, 5
+)
+
+if st.sidebar.button("Timeout Player"):
+    users[timeout_user]["timeout"]=time.time()+timeout_minutes*60
+    db["users"]=users
+    save_db(db)
+    st.sidebar.success(f"{timeout_user} timed out for {timeout_minutes} minutes")
 
 # ---------------- DAILY ----------------
 
