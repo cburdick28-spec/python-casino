@@ -129,6 +129,11 @@ st.sidebar.title("🎰 Casino")
 user=st.session_state.username
 db=load_db()
 users=db["users"]
+
+# make sure every user has a timeout value
+for u in users:
+    if "timeout" not in users[u]:
+        users[u]["timeout"] = 0
 # ---------------- TIMEOUT CHECK ----------------
 now = time.time()
 
