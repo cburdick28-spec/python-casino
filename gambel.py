@@ -150,6 +150,21 @@ st.sidebar.write("Money:",st.session_state.money)
 if st.sidebar.button("Logout"):
     st.session_state.username=None
     st.rerun()
+    # -------- REMOVE TIMEOUT (DEV ONLY) --------
+
+st.sidebar.subheader("🔓 Remove Timeout")
+
+untimeout_user = st.sidebar.selectbox(
+    "Player to untimeout",
+    list(users.keys()),
+    key="untimeout_select"
+)
+
+if st.sidebar.button("Remove Timeout"):
+    users[untimeout_user]["timeout"] = 0
+    db["users"] = users
+    save_db(db)
+    st.sidebar.success(f"{untimeout_user} timeout removed")
 
 # ---------------- DEV PANEL ----------------
 
