@@ -143,6 +143,7 @@ if st.sidebar.button("Logout"):
 
 # ---------------- DEV PANEL ----------------
 
+# ---------------- DEV PANEL ----------------
 if user in DEV_ACCOUNTS:
 
     st.sidebar.markdown("---")
@@ -152,45 +153,42 @@ if user in DEV_ACCOUNTS:
     give=st.sidebar.number_input("Give Money",0,1000000)
 
     if st.sidebar.button("Give Money"):
-
         users[target]["money"]+=give
         db["users"]=users
         save_db(db)
-
         st.sidebar.success("Money given")
 
     if st.sidebar.button("Reset All Money"):
-
         for u in users:
             users[u]["money"]=500
-
         db["users"]=users
         save_db(db)
-
         st.sidebar.success("All balances reset")
 
     new_odds=st.sidebar.slider("Slot Jackpot Multiplier",2,20,st.session_state.jackpot_odds)
-
     st.session_state.jackpot_odds=new_odds
-st.sidebar.subheader("⏳ Timeout Player")
 
-timeout_user=st.sidebar.selectbox(
-    "Player to timeout",
-    list(users.keys()),
-    key="timeout_select"
-)
 
-timeout_minutes=st.sidebar.number_input(
-    "Timeout minutes",
-    1, 10000, 5
-)
+    # -------- TIMEOUT SYSTEM (DEV ONLY) --------
 
-if st.sidebar.button("Timeout Player"):
-    users[timeout_user]["timeout"]=time.time()+timeout_minutes*60
-    db["users"]=users
-    save_db(db)
-    st.sidebar.success(f"{timeout_user} timed out for {timeout_minutes} minutes")
+    st.sidebar.subheader("⏳ Timeout Player")
 
+    timeout_user = st.sidebar.selectbox(
+        "Player to timeout",
+        list(users.keys()),
+        key="timeout_select"
+    )
+
+    timeout_minutes = st.sidebar.number_input(
+        "Timeout minutes",
+        1, 10000, 5
+    )
+
+    if st.sidebar.button("Timeout Player"):
+        users[timeout_user]["timeout"] = time.time() + timeout_minutes * 60
+        db["users"] = users
+        save_db(db)
+        st.sidebar.success(f"{timeout_user} timed out for {timeout_minutes} minutes")
 # ---------------- DAILY ----------------
 
 today=str(datetime.date.today())
