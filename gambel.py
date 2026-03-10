@@ -149,8 +149,15 @@ if "timeout" in users[user] and users[user]["timeout"] > now:
 if user in DEV_ACCOUNTS:
     st.session_state.money=999999999
 
-st.sidebar.write("User:",user)
-st.sidebar.write("Money:",st.session_state.money)
+st.sidebar.write("User:", user)
+
+# show role
+if user in DEV_ACCOUNTS:
+    st.sidebar.write("Role: 👑 Developer")
+else:
+    st.sidebar.write("Role: 🎮 Player")
+
+st.sidebar.write("Money:", st.session_state.money)
 
 if st.sidebar.button("Logout"):
     st.session_state.username=None
