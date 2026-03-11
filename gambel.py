@@ -7,13 +7,26 @@ import datetime
 import time
 
 DB_FILE="casino_db.json"
-
 DEV_ACCOUNTS=["Dev1","Dev2","Dev3"]
 
+# ---------------- DATABASE FUNCTIONS ----------------
+def load_db():
+    if not os.path.exists(DB_FILE):
+        return {
+            "users": {},
+            "jackpot": 1000
+        }
+    with open(DB_FILE, "r") as f:
+        return json.load(f)
+
+def save_db(db):
+    with open(DB_FILE, "w") as f:
+        json.dump(db, f, indent=4)
+
+def hash_password(p):
+    return hashlib.sha256(p.encode()).hexdigest()
+
 # ---------------- DATABASE ----------------
-
-
-# load database
 db = load_db()
 
 # make sure required fields exist
@@ -23,11 +36,9 @@ if "users" not in db:
 if "jackpot" not in db:
     db["jackpot"] = 1000
 
-# save fixes
 save_db(db)
 
 users = db["users"]
-
 # ---------------- SESSION ----------------
 
 # ---------------- SESSION ----------------
