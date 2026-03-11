@@ -20,7 +20,7 @@ if not os.path.exists(DB_FILE):
     }
 
     with open(DB_FILE,"w") as f:
-        json.dump(db,f)
+       json.dump(db,f,indent=4)
 
 def load_db():
     with open(DB_FILE,"r") as f:
@@ -129,6 +129,12 @@ st.sidebar.title("🎰 Casino")
 user=st.session_state.username
 db=load_db()
 users=db["users"]
+# make sure every user has required fields
+for u in users:
+    if "timeout" not in users[u]:
+        users[u]["timeout"] = 0
+    if "last_daily" not in users[u]:
+        users[u]["last_daily"] = ""
 
 # make sure every user has a timeout value
 for u in users:
