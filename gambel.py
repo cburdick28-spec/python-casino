@@ -17,9 +17,13 @@ DEV_ACCOUNTS=["Dev1","Dev2","Dev3"]
 DB_FILE = "casino_db.json"
 DEV_ACCOUNTS = ["Dev1","Dev2","Dev3"]
 
-# ---------------- DATABASE FUNCTIONS ----------------
+
+# -------- DATABASE FUNCTIONS --------
 def load_db():
-    if not os.path.exists(DB_FILE):
+    try:
+        with open(DB_FILE, "r") as f:
+            return json.load(f)
+    except:
         db = {
             "users": {},
             "jackpot": 1000
@@ -28,19 +32,13 @@ def load_db():
             json.dump(db, f, indent=4)
         return db
 
-    with open(DB_FILE, "r") as f:
-        return json.load(f)
-
 
 def save_db(db):
     with open(DB_FILE, "w") as f:
         json.dump(db, f, indent=4)
-
-
-def hash_password(p):
-    return hashlib.sha256(p.encode()).hexdigest()
 # ---------------- DATABASE ----------------
 db = load_db()
+users = db["users"]
 
 # make sure required fields exist
 if "users" not in db:
