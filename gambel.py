@@ -13,6 +13,14 @@ DEV_ACCOUNTS=["Dev1","Dev2","Dev3"]
 # ---------------- DATABASE ----------------
 
 if not os.path.exists(DB_FILE):
+    db = {
+        "users": {},
+        "jackpot": 1000
+    }
+    with open(DB_FILE, "w") as f:
+        json.dump(db, f, indent=4)
+else:
+    db = load_db()
 
     db={
         "users":{},
