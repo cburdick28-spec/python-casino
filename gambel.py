@@ -1,3 +1,5 @@
+import requests
+import base64
 import streamlit as st
 import random
 import json
@@ -5,27 +7,38 @@ import os
 import hashlib
 import datetime
 import time
+GITHUB_TOKEN = st.secrets["github_token"]
+REPO = "YOUR_GITHUB_USERNAME/python-casino"
+FILE_PATH = "casino_db.json"
 
 DB_FILE="casino_db.json"
 DEV_ACCOUNTS=["Dev1","Dev2","Dev3"]
 
+DB_FILE = "casino_db.json"
+DEV_ACCOUNTS = ["Dev1","Dev2","Dev3"]
+
 # ---------------- DATABASE FUNCTIONS ----------------
 def load_db():
     if not os.path.exists(DB_FILE):
-        return {
+        db = {
             "users": {},
             "jackpot": 1000
         }
+        with open(DB_FILE, "w") as f:
+            json.dump(db, f, indent=4)
+        return db
+
     with open(DB_FILE, "r") as f:
         return json.load(f)
+
 
 def save_db(db):
     with open(DB_FILE, "w") as f:
         json.dump(db, f, indent=4)
 
+
 def hash_password(p):
     return hashlib.sha256(p.encode()).hexdigest()
-
 # ---------------- DATABASE ----------------
 db = load_db()
 
