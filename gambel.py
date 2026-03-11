@@ -12,37 +12,33 @@ DEV_ACCOUNTS=["Dev1","Dev2","Dev3"]
 
 # ---------------- DATABASE ----------------
 
-if not os.path.exists(DB_FILE):
-    db = {
-        "users": {},
-        "jackpot": 1000
-    }
-    with open(DB_FILE, "w") as f:
-        json.dump(db, f, indent=4)
-else:
-    db = load_db()
-
-    db={
-        "users":{},
-        "jackpot":1000
-    }
-
-    with open(DB_FILE,"w") as f:
-       json.dump(db,f,indent=4)
-
 def load_db():
-    with open(DB_FILE,"r") as f:
+    if not os.path.exists(DB_FILE):
+        return {
+            "users": {},
+            "jackpot": 1000
+        }
+    with open(DB_FILE, "r") as f:
         return json.load(f)
 
 def save_db(db):
-    with open(DB_FILE,"w") as f:
-        json.dump(db,f,indent=4)
+    with open(DB_FILE, "w") as f:
+        json.dump(db, f, indent=4)
 
-def hash_password(p):
-    return hashlib.sha256(p.encode()).hexdigest()
+# load database
+db = load_db()
 
-db=load_db()
-users=db["users"]
+# make sure required fields exist
+if "users" not in db:
+    db["users"] = {}
+
+if "jackpot" not in db:
+    db["jackpot"] = 1000
+
+# save fixes
+save_db(db)
+
+users = db["users"]
 
 # ---------------- SESSION ----------------
 
