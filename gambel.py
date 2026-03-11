@@ -7,6 +7,10 @@ import os
 import hashlib
 import datetime
 import time
+
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
 GITHUB_TOKEN = st.secrets["github_token"]
 REPO = "YOUR_GITHUB_USERNAME/python-casino"
 FILE_PATH = "casino_db.json"
