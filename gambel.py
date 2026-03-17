@@ -61,26 +61,6 @@ def save_db(db):
     }
 
     requests.put(url, headers=headers, json=payload)
-
-
-# -------- DATABASE FUNCTIONS --------
-def load_db():
-    try:
-        with open(DB_FILE, "r") as f:
-            return json.load(f)
-    except:
-        db = {
-            "users": {},
-            "jackpot": 1000
-        }
-        with open(DB_FILE, "w") as f:
-            json.dump(db, f, indent=4)
-        return db
-
-
-def save_db(db):
-    with open(DB_FILE, "w") as f:
-        json.dump(db, f, indent=4)
 # ---------------- DATABASE ----------------
 db = load_db()
 users = db["users"]
