@@ -88,7 +88,7 @@ defaults={
 "bj_dealer":[],
 "bj_active":False,
 "bj_result":None,
-"bj_bet":0
+"bj_bet":0,
 "jackpot_odds":6
 }
 
