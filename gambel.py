@@ -306,7 +306,7 @@ st.title("🎰 Casino Games")
 
 st.header(f"💰 Progressive Jackpot: ${db['jackpot']}")
 
-game=st.selectbox("Game",["Slots","Dice","Blackjack","Roulette"])
+game=st.selectbox("Game",["Slots","Blackjack","Roulette"])
 
 money=st.session_state.money
 
@@ -378,32 +378,6 @@ if game=="Slots":
         save_db(db)
         save_progress()
 
-# ---------------- DICE ----------------
-
-if game=="Dice":
-
-    if st.button("Roll"):
-
-        p=random.randint(1,6)
-        h=random.randint(1,6)
-
-        st.write("You:",p,"House:",h)
-
-        if p>h:
-
-            st.success(f"Win +{bet}")
-            st.session_state.money+=bet
-
-        elif p<h:
-
-            st.error(f"Lose -{bet}")
-            st.session_state.money-=bet
-
-        else:
-
-            st.info("Draw")
-
-        save_progress()
 
 # ------------------------
 # BLACKJACK
