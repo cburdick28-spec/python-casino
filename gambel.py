@@ -88,6 +88,7 @@ defaults={
 "bj_dealer":[],
 "bj_active":False,
 "bj_result":None,
+"bj_bet":0
 "jackpot_odds":6
 }
 
@@ -491,6 +492,7 @@ if game == "Blackjack":
 
         if st.button("Deal"):
 
+            st.session_state.bj_bet = bet
             st.session_state.bj_player=[draw_card(),draw_card()]
             st.session_state.bj_dealer=[draw_card(),draw_card()]
             st.session_state.bj_active=True
@@ -523,7 +525,7 @@ if game == "Blackjack":
 
                 if hand_value(player)>21:
 
-                    st.session_state.money-=bet
+                    st.session_state.money-=st.session_state.bj_bet
 
                     st.session_state.bj_result=(
                         "lose",
@@ -554,7 +556,7 @@ if game == "Blackjack":
 
                 if dt>21 or pt>dt:
 
-                    st.session_state.money+=bet
+                    st.session_state.money+=st.session_state.bj_bet
 
                     st.session_state.bj_result=(
                         "win",
@@ -564,7 +566,7 @@ if game == "Blackjack":
 
                 elif pt<dt:
 
-                    st.session_state.money-=bet
+                    st.session_state.money-=st.session_state.bj_bet
 
                     st.session_state.bj_result=(
                         "lose",
