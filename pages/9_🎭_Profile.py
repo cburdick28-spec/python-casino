@@ -21,64 +21,44 @@ tier = get_vip_tier(money)
 
 # ---------------- AVATAR OPTIONS ----------------
 AVATARS = {
-    "🎰": "Slot Machine",
-    "🃏": "Card Shark",
-    "🎲": "Dice Roller",
-    "💎": "Diamond",
-    "🦁": "Lion",
-    "🐯": "Tiger",
-    "🦊": "Fox",
-    "🐺": "Wolf",
-    "🦅": "Eagle",
-    "🐉": "Dragon",
-    "🤑": "Money Face",
-    "😎": "Cool Guy",
-    "🤠": "Cowboy",
-    "🥷": "Ninja",
-    "👑": "King",
-    "🎭": "Jester",
-    "🧙": "Wizard",
-    "🤖": "Robot",
-    "👾": "Alien",
-    "💀": "Skull",
-    "🔥": "Fire",
-    "⚡": "Lightning",
-    "🌟": "Star",
-    "🍀": "Lucky Clover",
-    "🎯": "Bullseye",
+    "🎰": "Slot Machine", "🃏": "Card Shark", "🎲": "Dice Roller",
+    "💎": "Diamond", "🦁": "Lion", "🐯": "Tiger", "🦊": "Fox",
+    "🐺": "Wolf", "🦅": "Eagle", "🐉": "Dragon", "🤑": "Money Face",
+    "😎": "Cool Guy", "🤠": "Cowboy", "🥷": "Ninja", "👑": "King",
+    "🎭": "Jester", "🧙": "Wizard", "🤖": "Robot", "👾": "Alien",
+    "💀": "Skull", "🔥": "Fire", "⚡": "Lightning", "🌟": "Star",
+    "🍀": "Lucky Clover", "🎯": "Bullseye",
 }
 
 BANNER_COLORS = {
-    "🌑 Dark":       "#0d0d1a",
-    "🔵 Ocean":      "#0a3d62",
-    "🟣 Purple":     "#4a0080",
-    "🔴 Red":        "#7f0000",
-    "🟢 Forest":     "#1a4a1a",
-    "🟡 Gold":       "#7a6000",
-    "🩷 Pink":       "#7a1040",
-    "⬛ Midnight":   "#111111",
+    "🌑 Dark":    "#0d0d1a",
+    "🔵 Ocean":   "#0a3d62",
+    "🟣 Purple":  "#4a0080",
+    "🔴 Red":     "#7f0000",
+    "🟢 Forest":  "#1a4a1a",
+    "🟡 Gold":    "#7a6000",
+    "🩷 Pink":    "#7a1040",
+    "⬛ Midnight": "#111111",
 }
 
 TITLES = {
-    "Rookie":       {"req": 0,       "emoji": "🎮"},
-    "Gambler":      {"req": 1000,    "emoji": "🎲"},
-    "High Roller":  {"req": 10000,   "emoji": "💰"},
-    "Whale":        {"req": 100000,  "emoji": "🐋"},
-    "Casino King":  {"req": 500000,  "emoji": "👑"},
-    "Legend":       {"req": 1000000, "emoji": "🌟"},
+    "Rookie":      {"req": 0,       "emoji": "🎮"},
+    "Gambler":     {"req": 1000,    "emoji": "🎲"},
+    "High Roller": {"req": 10000,   "emoji": "💰"},
+    "Whale":       {"req": 100000,  "emoji": "🐋"},
+    "Casino King": {"req": 500000,  "emoji": "👑"},
+    "Legend":      {"req": 1000000, "emoji": "🌟"},
 }
 
 def get_available_titles(money):
     return [(name, info) for name, info in TITLES.items() if money >= info["req"]]
 
+def get_title_emoji(title):
+    return TITLES.get(title, {"emoji": "🎮"})["emoji"]
+
 def get_profile(user_data):
     if "profile" not in user_data:
-        user_data["profile"] = {
-            "avatar": "🎰",
-            "banner": "🌑 Dark",
-            "title": "Rookie",
-            "bio": "",
-        }
+        user_data["profile"] = {"avatar": "🎰", "banner": "🌑 Dark", "title": "Rookie", "bio": ""}
     return user_data["profile"]
 
 profile = get_profile(user_data)
@@ -90,24 +70,25 @@ banner_color = BANNER_COLORS.get(current_banner, "#0d0d1a")
 achievements = user_data.get("achievements", [])
 unlocked_achievements = [a for a in ACHIEVEMENTS if a["id"] in achievements]
 
+title_emoji = get_title_emoji(current_title)
+bio_display = current_bio if current_bio else "No bio set yet."
+
 # ---------------- PROFILE CARD ----------------
 st.markdown(f"""
-<div style="background: linear-gradient(135deg, {banner_color}, {banner_color}cc);
-border: 2px solid {tier['color']}; border-radius: 16px; padding: 30px;
-margin-bottom: 24px; position:relative;">
-  <div style="display:flex; align-items:center; gap:24px;">
-    <div style="font-size:80px; line-height:1;">{current_avatar}</div>
+<div style="background:linear-gradient(135deg,{banner_color},{banner_color}cc);
+border:2px solid {tier['color']};border-radius:16px;padding:30px;margin-bottom:24px;">
+  <div style="display:flex;align-items:center;gap:24px;">
+    <div style="font-size:80px;line-height:1;">{current_avatar}</div>
     <div>
-      <div style="font-size:28px; font-weight:bold; color:white;">{user}</div>
-      <div style="font-size:16px; color:{tier['color']}; margin:4px 0;">
-        {tier['emoji']} {tier['name']} VIP &nbsp;|&nbsp;
-        {TITLES.get(current_title, {{}}).get('emoji','🎮')} {current_title}
+      <div style="font-size:28px;font-weight:bold;color:white;">{user}</div>
+      <div style="font-size:16px;color:{tier['color']};margin:4px 0;">
+        {tier['emoji']} {tier['name']} VIP &nbsp;|&nbsp; {title_emoji} {current_title}
       </div>
-      <div style="font-size:14px; color:#aaa; margin-top:6px;">
+      <div style="font-size:14px;color:#aaa;margin-top:6px;">
         💰 ${money:,} &nbsp;|&nbsp; 🏆 {len(unlocked_achievements)} achievements
       </div>
-      <div style="font-size:14px; color:#ccc; margin-top:8px; font-style:italic;">
-        "{current_bio if current_bio else 'No bio set yet.'}"
+      <div style="font-size:14px;color:#ccc;margin-top:8px;font-style:italic;">
+        "{bio_display}"
       </div>
     </div>
   </div>
@@ -123,25 +104,24 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader("🎭 Choose Avatar")
-    avatar_cols = st.columns(5)
     selected_avatar = current_avatar
+    avatar_cols = st.columns(5)
     for i, (emoji, name) in enumerate(AVATARS.items()):
         with avatar_cols[i % 5]:
-            border = "3px solid #FFD700" if emoji == current_avatar else "2px solid #333"
             if st.button(emoji, key=f"av_{emoji}", help=name):
                 selected_avatar = emoji
 
     st.markdown("---")
     st.subheader("🎨 Banner Color")
-    selected_banner = st.selectbox("Banner", list(BANNER_COLORS.keys()),
-                                   index=list(BANNER_COLORS.keys()).index(current_banner))
+    banner_keys = list(BANNER_COLORS.keys())
+    current_banner_idx = banner_keys.index(current_banner) if current_banner in banner_keys else 0
+    selected_banner = st.selectbox("Banner", banner_keys, index=current_banner_idx)
 
 with col2:
     st.subheader("🏅 Title")
     available_titles = get_available_titles(money)
     title_options = [f"{info['emoji']} {name}" for name, info in available_titles]
     title_names = [name for name, _ in available_titles]
-
     current_idx = title_names.index(current_title) if current_title in title_names else 0
     selected_title_display = st.selectbox("Choose Title", title_options, index=current_idx)
     selected_title = title_names[title_options.index(selected_title_display)]
@@ -152,12 +132,13 @@ with col2:
                                 placeholder="Tell other players about yourself...")
     st.caption(f"{len(selected_bio)}/120 characters")
 
-    # Locked titles preview
     st.markdown("**🔒 Locked Titles:**")
     for name, info in TITLES.items():
         if money < info["req"]:
-            st.markdown(f"<span style='color:#555'>{info['emoji']} {name} — requires ${info['req']:,}</span>",
-                       unsafe_allow_html=True)
+            st.markdown(
+                f"<span style='color:#555'>{info['emoji']} {name} — requires ${info['req']:,}</span>",
+                unsafe_allow_html=True
+            )
 
 if st.button("💾 Save Profile", type="primary"):
     db = load_db()
@@ -207,26 +188,28 @@ else:
         udata = ensure_user_fields(udata)
         uprofile = get_profile(udata)
         utier = get_vip_tier(udata.get("money", 0))
-        ubanner = BANNER_COLORS.get(uprofile.get("banner", "🌑 Dark"), "#0d0d1a")
+        ubanner_color = BANNER_COLORS.get(uprofile.get("banner", "🌑 Dark"), "#0d0d1a")
         uavatar = uprofile.get("avatar", "🎰")
         utitle = uprofile.get("title", "Rookie")
-        ubio = uprofile.get("bio", "")
+        utitle_emoji = get_title_emoji(utitle)
+        ubio = uprofile.get("bio", "") or "No bio set."
         uach = len(udata.get("achievements", []))
+        umoney = udata.get("money", 0)
 
         with p_cols[i % 3]:
             st.markdown(f"""
-            <div style="background:linear-gradient(135deg,{ubanner},{ubanner}cc);
+            <div style="background:linear-gradient(135deg,{ubanner_color},{ubanner_color}cc);
             border:2px solid {utier['color']};border-radius:12px;padding:16px;margin-bottom:12px;">
             <div style="font-size:48px;text-align:center">{uavatar}</div>
             <div style="font-size:16px;font-weight:bold;color:white;text-align:center">{uname}</div>
             <div style="font-size:12px;color:{utier['color']};text-align:center">
-              {utier['emoji']} {utier['name']} &nbsp;|&nbsp; {TITLES.get(utitle,{{}}).get('emoji','🎮')} {utitle}
+              {utier['emoji']} {utier['name']} &nbsp;|&nbsp; {utitle_emoji} {utitle}
             </div>
             <div style="font-size:12px;color:#aaa;text-align:center;margin-top:4px;">
-              💰 ${udata.get('money',0):,} &nbsp;|&nbsp; 🏆 {uach}
+              💰 ${umoney:,} &nbsp;|&nbsp; 🏆 {uach}
             </div>
             <div style="font-size:12px;color:#ccc;text-align:center;font-style:italic;margin-top:6px;">
-              "{ubio if ubio else 'No bio set.'}"
+              "{ubio}"
             </div>
             </div>
             """, unsafe_allow_html=True)
