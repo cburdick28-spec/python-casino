@@ -25,7 +25,7 @@ if money <= 0:
     st.error("You're out of money! Go claim your daily reward on the main page.")
     st.stop()
 
-bet = st.number_input("Bet", 1, money, min(10, money))
+bet = st.number_input("Bet", min_value=1, max_value=money, value=min(10, money), step=1)
 
 SYMBOLS = ["🍒", "🍋", "🍉", "⭐", "💎", "7️⃣"]
 
