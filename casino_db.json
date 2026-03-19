@@ -2,7 +2,7 @@
     "users": {
         "Connor": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 2002134,
+            "money": 2002124,
             "last_daily": "2026-03-19",
             "timeout": 0
         },
@@ -14,7 +14,7 @@
         },
         "ncasey28": {
             "password": "2dc0907a15c08112ad3d9e6afc4011f00232c8de61cf3255129aa6c831a2d001",
-            "money": 475,
+            "money": 500,
             "last_daily": "",
             "timeout": 0
         }
