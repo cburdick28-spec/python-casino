@@ -23,7 +23,8 @@
             "timeout": 0,
             "achievements": [
                 "first_win",
-                "silver_tier"
+                "silver_tier",
+                "diamond_tier"
             ],
             "stats": {
                 "games_played": 0,
