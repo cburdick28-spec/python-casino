@@ -12,10 +12,10 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 7,
+                "games_played": 8,
                 "games_won": 4,
-                "games_lost": 3,
-                "total_wagered": 70,
+                "games_lost": 4,
+                "total_wagered": 80,
                 "total_won": 70,
                 "biggest_win": 20,
                 "daily_streak": 0
@@ -72,7 +72,7 @@
             }
         }
     },
-    "jackpot": 2001176,
+    "jackpot": 2001174,
     "chat": [
         {
             "user": "Connor",
