@@ -11,6 +11,12 @@
             "money": 1001999997,
             "last_daily": "2026-03-19",
             "timeout": 0
+        },
+        "ncasey28": {
+            "password": "2dc0907a15c08112ad3d9e6afc4011f00232c8de61cf3255129aa6c831a2d001",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0
         }
     },
     "jackpot": 2001072
