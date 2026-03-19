@@ -21,6 +21,12 @@
                 "total_won": 90,
                 "biggest_win": 20,
                 "daily_streak": 0
+            },
+            "profile": {
+                "avatar": "\ud83c\udfb0",
+                "banner": "\ud83d\udfe1 Gold",
+                "title": "Legend",
+                "bio": "Creator"
             }
         },
         "Dev1": {
