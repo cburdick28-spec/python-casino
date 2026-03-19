@@ -5,7 +5,9 @@
             "money": 2002574,
             "last_daily": "2026-03-19",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "gold_tier"
+            ],
             "stats": {
                 "games_played": 2,
                 "games_won": 1,
