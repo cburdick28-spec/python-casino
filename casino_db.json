@@ -24,7 +24,8 @@
             "achievements": [
                 "first_win",
                 "silver_tier",
-                "diamond_tier"
+                "diamond_tier",
+                "millionaire"
             ],
             "stats": {
                 "games_played": 0,
