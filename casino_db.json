@@ -68,5 +68,13 @@
         }
     },
     "jackpot": 2001168,
-    "chat": []
+    "chat": [
+        {
+            "user": "Connor",
+            "message": "hello",
+            "time": "19:39",
+            "vip": "\ud83d\udca0",
+            "dev": false
+        }
+    ]
 }
