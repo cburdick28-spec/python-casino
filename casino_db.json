@@ -21,7 +21,9 @@
             "money": 1001999997,
             "last_daily": "2026-03-19",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "first_win"
+            ],
             "stats": {
                 "games_played": 0,
                 "games_won": 0,
