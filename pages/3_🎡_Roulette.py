@@ -38,25 +38,25 @@ def get_color(n):
 # Session state
 if "rou_result" not in st.session_state:
     st.session_state.rou_result = None
-if "rou_pending" not in st.session_state:
-    st.session_state.rou_pending = False
-if "rou_bet" not in st.session_state:
-    st.session_state.rou_bet = 0
-if "rou_choice" not in st.session_state:
-    st.session_state.rou_choice = None
-if "rou_num" not in st.session_state:
-    st.session_state.rou_num = None
+if "rou_spun" not in st.session_state:
+    st.session_state.rou_spun = False
 
-# Roulette wheel order (standard European)
 WHEEL_ORDER = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,
                24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26]
 
-def build_wheel_html(target_number, should_spin):
-    spin_js = "false"
-    if should_spin:
-        spin_js = "true"
+spin_clicked = st.button("🎡 Spin the Wheel!")
 
-    return f"""
+if spin_clicked:
+    st.session_state.rou_result = random.randint(0, 36)
+    st.session_state.rou_spun = True
+    st.session_state.rou_bet = bet
+    st.session_state.rou_choice = choice
+    st.session_state.rou_num = num
+
+target = st.session_state.rou_result if st.session_state.rou_result is not None else 0
+do_spin = "true" if spin_clicked else "false"
+
+wheel_html = f"""
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,8 +74,8 @@ def build_wheel_html(target_number, should_spin):
     filter: drop-shadow(0 0 6px #FFD700);
   }}
   #resultBox {{
-    text-align:center; font-size:24px; font-weight:bold;
-    color:white; margin-top:16px; min-height:40px;
+    text-align:center; font-size:22px; font-weight:bold;
+    color:white; margin-top:16px; min-height:36px;
   }}
 </style>
 </head>
@@ -84,17 +84,15 @@ def build_wheel_html(target_number, should_spin):
   <canvas id="c" width="320" height="320"></canvas>
   <div id="pointer"></div>
 </div>
-<div id="resultBox" id="resultBox">🎡 Place your bet and spin!</div>
-
+<div id="resultBox">🎡 Place your bet and spin!</div>
 <script>
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 const cx = 160, cy = 160, R = 148;
-
-const numbers = {WHEEL_ORDER};
+const numbers = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26];
 const redSet = new Set([1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36]);
-const target = {target_number};
-const doSpin = {spin_js};
+const target = {target};
+const doSpin = {do_spin};
 
 function sliceColor(n) {{
   if (n === 0) return '#009900';
@@ -104,7 +102,6 @@ function sliceColor(n) {{
 function drawWheel(angle) {{
   ctx.clearRect(0, 0, 320, 320);
   const slice = (2 * Math.PI) / numbers.length;
-
   for (let i = 0; i < numbers.length; i++) {{
     const a0 = angle + i * slice;
     const a1 = a0 + slice;
@@ -117,8 +114,6 @@ function drawWheel(angle) {{
     ctx.strokeStyle = '#555';
     ctx.lineWidth = 0.8;
     ctx.stroke();
-
-    // label
     ctx.save();
     ctx.translate(cx, cy);
     ctx.rotate(a0 + slice / 2);
@@ -130,15 +125,11 @@ function drawWheel(angle) {{
     ctx.fillText(numbers[i], 0, 3);
     ctx.restore();
   }}
-
-  // gold ring
   ctx.beginPath();
   ctx.arc(cx, cy, R, 0, 2*Math.PI);
   ctx.strokeStyle = '#FFD700';
   ctx.lineWidth = 5;
   ctx.stroke();
-
-  // center hub
   ctx.beginPath();
   ctx.arc(cx, cy, 18, 0, 2*Math.PI);
   ctx.fillStyle = '#FFD700';
@@ -152,40 +143,25 @@ let currentAngle = 0;
 drawWheel(currentAngle);
 
 if (doSpin) {{
-  // Find where the target number sits on the wheel
   const idx = numbers.indexOf(target);
   const slice = (2 * Math.PI) / numbers.length;
-
-  // The pointer is on the RIGHT side (angle = 0).
-  // We need the target slice center to land at angle 0.
-  // Slice i starts at: currentAngle + i*slice
-  // We want: currentAngle + idx*slice + slice/2 = 0 (mod 2pi)
-  // So finalAngle = -(idx*slice + slice/2)
   const targetFinalAngle = -(idx * slice + slice / 2);
-
-  // Add several full rotations for effect
   const spins = 6 + Math.random() * 3;
   const finalAngle = targetFinalAngle - spins * 2 * Math.PI;
-
   const duration = 5000;
   const startAngle = currentAngle;
   const startTime = performance.now();
-
   document.getElementById('resultBox').textContent = '🎡 Spinning...';
 
-  function easeOut(t) {{
-    return 1 - Math.pow(1 - t, 4);
-  }}
+  function easeOut(t) {{ return 1 - Math.pow(1 - t, 4); }}
 
   function animate(now) {{
     const t = Math.min((now - startTime) / duration, 1);
     currentAngle = startAngle + (finalAngle - startAngle) * easeOut(t);
     drawWheel(currentAngle);
-
     if (t < 1) {{
       requestAnimationFrame(animate);
     }} else {{
-      // Snap exactly
       currentAngle = finalAngle;
       drawWheel(currentAngle);
       const color = target === 0 ? 'Green' : (redSet.has(target) ? 'Red' : 'Black');
@@ -193,57 +169,45 @@ if (doSpin) {{
       document.getElementById('resultBox').innerHTML = emoji + ' <b>' + target + ' — ' + color + '</b>';
     }}
   }}
-
   requestAnimationFrame(animate);
 }}
 </script>
 </body>
 </html>
-""".replace("{WHEEL_ORDER}", str(WHEEL_ORDER))
+"""
 
-# Show the wheel (pre-spin state or after spin)
-current_target = st.session_state.rou_result if st.session_state.rou_result is not None else 0
-wheel_placeholder = st.empty()
-wheel_placeholder.components.v1.html(
-    build_wheel_html(current_target, False), height=420
-)
+st.components.v1.html(wheel_html, height=420)
 
-if st.button("🎡 Spin the Wheel!"):
-    # Lock in the bet and choice NOW before spinning
-    spin_num = random.randint(0, 36)
-    st.session_state.rou_result = spin_num
-    st.session_state.rou_bet = bet
-    st.session_state.rou_choice = choice
-    st.session_state.rou_num = num
+# Show result after spin
+if spin_clicked and st.session_state.rou_spun:
+    time.sleep(5.5)
 
-    # Show animated wheel with the correct target
-    wheel_placeholder.empty()
-    st.components.v1.html(build_wheel_html(spin_num, True), height=420)
-
-    # Wait for animation to finish
-    time.sleep(5.8)
-
-    # Show result
+    spin_num = st.session_state.rou_result
+    locked_choice = st.session_state.rou_choice
+    locked_num = st.session_state.rou_num
+    locked_bet = st.session_state.rou_bet
     color = get_color(spin_num)
+
     st.markdown(f"### 🎯 Result: **{spin_num} — {color}**")
 
     won = False
     payout = 0
 
-    if choice == "Number" and spin_num == num:
-        payout = bet * 35
+    if locked_choice == "Number" and spin_num == locked_num:
+        payout = locked_bet * 35
         st.success(f"🎉 Big Win! +${payout:,}")
         st.session_state.money += payout
         won = True
-    elif choice == color:
-        payout = bet
-        st.success(f"✅ Winner! +${bet:,}")
-        st.session_state.money += bet
+    elif locked_choice == color:
+        payout = locked_bet
+        st.success(f"✅ Winner! +${locked_bet:,}")
+        st.session_state.money += locked_bet
         won = True
     else:
-        st.error(f"❌ No win. -${bet:,}")
-        st.session_state.money -= bet
+        st.error(f"❌ No win. -${locked_bet:,}")
+        st.session_state.money -= locked_bet
 
-    record_game(user, won, bet, payout)
+    record_game(user, won, locked_bet, payout)
     save_progress()
     st.write(f"**New Balance:** ${st.session_state.money:,}")
+    st.session_state.rou_spun = False
