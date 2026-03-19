@@ -10,7 +10,8 @@
                 "platinum_tier",
                 "diamond_tier",
                 "millionaire",
-                "first_win"
+                "first_win",
+                "high_roller"
             ],
             "stats": {
                 "games_played": 12,
@@ -73,7 +74,7 @@
             }
         }
     },
-    "jackpot": 2001431,
+    "jackpot": 2001182,
     "chat": [
         {
             "user": "Connor",
