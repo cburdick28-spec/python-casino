@@ -22,11 +22,11 @@ if money <= 0:
     st.error("You're out of money! Go claim your daily reward on the main page.")
     st.stop()
 
-bet = st.number_input("Bet", 1, money, min(10, money))
+bet = st.number_input("Bet", min_value=1, max_value=money, value=min(10, money), step=1)
 choice = st.selectbox("Bet on", ["Red", "Black", "Number"])
 num = None
 if choice == "Number":
-    num = int(st.number_input("Pick 0-36", 0, 36))
+    num = int(st.number_input("Pick 0-36", min_value=0, max_value=36, value=0, step=1))
 
 RED_NUMBERS = {1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36}
 
@@ -51,7 +51,6 @@ if spin_clicked:
 target = st.session_state.rou_result if st.session_state.rou_result is not None else 0
 do_spin = "true" if spin_clicked else "false"
 
-# The wheel order (standard European roulette)
 WHEEL_ORDER = [0,32,15,19,4,21,2,25,17,34,6,27,13,36,11,30,8,23,10,5,
                24,16,33,1,20,14,31,9,22,18,29,7,28,12,35,3,26]
 
@@ -63,16 +62,11 @@ wheel_html = f"""<!DOCTYPE html>
          align-items:center; flex-direction:column; font-family:Arial,sans-serif; }}
   #wrap {{ position:relative; width:360px; height:380px; margin:0 auto; }}
   #pointer {{
-    position:absolute;
-    top:5px;
-    left:50%;
-    transform:translateX(-50%);
+    position:absolute; top:5px; left:50%; transform:translateX(-50%);
     width:0; height:0;
-    border-left:12px solid transparent;
-    border-right:12px solid transparent;
+    border-left:12px solid transparent; border-right:12px solid transparent;
     border-top:26px solid #FFD700;
-    filter:drop-shadow(0 0 6px #FFD700);
-    z-index:10;
+    filter:drop-shadow(0 0 6px #FFD700); z-index:10;
   }}
   #resultBox {{
     text-align:center; font-size:22px; font-weight:bold;
@@ -86,13 +80,11 @@ wheel_html = f"""<!DOCTYPE html>
   <canvas id="c" width="360" height="360" style="margin-top:20px;display:block;"></canvas>
 </div>
 <div id="resultBox">🎡 Place your bet and spin!</div>
-
 <script>
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 const cx = 180, cy = 180, R = 162;
-
-const numbers = {WHEEL_ORDER};
+const numbers = {str(WHEEL_ORDER)};
 const redSet = new Set([1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36]);
 const target = {target};
 const doSpin = {do_spin};
@@ -107,74 +99,45 @@ function sliceColor(n) {{
 function drawWheel(angle) {{
   ctx.clearRect(0, 0, 360, 360);
   for (let i = 0; i < N; i++) {{
-    const a0 = angle + i * SLICE;
-    const a1 = a0 + SLICE;
-    ctx.beginPath();
-    ctx.moveTo(cx, cy);
-    ctx.arc(cx, cy, R, a0, a1);
-    ctx.closePath();
-    ctx.fillStyle = sliceColor(numbers[i]);
-    ctx.fill();
-    ctx.strokeStyle = '#444';
-    ctx.lineWidth = 0.8;
-    ctx.stroke();
+    const a0 = angle + i * SLICE, a1 = a0 + SLICE;
+    ctx.beginPath(); ctx.moveTo(cx, cy);
+    ctx.arc(cx, cy, R, a0, a1); ctx.closePath();
+    ctx.fillStyle = sliceColor(numbers[i]); ctx.fill();
+    ctx.strokeStyle = '#444'; ctx.lineWidth = 0.8; ctx.stroke();
     ctx.save();
-    ctx.translate(cx, cy);
-    ctx.rotate(a0 + SLICE / 2);
-    ctx.translate(R - 20, 0);
-    ctx.rotate(Math.PI / 2);
-    ctx.fillStyle = 'white';
-    ctx.font = 'bold 10px Arial';
-    ctx.textAlign = 'center';
-    ctx.fillText(numbers[i], 0, 4);
+    ctx.translate(cx, cy); ctx.rotate(a0 + SLICE / 2);
+    ctx.translate(R - 20, 0); ctx.rotate(Math.PI / 2);
+    ctx.fillStyle = 'white'; ctx.font = 'bold 10px Arial';
+    ctx.textAlign = 'center'; ctx.fillText(numbers[i], 0, 4);
     ctx.restore();
   }}
-  ctx.beginPath();
-  ctx.arc(cx, cy, R, 0, 2*Math.PI);
-  ctx.strokeStyle = '#FFD700';
-  ctx.lineWidth = 6;
-  ctx.stroke();
-  ctx.beginPath();
-  ctx.arc(cx, cy, 20, 0, 2*Math.PI);
-  ctx.fillStyle = '#FFD700';
-  ctx.fill();
-  ctx.strokeStyle = '#fff';
-  ctx.lineWidth = 2;
-  ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2*Math.PI);
+  ctx.strokeStyle = '#FFD700'; ctx.lineWidth = 6; ctx.stroke();
+  ctx.beginPath(); ctx.arc(cx, cy, 20, 0, 2*Math.PI);
+  ctx.fillStyle = '#FFD700'; ctx.fill();
+  ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
 }}
 
-// The pointer sits at the very TOP of the canvas, which in canvas coords is -PI/2.
-// Slice i's center is at: angle + i*SLICE + SLICE/2
-// We want slice center = -PI/2:
-//   angle = -PI/2 - i*SLICE - SLICE/2
-// Start with angle=0 so slice 0 center starts at SLICE/2 (slight offset from top)
 let currentAngle = 0;
 drawWheel(currentAngle);
 
 if (doSpin) {{
   const idx = numbers.indexOf(target);
-
-  // Final resting angle: target slice center aligns with top pointer (-PI/2)
   const restAngle = -Math.PI/2 - idx * SLICE - SLICE/2;
-
-  // Spin several full rotations before landing
   const extraSpins = Math.floor(6 + Math.random() * 4) * 2 * Math.PI;
   const finalAngle = restAngle - extraSpins;
-
   const duration = 5000;
   const startAngle = currentAngle;
   const startTime = performance.now();
   document.getElementById('resultBox').textContent = '🎡 Spinning...';
 
   function easeOut(t) {{ return 1 - Math.pow(1 - t, 4); }}
-
   function animate(now) {{
     const t = Math.min((now - startTime) / duration, 1);
     currentAngle = startAngle + (finalAngle - startAngle) * easeOut(t);
     drawWheel(currentAngle);
-    if (t < 1) {{
-      requestAnimationFrame(animate);
-    }} else {{
+    if (t < 1) {{ requestAnimationFrame(animate); }}
+    else {{
       drawWheel(finalAngle);
       const color = target === 0 ? 'Green' : (redSet.has(target) ? 'Red' : 'Black');
       const emoji = color === 'Red' ? '🔴' : color === 'Green' ? '🟢' : '⚫';
@@ -185,7 +148,7 @@ if (doSpin) {{
 }}
 </script>
 </body>
-</html>""".replace("{WHEEL_ORDER}", str(WHEEL_ORDER))
+</html>"""
 
 st.components.v1.html(wheel_html, height=480)
 
