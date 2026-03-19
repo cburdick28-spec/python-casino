@@ -10,14 +10,13 @@
                 "platinum_tier",
                 "diamond_tier",
                 "millionaire",
-                "first_win",
-                "high_roller"
+                "first_win"
             ],
             "stats": {
-                "games_played": 12,
+                "games_played": 13,
                 "games_won": 4,
-                "games_lost": 8,
-                "total_wagered": 120,
+                "games_lost": 9,
+                "total_wagered": 1119,
                 "total_won": 70,
                 "biggest_win": 20,
                 "daily_streak": 0
