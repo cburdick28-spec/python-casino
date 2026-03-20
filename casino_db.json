@@ -277,7 +277,8 @@
                 "platinum_tier",
                 "millionaire",
                 "diamond_tier",
-                "high_roller"
+                "high_roller",
+                "first_win"
             ],
             "bet_history": [
                 {
