@@ -271,7 +271,9 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "silver_tier"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udfa1 Roulette",
