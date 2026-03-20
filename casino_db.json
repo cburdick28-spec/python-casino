@@ -90,7 +90,8 @@
             "achievements": [
                 "jackpot",
                 "silver_tier",
-                "gold_tier"
+                "gold_tier",
+                "platinum_tier"
             ],
             "stats": {
                 "games_played": 4,
