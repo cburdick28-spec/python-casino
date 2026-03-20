@@ -488,14 +488,21 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "03/20 14:14"
+                },
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 100,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "03/20 14:16"
                 }
             ],
             "stats": {
-                "games_played": 7,
-                "games_won": 2,
+                "games_played": 8,
+                "games_won": 3,
                 "games_lost": 5,
-                "total_wagered": 490,
-                "total_won": 450,
+                "total_wagered": 590,
+                "total_won": 550,
                 "biggest_win": 250,
                 "daily_streak": 0
             }
