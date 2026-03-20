@@ -387,6 +387,23 @@
                 "biggest_win": 2071198,
                 "daily_streak": 0
             }
+        },
+        "dihcheese": {
+            "password": "502e95295a4c628bf8868e4cc867283072bd07bd01654443aeb5baefcc93bb1b",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 1000,
