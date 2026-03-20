@@ -84,7 +84,7 @@
         },
         "Owner": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 2001864,
+            "money": 2001867,
             "last_daily": "",
             "timeout": 0,
             "achievements": [
@@ -92,9 +92,7 @@
                 "first_win",
                 "silver_tier",
                 "gold_tier",
-                "platinum_tier",
-                "diamond_tier",
-                "millionaire"
+                "platinum_tier"
             ],
             "stats": {
                 "games_played": 8,
