@@ -272,7 +272,8 @@
             "last_daily": "",
             "timeout": 0,
             "achievements": [
-                "silver_tier"
+                "silver_tier",
+                "gold_tier"
             ],
             "bet_history": [
                 {
