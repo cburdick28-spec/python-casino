@@ -87,7 +87,9 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "jackpot"
+            ],
             "stats": {
                 "games_played": 3,
                 "games_won": 3,
