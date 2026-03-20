@@ -411,13 +411,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/20 14:07"
+                },
+                {
+                    "game": "\ud83c\udfc7 Horse Racing",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/20 14:07"
                 }
             ],
             "stats": {
-                "games_played": 19,
+                "games_played": 20,
                 "games_won": 3,
-                "games_lost": 16,
-                "total_wagered": 60130,
+                "games_lost": 17,
+                "total_wagered": 60140,
                 "total_won": 2091233,
                 "biggest_win": 2071198,
                 "daily_streak": 0
@@ -470,13 +477,6 @@
             "time": "14:05",
             "vip": "\ud83d\udca0",
             "dev": true
-        },
-        {
-            "user": "dihcheese",
-            "message": "say you swear to god",
-            "time": "14:07",
-            "vip": "\ud83e\udd49",
-            "dev": false
         }
     ]
 }
