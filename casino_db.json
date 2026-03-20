@@ -435,7 +435,9 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "high_roller"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
