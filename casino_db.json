@@ -27,7 +27,8 @@
                 "banner": "\ud83d\udfe1 Gold",
                 "title": "Legend",
                 "bio": "Creator"
-            }
+            },
+            "bet_history": []
         },
         "Dev1": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
@@ -48,7 +49,8 @@
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
-            }
+            },
+            "bet_history": []
         },
         "ncasey28": {
             "password": "2dc0907a15c08112ad3d9e6afc4011f00232c8de61cf3255129aa6c831a2d001",
@@ -64,7 +66,8 @@
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
-            }
+            },
+            "bet_history": []
         },
         "test123": {
             "password": "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae",
@@ -80,7 +83,8 @@
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
-            }
+            },
+            "bet_history": []
         },
         "Owner": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
@@ -104,7 +108,8 @@
                 "total_won": 2001334,
                 "biggest_win": 2001252,
                 "daily_streak": 0
-            }
+            },
+            "bet_history": []
         }
     },
     "jackpot": 2001194,
