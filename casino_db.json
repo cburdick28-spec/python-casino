@@ -88,15 +88,14 @@
             "last_daily": "",
             "timeout": 0,
             "achievements": [
-                "jackpot",
-                "first_win"
+                "jackpot"
             ],
             "stats": {
-                "games_played": 4,
-                "games_won": 4,
+                "games_played": 5,
+                "games_won": 5,
                 "games_lost": 0,
-                "total_wagered": 31,
-                "total_won": 2001294,
+                "total_wagered": 41,
+                "total_won": 2001314,
                 "biggest_win": 2001252,
                 "daily_streak": 0
             }
