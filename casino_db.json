@@ -89,7 +89,8 @@
             "timeout": 0,
             "achievements": [
                 "jackpot",
-                "silver_tier"
+                "silver_tier",
+                "gold_tier"
             ],
             "stats": {
                 "games_played": 4,
