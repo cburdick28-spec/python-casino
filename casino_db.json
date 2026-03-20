@@ -88,7 +88,7 @@
         },
         "Owner": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 2002507,
+            "money": 2002487,
             "last_daily": "",
             "timeout": 0,
             "achievements": [
@@ -101,11 +101,11 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 22,
-                "games_won": 16,
+                "games_played": 23,
+                "games_won": 17,
                 "games_lost": 6,
-                "total_wagered": 701,
-                "total_won": 2002514,
+                "total_wagered": 711,
+                "total_won": 2002534,
                 "biggest_win": 2001252,
                 "daily_streak": 0
             },
@@ -200,6 +200,13 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/20 09:43"
+                },
+                {
+                    "game": "\u2660\ufe0f Poker",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
+                    "time": "03/20 09:44"
                 },
                 {
                     "game": "\u2660\ufe0f Poker",
