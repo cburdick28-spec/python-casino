@@ -98,15 +98,14 @@
                 "gold_tier",
                 "platinum_tier",
                 "diamond_tier",
-                "millionaire",
-                "high_roller"
+                "millionaire"
             ],
             "stats": {
-                "games_played": 19,
-                "games_won": 14,
+                "games_played": 20,
+                "games_won": 15,
                 "games_lost": 5,
-                "total_wagered": 181,
-                "total_won": 2001494,
+                "total_wagered": 681,
+                "total_won": 2002494,
                 "biggest_win": 2001252,
                 "daily_streak": 0
             },
@@ -186,6 +185,13 @@
                     "bet": 10,
                     "outcome": "win",
                     "net": 10,
+                    "time": "03/20 09:43"
+                },
+                {
+                    "game": "\u2660\ufe0f Poker",
+                    "bet": 500,
+                    "outcome": "win",
+                    "net": 500,
                     "time": "03/20 09:43"
                 }
             ]
