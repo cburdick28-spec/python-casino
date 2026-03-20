@@ -101,11 +101,11 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 25,
-                "games_won": 18,
+                "games_played": 26,
+                "games_won": 19,
                 "games_lost": 7,
-                "total_wagered": 1471,
-                "total_won": 2004034,
+                "total_wagered": 1481,
+                "total_won": 2004054,
                 "biggest_win": 2001252,
                 "daily_streak": 0
             },
@@ -227,6 +227,13 @@
                     "bet": 10,
                     "outcome": "loss",
                     "net": -10,
+                    "time": "03/20 11:13"
+                },
+                {
+                    "game": "\ud83c\udfc7 Horse Racing",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
                     "time": "03/20 11:13"
                 }
             ]
