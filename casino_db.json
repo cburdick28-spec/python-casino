@@ -432,7 +432,7 @@
         },
         "dihcheese": {
             "password": "502e95295a4c628bf8868e4cc867283072bd07bd01654443aeb5baefcc93bb1b",
-            "money": 616,
+            "money": 609,
             "last_daily": "",
             "timeout": 0,
             "achievements": [
@@ -551,20 +551,13 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/20 14:19"
-                },
-                {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "03/20 14:19"
                 }
             ],
             "stats": {
-                "games_played": 17,
+                "games_played": 16,
                 "games_won": 6,
-                "games_lost": 11,
-                "total_wagered": 950,
+                "games_lost": 10,
+                "total_wagered": 940,
                 "total_won": 780,
                 "biggest_win": 250,
                 "daily_streak": 0
