@@ -435,9 +435,7 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [
-                "high_roller"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
@@ -452,13 +450,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/20 14:08"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 100,
+                    "outcome": "loss",
+                    "net": -100,
+                    "time": "03/20 14:08"
                 }
             ],
             "stats": {
-                "games_played": 2,
+                "games_played": 3,
                 "games_won": 0,
-                "games_lost": 2,
-                "total_wagered": 20,
+                "games_lost": 3,
+                "total_wagered": 120,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
