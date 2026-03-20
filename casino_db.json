@@ -432,7 +432,7 @@
         },
         "dihcheese": {
             "password": "502e95295a4c628bf8868e4cc867283072bd07bd01654443aeb5baefcc93bb1b",
-            "money": 200,
+            "money": 190,
             "last_daily": "2026-03-20",
             "timeout": 0,
             "achievements": [
@@ -565,20 +565,13 @@
                     "outcome": "loss",
                     "net": -100,
                     "time": "03/20 14:21"
-                },
-                {
-                    "game": "\ud83c\udfc7 Horse Racing",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "03/20 14:22"
                 }
             ],
             "stats": {
-                "games_played": 19,
+                "games_played": 18,
                 "games_won": 6,
-                "games_lost": 13,
-                "total_wagered": 1550,
+                "games_lost": 12,
+                "total_wagered": 1540,
                 "total_won": 780,
                 "biggest_win": 250,
                 "daily_streak": 0
