@@ -3,6 +3,7 @@ import base64
 import streamlit as st
 import json
 import hashlib
+import datetime
 
 GITHUB_TOKEN = st.secrets["github_token"]
 REPO = "cburdick28-spec/python-casino"
@@ -33,22 +34,21 @@ def get_next_tier(money):
 
 # ---------------- ACHIEVEMENTS ----------------
 ACHIEVEMENTS = [
-    {"id": "first_win",      "name": "First Win",        "emoji": "🏆", "desc": "Win your first game"},
-    {"id": "high_roller",    "name": "High Roller",      "emoji": "💰", "desc": "Bet $100 or more at once"},
-    {"id": "jackpot",        "name": "Jackpot!",         "emoji": "🎰", "desc": "Win the progressive jackpot"},
-    {"id": "broke",          "name": "Broke",            "emoji": "💸", "desc": "Lose all your money"},
-    {"id": "millionaire",    "name": "Millionaire",      "emoji": "🤑", "desc": "Reach $1,000,000"},
-    {"id": "blackjack_ace",  "name": "Blackjack!",       "emoji": "🃏", "desc": "Get a natural blackjack"},
-    {"id": "royal_flush",    "name": "Royal Flush",      "emoji": "♠️", "desc": "Hit a royal flush in poker"},
-    {"id": "daily_7",        "name": "Dedicated",        "emoji": "📅", "desc": "Claim daily reward 7 days in a row"},
-    {"id": "silver_tier",    "name": "Going Silver",     "emoji": "🥈", "desc": "Reach Silver VIP tier"},
-    {"id": "gold_tier",      "name": "Going Gold",       "emoji": "🥇", "desc": "Reach Gold VIP tier"},
-    {"id": "platinum_tier",  "name": "Platinum Status",  "emoji": "💎", "desc": "Reach Platinum VIP tier"},
-    {"id": "diamond_tier",   "name": "Diamond Status",   "emoji": "💠", "desc": "Reach Diamond VIP tier"},
+    {"id": "first_win",     "name": "First Win",       "emoji": "🏆", "desc": "Win your first game"},
+    {"id": "high_roller",   "name": "High Roller",     "emoji": "💰", "desc": "Bet $100 or more at once"},
+    {"id": "jackpot",       "name": "Jackpot!",        "emoji": "🎰", "desc": "Win the progressive jackpot"},
+    {"id": "broke",         "name": "Broke",           "emoji": "💸", "desc": "Lose all your money"},
+    {"id": "millionaire",   "name": "Millionaire",     "emoji": "🤑", "desc": "Reach $1,000,000"},
+    {"id": "blackjack_ace", "name": "Blackjack!",      "emoji": "🃏", "desc": "Get a natural blackjack"},
+    {"id": "royal_flush",   "name": "Royal Flush",     "emoji": "♠️", "desc": "Hit a royal flush in poker"},
+    {"id": "daily_7",       "name": "Dedicated",       "emoji": "📅", "desc": "Claim daily reward 7 days in a row"},
+    {"id": "silver_tier",   "name": "Going Silver",    "emoji": "🥈", "desc": "Reach Silver VIP tier"},
+    {"id": "gold_tier",     "name": "Going Gold",      "emoji": "🥇", "desc": "Reach Gold VIP tier"},
+    {"id": "platinum_tier", "name": "Platinum Status", "emoji": "💎", "desc": "Reach Platinum VIP tier"},
+    {"id": "diamond_tier",  "name": "Diamond Status",  "emoji": "💠", "desc": "Reach Diamond VIP tier"},
 ]
 
 def unlock_achievement(username, achievement_id):
-    """Unlock an achievement for a user. Returns True if newly unlocked."""
     db = load_db()
     if username not in db["users"]:
         return False
@@ -63,7 +63,6 @@ def unlock_achievement(username, achievement_id):
     return False
 
 def check_vip_achievements(username, money):
-    """Check and unlock VIP tier achievements."""
     if money >= 1000:
         unlock_achievement(username, "silver_tier")
     if money >= 5000:
@@ -107,11 +106,11 @@ def save_db(db):
 
 
 def ensure_user_fields(user_data):
-    """Make sure all required fields exist on a user record."""
     defaults = {
         "timeout": 0,
         "last_daily": "",
         "achievements": [],
+        "bet_history": [],
         "stats": {
             "games_played": 0,
             "games_won": 0,
@@ -125,7 +124,6 @@ def ensure_user_fields(user_data):
     for k, v in defaults.items():
         if k not in user_data:
             user_data[k] = v
-    # ensure all stat sub-fields exist
     for k, v in defaults["stats"].items():
         if k not in user_data["stats"]:
             user_data["stats"][k] = v
@@ -140,8 +138,7 @@ def save_progress():
     save_db(db)
 
 
-def record_game(username, won, wagered, payout):
-    """Update a user's stats after a game."""
+def record_game(username, won, wagered, payout, game_name="Unknown"):
     db = load_db()
     if username not in db["users"]:
         return
@@ -149,15 +146,35 @@ def record_game(username, won, wagered, payout):
     stats = user["stats"]
     stats["games_played"] += 1
     stats["total_wagered"] += wagered
+
     if won:
+        net = payout - wagered
+        outcome = "win"
         stats["games_won"] += 1
         stats["total_won"] += payout
         if payout > stats["biggest_win"]:
             stats["biggest_win"] = payout
         unlock_achievement(username, "first_win")
     else:
+        net = -wagered
+        outcome = "loss"
         stats["games_lost"] += 1
+
     if wagered >= 100:
         unlock_achievement(username, "high_roller")
+
+    # Add to bet history
+    if "bet_history" not in user:
+        user["bet_history"] = []
+    user["bet_history"].append({
+        "game": game_name,
+        "bet": wagered,
+        "outcome": outcome,
+        "net": net,
+        "time": datetime.datetime.now().strftime("%m/%d %H:%M")
+    })
+    # Keep only last 50
+    user["bet_history"] = user["bet_history"][-50:]
+
     db["users"][username] = user
     save_db(db)
