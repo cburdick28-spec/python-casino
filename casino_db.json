@@ -42,10 +42,10 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 5,
+                "games_played": 6,
                 "games_won": 0,
-                "games_lost": 5,
-                "total_wagered": 50,
+                "games_lost": 6,
+                "total_wagered": 60,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
@@ -60,6 +60,13 @@
                 },
                 {
                     "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/20 13:08"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
                     "bet": 10,
                     "outcome": "loss",
                     "net": -10,
