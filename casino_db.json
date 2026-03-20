@@ -101,11 +101,11 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 12,
-                "games_won": 7,
+                "games_played": 13,
+                "games_won": 8,
                 "games_lost": 5,
-                "total_wagered": 111,
-                "total_won": 2001354,
+                "total_wagered": 121,
+                "total_won": 2001374,
                 "biggest_win": 2001252,
                 "daily_streak": 0
             },
@@ -137,6 +137,13 @@
                     "outcome": "win",
                     "net": 10,
                     "time": "03/20 09:40"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
+                    "time": "03/20 09:41"
                 }
             ]
         }
