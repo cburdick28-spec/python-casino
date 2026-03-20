@@ -2,7 +2,7 @@
     "users": {
         "Connor": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 2001674,
+            "money": 2001684,
             "last_daily": "2026-03-20",
             "timeout": 0,
             "achievements": [
@@ -14,11 +14,11 @@
                 "silver_tier"
             ],
             "stats": {
-                "games_played": 22,
-                "games_won": 9,
+                "games_played": 21,
+                "games_won": 8,
                 "games_lost": 13,
-                "total_wagered": 1209,
-                "total_won": 160,
+                "total_wagered": 1199,
+                "total_won": 150,
                 "biggest_win": 20,
                 "daily_streak": 0
             },
