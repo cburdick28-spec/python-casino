@@ -268,7 +268,7 @@
         },
         "Dev2": {
             "password": "0c9d846b092b386c910594c10a69e6950acd28fe5459ac2de62b76e78e4b19b6",
-            "money": 999999989,
+            "money": 1002071197,
             "last_daily": "",
             "timeout": 0,
             "achievements": [
@@ -276,8 +276,7 @@
                 "gold_tier",
                 "platinum_tier",
                 "millionaire",
-                "diamond_tier",
-                "first_win"
+                "diamond_tier"
             ],
             "bet_history": [
                 {
@@ -398,14 +397,21 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/20 14:06"
+                },
+                {
+                    "game": "\ud83c\udfc7 Horse Racing",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 25,
+                    "time": "03/20 14:06"
                 }
             ],
             "stats": {
-                "games_played": 17,
-                "games_won": 2,
+                "games_played": 18,
+                "games_won": 3,
                 "games_lost": 15,
-                "total_wagered": 60110,
-                "total_won": 2091198,
+                "total_wagered": 60120,
+                "total_won": 2091233,
                 "biggest_win": 2071198,
                 "daily_streak": 0
             }
