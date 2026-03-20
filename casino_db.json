@@ -272,12 +272,20 @@
             "last_daily": "",
             "timeout": 0,
             "achievements": [],
-            "bet_history": [],
+            "bet_history": [
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/20 13:13"
+                }
+            ],
             "stats": {
-                "games_played": 0,
+                "games_played": 1,
                 "games_won": 0,
-                "games_lost": 0,
-                "total_wagered": 0,
+                "games_lost": 1,
+                "total_wagered": 10,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
