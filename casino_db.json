@@ -101,15 +101,22 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 10,
+                "games_played": 11,
                 "games_won": 6,
-                "games_lost": 4,
-                "total_wagered": 91,
+                "games_lost": 5,
+                "total_wagered": 101,
                 "total_won": 2001334,
                 "biggest_win": 2001252,
                 "daily_streak": 0
             },
             "bet_history": [
+                {
+                    "game": "\ud83c\udfb2 Craps",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/20 09:39"
+                },
                 {
                     "game": "\ud83c\udfb2 Craps",
                     "bet": 10,
