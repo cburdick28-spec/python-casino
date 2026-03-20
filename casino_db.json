@@ -268,7 +268,7 @@
         },
         "Dev2": {
             "password": "0c9d846b092b386c910594c10a69e6950acd28fe5459ac2de62b76e78e4b19b6",
-            "money": 1002071197,
+            "money": 1000000024,
             "last_daily": "",
             "timeout": 0,
             "achievements": [
@@ -463,13 +463,6 @@
             "time": "14:05",
             "vip": "\ud83d\udca0",
             "dev": true
-        },
-        {
-            "user": "dihcheese",
-            "message": "son",
-            "time": "14:07",
-            "vip": "\ud83e\udd49",
-            "dev": false
         }
     ]
 }
