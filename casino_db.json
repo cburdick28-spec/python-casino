@@ -37,7 +37,8 @@
             "achievements": [
                 "first_win",
                 "gold_tier",
-                "platinum_tier"
+                "platinum_tier",
+                "diamond_tier"
             ],
             "stats": {
                 "games_played": 1,
