@@ -236,7 +236,13 @@
                     "net": 10,
                     "time": "03/20 11:13"
                 }
-            ]
+            ],
+            "profile": {
+                "avatar": "\ud83c\udfb0",
+                "banner": "\ud83c\udf11 Dark",
+                "title": "Legend",
+                "bio": ""
+            }
         }
     },
     "jackpot": 2001194,
