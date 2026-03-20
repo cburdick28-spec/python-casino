@@ -481,15 +481,22 @@
                     "outcome": "win",
                     "net": 100,
                     "time": "03/20 14:09"
+                },
+                {
+                    "game": "\ud83c\udccf Blackjack",
+                    "bet": 250,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "03/20 14:14"
                 }
             ],
             "stats": {
-                "games_played": 6,
-                "games_won": 1,
+                "games_played": 7,
+                "games_won": 2,
                 "games_lost": 5,
-                "total_wagered": 240,
-                "total_won": 200,
-                "biggest_win": 200,
+                "total_wagered": 490,
+                "total_won": 450,
+                "biggest_win": 250,
                 "daily_streak": 0
             }
         }
