@@ -42,15 +42,23 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 3,
+                "games_played": 4,
                 "games_won": 0,
-                "games_lost": 3,
-                "total_wagered": 30,
+                "games_lost": 4,
+                "total_wagered": 40,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
             },
-            "bet_history": []
+            "bet_history": [
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/20 13:08"
+                }
+            ]
         },
         "ncasey28": {
             "password": "2dc0907a15c08112ad3d9e6afc4011f00232c8de61cf3255129aa6c831a2d001",
