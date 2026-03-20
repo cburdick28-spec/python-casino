@@ -432,8 +432,8 @@
         },
         "dihcheese": {
             "password": "502e95295a4c628bf8868e4cc867283072bd07bd01654443aeb5baefcc93bb1b",
-            "money": 0,
-            "last_daily": "2026-03-20",
+            "money": 200,
+            "last_daily": "",
             "timeout": 0,
             "achievements": [
                 "high_roller",
