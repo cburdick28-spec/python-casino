@@ -92,11 +92,11 @@
                 "first_win"
             ],
             "stats": {
-                "games_played": 5,
-                "games_won": 5,
+                "games_played": 6,
+                "games_won": 6,
                 "games_lost": 0,
-                "total_wagered": 41,
-                "total_won": 2001314,
+                "total_wagered": 51,
+                "total_won": 2001334,
                 "biggest_win": 2001252,
                 "daily_streak": 0
             }
