@@ -36,7 +36,8 @@
             "timeout": 0,
             "achievements": [
                 "first_win",
-                "gold_tier"
+                "gold_tier",
+                "platinum_tier"
             ],
             "stats": {
                 "games_played": 1,
