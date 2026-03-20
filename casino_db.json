@@ -87,15 +87,13 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [
-                "first_win"
-            ],
+            "achievements": [],
             "stats": {
-                "games_played": 2,
-                "games_won": 2,
+                "games_played": 3,
+                "games_won": 3,
                 "games_lost": 0,
-                "total_wagered": 11,
-                "total_won": 22,
+                "total_wagered": 21,
+                "total_won": 42,
                 "biggest_win": 20,
                 "daily_streak": 0
             }
