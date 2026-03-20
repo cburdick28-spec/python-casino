@@ -41,10 +41,10 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 4,
+                "games_played": 3,
                 "games_won": 0,
-                "games_lost": 4,
-                "total_wagered": 40,
+                "games_lost": 3,
+                "total_wagered": 30,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
