@@ -14,10 +14,10 @@
                 "silver_tier"
             ],
             "stats": {
-                "games_played": 25,
+                "games_played": 26,
                 "games_won": 10,
-                "games_lost": 15,
-                "total_wagered": 1239,
+                "games_lost": 16,
+                "total_wagered": 1249,
                 "total_won": 180,
                 "biggest_win": 20,
                 "daily_streak": 0
@@ -29,6 +29,13 @@
                 "bio": "Creator"
             },
             "bet_history": [
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/22 10:53"
+                },
                 {
                     "game": "\ud83c\udfa1 Roulette",
                     "bet": 10,
