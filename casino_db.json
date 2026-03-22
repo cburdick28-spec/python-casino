@@ -14,10 +14,10 @@
                 "silver_tier"
             ],
             "stats": {
-                "games_played": 24,
+                "games_played": 25,
                 "games_won": 10,
-                "games_lost": 14,
-                "total_wagered": 1229,
+                "games_lost": 15,
+                "total_wagered": 1239,
                 "total_won": 180,
                 "biggest_win": 20,
                 "daily_streak": 0
@@ -28,7 +28,15 @@
                 "title": "Legend",
                 "bio": "Creator"
             },
-            "bet_history": []
+            "bet_history": [
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/22 10:53"
+                }
+            ]
         },
         "Dev1": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
