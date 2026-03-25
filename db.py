@@ -9,7 +9,8 @@ GITHUB_TOKEN = st.secrets["github_token"]
 REPO = "cburdick28-spec/python-casino"
 FILE_PATH = "casino_db.json"
 DEV_ACCOUNTS = ["Dev1", "Dev2", "Dev3"]
-MAX_SAFE_MONEY = (1 << 53) - 1  # JavaScript Number.MAX_SAFE_INTEGER
+MAX_SAFE_MONEY = (1 << 53) - 1  # JavaScript Number.MAX_SAFE_INTEGER — kept as reference
+MAX_BET = 1_000_000_000_000_000  # 1 quadrillion — maximum allowed single bet
 
 # ---------------- VIP TIERS ----------------
 VIP_TIERS = [
@@ -134,7 +135,7 @@ def ensure_user_fields(user_data):
 def save_progress():
     db = load_db()
     if st.session_state.username in db["users"]:
-        db["users"][st.session_state.username]["money"] = min(st.session_state.money, MAX_SAFE_MONEY)
+        db["users"][st.session_state.username]["money"] = st.session_state.money
         check_vip_achievements(st.session_state.username, st.session_state.money)
     save_db(db)
 
