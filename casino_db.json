@@ -11,8 +11,7 @@
                 "diamond_tier",
                 "millionaire",
                 "first_win",
-                "silver_tier",
-                "jackpot"
+                "silver_tier"
             ],
             "stats": {
                 "games_played": 38,
@@ -736,7 +735,7 @@
             }
         }
     },
-    "jackpot": 1110,
+    "jackpot": 1000,
     "chat": [
         {
             "user": "Connor",
