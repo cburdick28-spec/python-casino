@@ -309,11 +309,11 @@
                 "high_roller"
             ],
             "stats": {
-                "games_played": 49,
-                "games_won": 39,
+                "games_played": 50,
+                "games_won": 40,
                 "games_lost": 10,
-                "total_wagered": 37595976364411,
-                "total_won": 93551970261407,
+                "total_wagered": 37595976367486,
+                "total_won": 93551970267557,
                 "biggest_win": 62370000002050,
                 "daily_streak": 0
             },
@@ -603,6 +603,13 @@
                     "bet": 31185000001025,
                     "outcome": "win",
                     "net": 31185000001025,
+                    "time": "03/25 11:33"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 3075,
+                    "outcome": "win",
+                    "net": 3075,
                     "time": "03/25 11:33"
                 }
             ],
