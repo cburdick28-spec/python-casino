@@ -309,11 +309,11 @@
                 "high_roller"
             ],
             "stats": {
-                "games_played": 53,
-                "games_won": 41,
+                "games_played": 54,
+                "games_won": 42,
                 "games_lost": 12,
-                "total_wagered": 318260976376711,
-                "total_won": 654881970267557,
+                "total_wagered": 318260976376731,
+                "total_won": 654881970267597,
                 "biggest_win": 561330000000000,
                 "daily_streak": 0
             },
@@ -632,6 +632,13 @@
                     "outcome": "win",
                     "net": 280665000000000,
                     "time": "03/25 11:46"
+                },
+                {
+                    "game": "\u2660\ufe0f Poker",
+                    "bet": 20,
+                    "outcome": "win",
+                    "net": 20,
+                    "time": "03/25 11:48"
                 }
             ],
             "profile": {
