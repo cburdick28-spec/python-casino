@@ -2,7 +2,7 @@
     "users": {
         "Connor": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 2001626,
+            "money": 2001617,
             "last_daily": "2026-03-20",
             "timeout": 0,
             "achievements": [
@@ -14,10 +14,10 @@
                 "silver_tier"
             ],
             "stats": {
-                "games_played": 30,
+                "games_played": 29,
                 "games_won": 11,
-                "games_lost": 19,
-                "total_wagered": 1289,
+                "games_lost": 18,
+                "total_wagered": 1279,
                 "total_won": 190,
                 "biggest_win": 20,
                 "daily_streak": 0
@@ -63,13 +63,6 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/22 10:55"
-                },
-                {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "03/25 10:08"
                 }
             ]
         },
