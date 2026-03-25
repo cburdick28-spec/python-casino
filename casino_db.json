@@ -11,7 +11,8 @@
                 "diamond_tier",
                 "millionaire",
                 "first_win",
-                "silver_tier"
+                "silver_tier",
+                "jackpot"
             ],
             "stats": {
                 "games_played": 38,
