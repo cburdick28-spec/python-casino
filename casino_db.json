@@ -92,12 +92,12 @@
                 "millionaire"
             ],
             "stats": {
-                "games_played": 7,
-                "games_won": 0,
+                "games_played": 8,
+                "games_won": 1,
                 "games_lost": 7,
-                "total_wagered": 70,
-                "total_won": 0,
-                "biggest_win": 0,
+                "total_wagered": 80,
+                "total_won": 30,
+                "biggest_win": 30,
                 "daily_streak": 0
             },
             "bet_history": [
@@ -127,6 +127,13 @@
                     "bet": 10,
                     "outcome": "loss",
                     "net": -10,
+                    "time": "03/25 10:46"
+                },
+                {
+                    "game": "\ud83c\udfb3 Plinko",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 20,
                     "time": "03/25 10:46"
                 }
             ]
