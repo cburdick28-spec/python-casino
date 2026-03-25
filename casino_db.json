@@ -90,7 +90,8 @@
                 "gold_tier",
                 "platinum_tier",
                 "millionaire",
-                "silver_tier"
+                "silver_tier",
+                "diamond_tier"
             ],
             "stats": {
                 "games_played": 7,
