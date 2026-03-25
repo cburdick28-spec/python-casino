@@ -14,10 +14,10 @@
                 "silver_tier"
             ],
             "stats": {
-                "games_played": 29,
+                "games_played": 30,
                 "games_won": 11,
-                "games_lost": 18,
-                "total_wagered": 1279,
+                "games_lost": 19,
+                "total_wagered": 1289,
                 "total_won": 190,
                 "biggest_win": 20,
                 "daily_streak": 0
@@ -63,6 +63,13 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/22 10:55"
+                },
+                {
+                    "game": "\ud83c\udfb3 Plinko",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/25 10:09"
                 }
             ]
         },
