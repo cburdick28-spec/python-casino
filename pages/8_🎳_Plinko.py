@@ -59,9 +59,6 @@ do_drop = "true" if drop_clicked else "false"
 path_json = str(path).lower() if path else "[]"
 slot_val = slot if slot is not None else -1
 
-# Key trick: use a unique key per drop so the canvas always re-renders fresh
-canvas_key = f"plinko_{slot_val}_{drop_clicked}"
-
 plinko_html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -260,7 +257,7 @@ if (doDROP && finalSlot >= 0) {{
 </body>
 </html>"""
 
-st.components.v1.html(plinko_html, height=640, key=canvas_key)
+st.components.v1.html(plinko_html, height=640)
 
 if drop_clicked and st.session_state.plinko_dropped:
     time.sleep(3.8)
