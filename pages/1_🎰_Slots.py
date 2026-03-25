@@ -25,7 +25,11 @@ if money <= 0:
     st.error("You're out of money! Go claim your daily reward on the main page.")
     st.stop()
 
-bet = st.number_input("Bet", min_value=1, max_value=money, value=min(10, money), step=1)
+if "slots_bet_input" not in st.session_state:
+    st.session_state["slots_bet_input"] = min(10, money)
+else:
+    st.session_state["slots_bet_input"] = min(st.session_state["slots_bet_input"], money)
+bet = st.number_input("Bet", min_value=1, max_value=money, step=1, key="slots_bet_input")
 
 SYMBOLS = ["🍒", "🍋", "🍉", "⭐", "💎", "7️⃣"]
 
