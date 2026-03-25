@@ -25,7 +25,7 @@ if money <= 0:
 
 bet = st.number_input("Bet", min_value=1, max_value=money, value=min(10, money), step=1)
 
-ROWS = 12
+ROWS = 14
 MULTIPLIERS = [10, 3, 1.5, 1, 0.5, 0.3, 0.2, 0.1, 0.2, 0.3, 0.5, 1, 1.5, 3, 10]
 MULTIPLIER_COLORS = {10:"#FFD700",3:"#FF6B35",1.5:"#FF9F1C",1:"#2EC4B6",
                      0.5:"#3D9970",0.3:"#2ECC40",0.2:"#7FDBFF",0.1:"#AAAAAA"}
