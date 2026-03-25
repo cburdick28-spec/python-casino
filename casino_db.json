@@ -305,15 +305,14 @@
                 "gold_tier",
                 "platinum_tier",
                 "diamond_tier",
-                "millionaire",
-                "high_roller"
+                "millionaire"
             ],
             "stats": {
-                "games_played": 30,
-                "games_won": 23,
+                "games_played": 31,
+                "games_won": 24,
                 "games_lost": 7,
-                "total_wagered": 6101481,
-                "total_won": 30205054,
+                "total_wagered": 16101481,
+                "total_won": 50205054,
                 "biggest_win": 24001000,
                 "daily_streak": 0
             },
@@ -470,6 +469,13 @@
                     "bet": 4000000,
                     "outcome": "win",
                     "net": 20001000,
+                    "time": "03/25 11:13"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10000000,
+                    "outcome": "win",
+                    "net": 10000000,
                     "time": "03/25 11:13"
                 }
             ],
