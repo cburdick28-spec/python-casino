@@ -1,7 +1,7 @@
 import streamlit as st
 import datetime
 import time
-from db import load_db, save_db, save_progress, hash_password, DEV_ACCOUNTS, ensure_user_fields, get_vip_tier, check_vip_achievements
+from db import load_db, save_db, save_progress, hash_password, DEV_ACCOUNTS, ensure_user_fields, get_vip_tier, check_vip_achievements, MAX_SAFE_MONEY
 
 st.set_page_config(page_title="🎰 Ultimate Casino", layout="wide")
 
@@ -41,7 +41,7 @@ if st.session_state.username is None:
         if st.button("Login"):
             if user in users and users[user]["password"] == hash_password(pw):
                 st.session_state.username = user
-                st.session_state.money = users[user]["money"]
+                st.session_state.money = min(users[user]["money"], MAX_SAFE_MONEY)
                 st.rerun()
             else:
                 st.error("Invalid login")
