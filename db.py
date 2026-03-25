@@ -134,7 +134,7 @@ def ensure_user_fields(user_data):
 def save_progress():
     db = load_db()
     if st.session_state.username in db["users"]:
-        db["users"][st.session_state.username]["money"] = st.session_state.money
+        db["users"][st.session_state.username]["money"] = min(st.session_state.money, MAX_SAFE_MONEY)
         check_vip_achievements(st.session_state.username, st.session_state.money)
     save_db(db)
 
