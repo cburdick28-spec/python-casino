@@ -12,15 +12,16 @@
                 "millionaire",
                 "first_win",
                 "silver_tier",
-                "high_roller"
+                "high_roller",
+                "jackpot"
             ],
             "stats": {
-                "games_played": 38,
-                "games_won": 18,
+                "games_played": 39,
+                "games_won": 19,
                 "games_lost": 20,
-                "total_wagered": 1369,
-                "total_won": 330,
-                "biggest_win": 20,
+                "total_wagered": 1869,
+                "total_won": 4330,
+                "biggest_win": 4000,
                 "daily_streak": 0
             },
             "profile": {
@@ -127,6 +128,13 @@
                     "outcome": "win",
                     "net": 10,
                     "time": "03/25 11:03"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 500,
+                    "outcome": "win",
+                    "net": 3500,
+                    "time": "03/25 11:08"
                 }
             ]
         },
