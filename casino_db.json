@@ -12,7 +12,8 @@
                 "millionaire",
                 "first_win",
                 "silver_tier",
-                "high_roller"
+                "high_roller",
+                "jackpot"
             ],
             "stats": {
                 "games_played": 38,
