@@ -14,11 +14,11 @@
                 "silver_tier"
             ],
             "stats": {
-                "games_played": 32,
-                "games_won": 12,
+                "games_played": 33,
+                "games_won": 13,
                 "games_lost": 20,
-                "total_wagered": 1309,
-                "total_won": 210,
+                "total_wagered": 1319,
+                "total_won": 230,
                 "biggest_win": 20,
                 "daily_streak": 0
             },
@@ -77,6 +77,13 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/25 10:09"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
+                    "time": "03/25 11:02"
                 },
                 {
                     "game": "\ud83c\udfb0 Slots",
