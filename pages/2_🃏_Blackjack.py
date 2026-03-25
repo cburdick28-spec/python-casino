@@ -1,6 +1,6 @@
 import streamlit as st
 import random
-from db import load_db, save_progress, record_game, unlock_achievement, DEV_ACCOUNTS
+from db import load_db, save_progress, record_game, unlock_achievement, DEV_ACCOUNTS, MAX_SAFE_MONEY
 
 st.set_page_config(page_title="🃏 Blackjack", layout="wide")
 
@@ -54,7 +54,7 @@ if money <= 0:
     st.error("You're out of money! Go claim your daily reward on the main page.")
     st.stop()
 
-bet = st.number_input("Bet", min_value=1, max_value=money, value=min(10, money), step=1)
+bet = st.number_input("Bet", min_value=1, max_value=min(money, MAX_SAFE_MONEY), value=min(10, money), step=1)
 
 if st.session_state.bj_result:
     r, amt, msg = st.session_state.bj_result

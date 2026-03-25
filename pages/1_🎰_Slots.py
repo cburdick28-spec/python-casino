@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import time
-from db import load_db, save_db, save_progress, record_game, unlock_achievement, DEV_ACCOUNTS
+from db import load_db, save_db, save_progress, record_game, unlock_achievement, DEV_ACCOUNTS, MAX_SAFE_MONEY
 
 st.set_page_config(page_title="🎰 Slots", layout="wide")
 
@@ -28,8 +28,8 @@ if money <= 0:
 if "slots_bet_input" not in st.session_state:
     st.session_state["slots_bet_input"] = min(10, money)
 else:
-    st.session_state["slots_bet_input"] = min(st.session_state["slots_bet_input"], money)
-bet = st.number_input("Bet", min_value=1, max_value=money, step=1, key="slots_bet_input")
+    st.session_state["slots_bet_input"] = min(st.session_state["slots_bet_input"], min(money, MAX_SAFE_MONEY))
+bet = st.number_input("Bet", min_value=1, max_value=min(money, MAX_SAFE_MONEY), step=1, key="slots_bet_input")
 
 SYMBOLS = ["🍒", "🍋", "🍉", "⭐", "💎", "7️⃣"]
 

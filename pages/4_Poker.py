@@ -2,7 +2,7 @@ import streamlit as st
 import random
 from collections import Counter
 from itertools import combinations
-from db import load_db, save_progress, record_game, unlock_achievement, DEV_ACCOUNTS
+from db import load_db, save_progress, record_game, unlock_achievement, DEV_ACCOUNTS, MAX_SAFE_MONEY
 
 st.set_page_config(page_title="♠️ Texas Hold'em", layout="wide")
 
@@ -93,7 +93,7 @@ def action_buttons(next_stage, key_suffix):
         if st.button(label, key=f"check_{key_suffix}"):
             st.session_state.th_stage = next_stage; st.rerun()
     with col2:
-        max_raise = max(1, money)
+        max_raise = max(1, min(money, MAX_SAFE_MONEY))
         raise_amt = st.number_input("Raise", min_value=1, max_value=max_raise,
                                     value=min(5,max_raise), step=1, key=f"raise_amt_{key_suffix}")
         if st.button("💰 Raise", key=f"raise_{key_suffix}"):
@@ -127,7 +127,7 @@ if st.session_state.th_result:
 stage = st.session_state.th_stage
 
 if stage == "bet":
-    bet = st.number_input("Ante", min_value=1, max_value=money, value=min(10,money), step=1)
+    bet = st.number_input("Ante", min_value=1, max_value=min(money, MAX_SAFE_MONEY), value=min(10,money), step=1)
     if st.button("Deal"):
         deck = build_deck()
         st.session_state.th_deck = deck
