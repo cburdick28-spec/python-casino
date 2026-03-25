@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import time
-from db import load_db, save_progress, record_game, DEV_ACCOUNTS
+from db import load_db, save_progress, record_game, DEV_ACCOUNTS, MAX_SAFE_MONEY
 
 st.set_page_config(page_title="🎡 Roulette", layout="wide")
 
@@ -22,7 +22,7 @@ if money <= 0:
     st.error("You're out of money! Go claim your daily reward on the main page.")
     st.stop()
 
-bet = st.number_input("Bet", min_value=1, max_value=money, value=min(10, money), step=1)
+bet = st.number_input("Bet", min_value=1, max_value=min(money, MAX_SAFE_MONEY), value=min(10, money), step=1)
 choice = st.selectbox("Bet on", ["Red", "Black", "Number"])
 num = None
 if choice == "Number":

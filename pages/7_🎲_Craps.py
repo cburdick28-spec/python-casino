@@ -1,7 +1,7 @@
 import streamlit as st
 import random
 import time
-from db import load_db, save_progress, record_game, DEV_ACCOUNTS
+from db import load_db, save_progress, record_game, DEV_ACCOUNTS, MAX_SAFE_MONEY
 
 st.set_page_config(page_title="🎲 Craps", layout="wide")
 
@@ -40,7 +40,7 @@ for k, v in [("craps_phase","come_out"),("craps_point",None),
     if k not in st.session_state:
         st.session_state[k] = v
 
-bet = st.number_input("Bet", min_value=1, max_value=money, value=min(10,money), step=1)
+bet = st.number_input("Bet", min_value=1, max_value=min(money, MAX_SAFE_MONEY), value=min(10,money), step=1)
 
 if st.session_state.craps_result:
     outcome, msg, amount = st.session_state.craps_result

@@ -9,6 +9,7 @@ GITHUB_TOKEN = st.secrets["github_token"]
 REPO = "cburdick28-spec/python-casino"
 FILE_PATH = "casino_db.json"
 DEV_ACCOUNTS = ["Dev1", "Dev2", "Dev3"]
+MAX_SAFE_MONEY = (1 << 53) - 1  # JavaScript Number.MAX_SAFE_INTEGER
 
 # ---------------- VIP TIERS ----------------
 VIP_TIERS = [
