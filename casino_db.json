@@ -1214,7 +1214,7 @@
             }
         }
     },
-    "jackpot": 2000000000001000,
+    "jackpot": 1000,
     "chat": [
         {
             "user": "Connor",
