@@ -477,7 +477,7 @@
         },
         "Owner": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 61795685000004671,
+            "money": 58795685000004671,
             "last_daily": "2026-03-26",
             "timeout": 0,
             "achievements": [
@@ -491,15 +491,22 @@
                 "high_roller"
             ],
             "stats": {
-                "games_played": 104,
+                "games_played": 103,
                 "games_won": 66,
-                "games_lost": 38,
-                "total_wagered": 72104095976377781,
+                "games_lost": 37,
+                "total_wagered": 71104095976377781,
                 "total_won": 131288371970274318,
                 "biggest_win": 45467730000002661,
                 "daily_streak": 0
             },
             "bet_history": [
+                {
+                    "game": "\u2660\ufe0f Poker",
+                    "bet": 20,
+                    "outcome": "win",
+                    "net": 20,
+                    "time": "03/25 11:48"
+                },
                 {
                     "game": "\ud83c\udfb0 Slots",
                     "bet": 2525985000000000,
@@ -835,13 +842,6 @@
                     "outcome": "win",
                     "net": 5750000000001000,
                     "time": "03/26 12:05"
-                },
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 1000000000000000,
-                    "outcome": "loss",
-                    "net": -1000000000000000,
-                    "time": "03/26 12:06"
                 },
                 {
                     "game": "\ud83c\udfb0 Slots",
