@@ -16,11 +16,11 @@
                 "jackpot"
             ],
             "stats": {
-                "games_played": 57,
-                "games_won": 35,
+                "games_played": 58,
+                "games_won": 36,
                 "games_lost": 22,
-                "total_wagered": 296644747,
-                "total_won": 359895092,
+                "total_wagered": 296644753,
+                "total_won": 359895104,
                 "biggest_win": 80465706,
                 "daily_streak": 0
             },
@@ -260,6 +260,13 @@
                     "bet": 2250,
                     "outcome": "win",
                     "net": 2250,
+                    "time": "03/26 10:24"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 6,
+                    "outcome": "win",
+                    "net": 6,
                     "time": "03/26 10:24"
                 }
             ]
