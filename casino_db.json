@@ -2,7 +2,7 @@
     "users": {
         "Connor": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 21250314710703591,
+            "money": 26250314710704591,
             "last_daily": "2026-03-26",
             "timeout": 0,
             "achievements": [
@@ -16,10 +16,10 @@
                 "jackpot"
             ],
             "stats": {
-                "games_played": 108,
+                "games_played": 107,
                 "games_won": 74,
-                "games_lost": 34,
-                "total_wagered": 20000124427898555,
+                "games_lost": 33,
+                "total_wagered": 19000124427898555,
                 "total_won": 35250288412257855,
                 "biggest_win": 7000004432262680,
                 "daily_streak": 0
@@ -31,6 +31,13 @@
                 "bio": "Creator"
             },
             "bet_history": [
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 6,
+                    "outcome": "win",
+                    "net": 6,
+                    "time": "03/26 10:24"
+                },
                 {
                     "game": "\ud83c\udfb0 Slots",
                     "bet": 6,
@@ -351,13 +358,6 @@
                     "bet": 1000000000000000,
                     "outcome": "win",
                     "net": 1000000000000000,
-                    "time": "03/26 11:21"
-                },
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 1000000000000000,
-                    "outcome": "loss",
-                    "net": -1000000000000000,
                     "time": "03/26 11:21"
                 },
                 {
