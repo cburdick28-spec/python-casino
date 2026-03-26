@@ -309,22 +309,15 @@
                 "high_roller"
             ],
             "stats": {
-                "games_played": 73,
+                "games_played": 74,
                 "games_won": 57,
-                "games_lost": 16,
-                "total_wagered": 42104095976376781,
+                "games_lost": 17,
+                "total_wagered": 43104095976376781,
                 "total_won": 110538371970271318,
                 "biggest_win": 45467730000002661,
                 "daily_streak": 0
             },
             "bet_history": [
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 750,
-                    "outcome": "win",
-                    "net": 750,
-                    "time": "03/20 10:45"
-                },
                 {
                     "game": "\ud83c\udfc7 Horse Racing",
                     "bet": 10,
@@ -659,6 +652,13 @@
                     "bet": 1000000000000000,
                     "outcome": "win",
                     "net": 1000000000000000,
+                    "time": "03/26 09:40"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 1000000000000000,
+                    "outcome": "loss",
+                    "net": -1000000000000000,
                     "time": "03/26 09:40"
                 },
                 {
