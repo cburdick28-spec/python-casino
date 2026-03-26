@@ -2,7 +2,7 @@
     "users": {
         "Connor": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 26250314710700696,
+            "money": 26250314710706696,
             "last_daily": "2026-03-26",
             "timeout": 0,
             "achievements": [
@@ -16,11 +16,11 @@
                 "jackpot"
             ],
             "stats": {
-                "games_played": 116,
-                "games_won": 77,
+                "games_played": 115,
+                "games_won": 76,
                 "games_lost": 39,
-                "total_wagered": 19000124427904595,
-                "total_won": 35250288412266875,
+                "total_wagered": 19000124427903095,
+                "total_won": 35250288412257875,
                 "biggest_win": 7000004432262680,
                 "daily_streak": 0
             },
@@ -31,6 +31,13 @@
                 "bio": "Creator"
             },
             "bet_history": [
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 203040,
+                    "outcome": "win",
+                    "net": 203040,
+                    "time": "03/26 10:26"
+                },
                 {
                     "game": "\ud83c\udfb0 Slots",
                     "bet": 744480,
@@ -372,13 +379,6 @@
                     "bet": 1500,
                     "outcome": "loss",
                     "net": -1500,
-                    "time": "03/26 11:27"
-                },
-                {
-                    "game": "\ud83c\udfc7 Horse Racing",
-                    "bet": 1500,
-                    "outcome": "win",
-                    "net": 7500,
                     "time": "03/26 11:27"
                 }
             ]
