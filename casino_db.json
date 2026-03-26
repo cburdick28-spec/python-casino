@@ -16,12 +16,12 @@
                 "jackpot"
             ],
             "stats": {
-                "games_played": 79,
-                "games_won": 55,
+                "games_played": 80,
+                "games_won": 56,
                 "games_lost": 24,
-                "total_wagered": 3279410635,
-                "total_won": 6204807584,
-                "biggest_win": 1688480640,
+                "total_wagered": 9189092875,
+                "total_won": 18024172064,
+                "biggest_win": 11819364480,
                 "daily_streak": 0
             },
             "profile": {
@@ -31,13 +31,6 @@
                 "bio": "Creator"
             },
             "bet_history": [
-                {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "03/25 10:09"
-                },
                 {
                     "game": "\ud83c\udfb3 Plinko",
                     "bet": 10,
@@ -380,6 +373,13 @@
                     "outcome": "win",
                     "net": 844240320,
                     "time": "03/26 10:49"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 5909682240,
+                    "outcome": "win",
+                    "net": 5909682240,
+                    "time": "03/26 11:05"
                 }
             ]
         },
