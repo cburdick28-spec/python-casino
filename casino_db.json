@@ -1235,7 +1235,9 @@
             "money": 441,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "high_roller"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb3 Plinko",
