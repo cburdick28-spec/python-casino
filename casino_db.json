@@ -1236,8 +1236,7 @@
             "last_daily": "",
             "timeout": 0,
             "achievements": [
-                "high_roller",
-                "first_win"
+                "high_roller"
             ],
             "bet_history": [
                 {
@@ -1309,15 +1308,22 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/27 11:12"
+                },
+                {
+                    "game": "\ud83c\udfb2 Craps",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "03/27 11:12"
                 }
             ],
             "stats": {
-                "games_played": 10,
-                "games_won": 0,
+                "games_played": 11,
+                "games_won": 1,
                 "games_lost": 10,
-                "total_wagered": 531,
-                "total_won": 0,
-                "biggest_win": 0,
+                "total_wagered": 541,
+                "total_won": 10,
+                "biggest_win": 10,
                 "daily_streak": 0
             }
         }
