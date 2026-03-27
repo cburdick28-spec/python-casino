@@ -1237,7 +1237,8 @@
             "timeout": 0,
             "achievements": [
                 "high_roller",
-                "first_win"
+                "first_win",
+                "jackpot"
             ],
             "bet_history": [
                 {
