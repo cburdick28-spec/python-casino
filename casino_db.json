@@ -1243,13 +1243,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/27 11:09"
+                },
+                {
+                    "game": "\ud83c\udfb3 Plinko",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/27 11:09"
                 }
             ],
             "stats": {
-                "games_played": 1,
+                "games_played": 2,
                 "games_won": 0,
-                "games_lost": 1,
-                "total_wagered": 10,
+                "games_lost": 2,
+                "total_wagered": 20,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
