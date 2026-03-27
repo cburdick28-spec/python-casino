@@ -1232,7 +1232,7 @@
         },
         "pissmog": {
             "password": "5e77061a9b955ac03d9a574a8a68d8a58005949fa4fdd3d9e38dbd263028ffe8",
-            "money": 485,
+            "money": 441,
             "last_daily": "",
             "timeout": 0,
             "achievements": [],
@@ -1285,20 +1285,13 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/27 11:10"
-                },
-                {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "03/27 11:10"
                 }
             ],
             "stats": {
-                "games_played": 8,
+                "games_played": 7,
                 "games_won": 0,
-                "games_lost": 8,
-                "total_wagered": 80,
+                "games_lost": 7,
+                "total_wagered": 70,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
