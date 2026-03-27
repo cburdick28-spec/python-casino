@@ -1229,6 +1229,23 @@
                 "biggest_win": 0,
                 "daily_streak": 0
             }
+        },
+        "pissmog": {
+            "password": "5e77061a9b955ac03d9a574a8a68d8a58005949fa4fdd3d9e38dbd263028ffe8",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 1000,
