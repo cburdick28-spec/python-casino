@@ -1235,9 +1235,7 @@
             "money": 441,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [
-                "high_roller"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb3 Plinko",
@@ -1287,13 +1285,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "03/27 11:10"
+                },
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 441,
+                    "outcome": "loss",
+                    "net": -441,
+                    "time": "03/27 11:10"
                 }
             ],
             "stats": {
-                "games_played": 7,
+                "games_played": 8,
                 "games_won": 0,
-                "games_lost": 7,
-                "total_wagered": 70,
+                "games_lost": 8,
+                "total_wagered": 511,
                 "total_won": 0,
                 "biggest_win": 0,
                 "daily_streak": 0
