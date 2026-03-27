@@ -1322,13 +1322,20 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "03/27 11:12"
+                },
+                {
+                    "game": "\ud83c\udfb2 Craps",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "03/27 11:12"
                 }
             ],
             "stats": {
-                "games_played": 12,
+                "games_played": 13,
                 "games_won": 2,
-                "games_lost": 10,
-                "total_wagered": 551,
+                "games_lost": 11,
+                "total_wagered": 561,
                 "total_won": 20,
                 "biggest_win": 10,
                 "daily_streak": 0
