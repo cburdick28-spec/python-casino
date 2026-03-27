@@ -2,7 +2,7 @@
     "users": {
         "Connor": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 36250314710713696,
+            "money": 500,
             "last_daily": "2026-03-26",
             "timeout": 0,
             "achievements": [
@@ -385,7 +385,7 @@
         },
         "Dev1": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 1000000019,
+            "money": 500,
             "last_daily": "2026-03-19",
             "timeout": 0,
             "achievements": [
@@ -460,7 +460,7 @@
         },
         "test123": {
             "password": "ecd71870d1963316a97e3ac3408c9835ad8cf0f3c1bc703527c30265534f75ae",
-            "money": 580,
+            "money": 500,
             "last_daily": "2026-03-19",
             "timeout": 0,
             "achievements": [],
@@ -477,7 +477,7 @@
         },
         "Owner": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 59795685000004671,
+            "money": 500,
             "last_daily": "2026-03-26",
             "timeout": 0,
             "achievements": [
@@ -860,7 +860,7 @@
         },
         "Dev2": {
             "password": "0c9d846b092b386c910594c10a69e6950acd28fe5459ac2de62b76e78e4b19b6",
-            "money": 999999989,
+            "money": 500,
             "last_daily": "",
             "timeout": 0,
             "achievements": [
@@ -1040,7 +1040,7 @@
         },
         "dihcheese": {
             "password": "502e95295a4c628bf8868e4cc867283072bd07bd01654443aeb5baefcc93bb1b",
-            "money": 880,
+            "money": 500,
             "last_daily": "2026-03-20",
             "timeout": 0,
             "achievements": [
@@ -1232,7 +1232,7 @@
         },
         "pissmog": {
             "password": "5e77061a9b955ac03d9a574a8a68d8a58005949fa4fdd3d9e38dbd263028ffe8",
-            "money": 551,
+            "money": 500,
             "last_daily": "",
             "timeout": 0,
             "achievements": [
