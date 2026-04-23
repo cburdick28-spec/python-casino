@@ -491,7 +491,8 @@
                 "high_roller",
                 "blackjack_ace",
                 "royal_flush",
-                "broke"
+                "broke",
+                "daily_7"
             ],
             "stats": {
                 "games_played": 195,
