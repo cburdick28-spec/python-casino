@@ -488,7 +488,10 @@
                 "platinum_tier",
                 "diamond_tier",
                 "millionaire",
-                "high_roller"
+                "high_roller",
+                "blackjack_ace",
+                "royal_flush",
+                "broke"
             ],
             "stats": {
                 "games_played": 195,
