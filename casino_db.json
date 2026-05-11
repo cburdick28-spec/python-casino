@@ -1436,6 +1436,23 @@
                 "biggest_win": 1062,
                 "daily_streak": 0
             }
+        },
+        "Connor1": {
+            "password": "bf7b0ead279760f89777a5c87858171765a95d66f0265006b9e992a2154401e9",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 331952731048909,
