@@ -1464,13 +1464,20 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "05/11 16:32"
+                },
+                {
+                    "game": "\u2660\ufe0f Poker",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "05/11 16:32"
                 }
             ],
             "stats": {
-                "games_played": 3,
+                "games_played": 4,
                 "games_won": 1,
-                "games_lost": 2,
-                "total_wagered": 30,
+                "games_lost": 3,
+                "total_wagered": 40,
                 "total_won": 10,
                 "biggest_win": 10,
                 "daily_streak": 0
