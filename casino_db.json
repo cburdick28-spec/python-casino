@@ -495,22 +495,15 @@
                 "daily_7"
             ],
             "stats": {
-                "games_played": 204,
-                "games_won": 145,
+                "games_played": 205,
+                "games_won": 146,
                 "games_lost": 59,
-                "total_wagered": 117278090689727363,
-                "total_won": 204620128454755142,
+                "total_wagered": 117278090689727373,
+                "total_won": 204620128454755162,
                 "biggest_win": 45467730000002661,
                 "daily_streak": 0
             },
             "bet_history": [
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 1000000000000000,
-                    "outcome": "win",
-                    "net": 1000000000000000,
-                    "time": "04/10 13:02"
-                },
                 {
                     "game": "\ud83c\udfb0 Slots",
                     "bet": 1000000000000000,
@@ -845,6 +838,13 @@
                     "bet": 10,
                     "outcome": "loss",
                     "net": -10,
+                    "time": "06/05 12:39"
+                },
+                {
+                    "game": "\ud83c\udfc7 Horse Racing",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
                     "time": "06/05 12:39"
                 },
                 {
