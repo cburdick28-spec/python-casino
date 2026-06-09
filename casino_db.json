@@ -495,22 +495,15 @@
                 "daily_7"
             ],
             "stats": {
-                "games_played": 208,
+                "games_played": 209,
                 "games_won": 149,
-                "games_lost": 59,
-                "total_wagered": 118283090689727388,
+                "games_lost": 60,
+                "total_wagered": 118283090689727398,
                 "total_won": 206982081185804125,
                 "biggest_win": 45467730000002661,
                 "daily_streak": 0
             },
             "bet_history": [
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 1000000000000000,
-                    "outcome": "win",
-                    "net": 1000000000000000,
-                    "time": "04/10 13:03"
-                },
                 {
                     "game": "\ud83c\udfb0 Slots",
                     "bet": 1000000000000000,
@@ -853,6 +846,13 @@
                     "outcome": "win",
                     "net": 10,
                     "time": "06/09 10:08"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "06/09 10:09"
                 }
             ],
             "profile": {
