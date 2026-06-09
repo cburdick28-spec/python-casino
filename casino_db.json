@@ -495,22 +495,15 @@
                 "daily_7"
             ],
             "stats": {
-                "games_played": 239,
+                "games_played": 240,
                 "games_won": 170,
-                "games_lost": 69,
-                "total_wagered": 123283340689727633,
+                "games_lost": 70,
+                "total_wagered": 124283340689727633,
                 "total_won": 216982581185806522,
                 "biggest_win": 45467730000002661,
                 "daily_streak": 0
             },
             "bet_history": [
-                {
-                    "game": "\ud83c\udccf Blackjack",
-                    "bet": 1000000000000,
-                    "outcome": "loss",
-                    "net": -1000000000000,
-                    "time": "04/23 13:05"
-                },
                 {
                     "game": "\ud83c\udccf Blackjack",
                     "bet": 1000000000000,
@@ -852,6 +845,13 @@
                     "bet": 1000000000000000,
                     "outcome": "win",
                     "net": 1000000000000000,
+                    "time": "06/09 10:21"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 1000000000000000,
+                    "outcome": "loss",
+                    "net": -1000000000000000,
                     "time": "06/09 10:21"
                 }
             ],
