@@ -1065,13 +1065,20 @@
                     "outcome": "win",
                     "net": 10,
                     "time": "06/10 22:26"
+                },
+                {
+                    "game": "\ud83c\udfc7 Horse Racing",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "06/10 22:26"
                 }
             ],
             "stats": {
-                "games_played": 27,
+                "games_played": 28,
                 "games_won": 6,
-                "games_lost": 21,
-                "total_wagered": 60210,
+                "games_lost": 22,
+                "total_wagered": 60220,
                 "total_won": 2091293,
                 "biggest_win": 2071198,
                 "daily_streak": 0
