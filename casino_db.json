@@ -1541,17 +1541,24 @@
             "last_daily": "",
             "timeout": 0,
             "achievements": [
-                "blackjack_ace",
-                "first_win"
+                "blackjack_ace"
             ],
-            "bet_history": [],
+            "bet_history": [
+                {
+                    "game": "\ud83c\udccf Blackjack",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "07/24 20:07"
+                }
+            ],
             "stats": {
-                "games_played": 0,
-                "games_won": 0,
+                "games_played": 1,
+                "games_won": 1,
                 "games_lost": 0,
-                "total_wagered": 0,
-                "total_won": 0,
-                "biggest_win": 0,
+                "total_wagered": 10,
+                "total_won": 10,
+                "biggest_win": 10,
                 "daily_streak": 0
             }
         }
