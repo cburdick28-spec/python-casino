@@ -1517,6 +1517,23 @@
                 "biggest_win": 10,
                 "daily_streak": 0
             }
+        },
+        "Driel": {
+            "password": "8eb2d8fbee458b0291f0f58d1bcc943fa114584c41db8f1ac173579a0ea94d04",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 250000000001606,
