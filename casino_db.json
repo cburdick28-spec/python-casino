@@ -1534,6 +1534,23 @@
                 "biggest_win": 0,
                 "daily_streak": 0
             }
+        },
+        "Diddy": {
+            "password": "de9cacd3ffd7b623cc7cae95f85635d00a7485caeacfde8ca8f4e6fced36ac2c",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 250000000001606,
