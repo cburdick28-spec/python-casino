@@ -1541,7 +1541,8 @@
             "last_daily": "",
             "timeout": 0,
             "achievements": [
-                "blackjack_ace"
+                "blackjack_ace",
+                "first_win"
             ],
             "bet_history": [],
             "stats": {
