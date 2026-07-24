@@ -1540,7 +1540,9 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "blackjack_ace"
+            ],
             "bet_history": [],
             "stats": {
                 "games_played": 0,
