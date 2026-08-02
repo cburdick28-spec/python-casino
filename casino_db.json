@@ -1604,13 +1604,6 @@
                     "bet": 10,
                     "outcome": "loss",
                     "net": -10,
-                    "time": "08/02 21:31"
-                },
-                {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
                     "time": "08/02 21:32"
                 },
                 {
@@ -1927,14 +1920,21 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "08/02 21:54"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
+                    "time": "08/02 21:54"
                 }
             ],
             "stats": {
-                "games_played": 59,
-                "games_won": 17,
+                "games_played": 60,
+                "games_won": 18,
                 "games_lost": 42,
-                "total_wagered": 1160,
-                "total_won": 500000000004677,
+                "total_wagered": 1170,
+                "total_won": 500000000004697,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
