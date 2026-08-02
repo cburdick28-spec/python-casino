@@ -1940,7 +1940,7 @@
             }
         }
     },
-    "jackpot": 1024,
+    "jackpot": 1000,
     "chat": [
         {
             "user": "Connor",
