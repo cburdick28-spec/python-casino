@@ -1568,7 +1568,8 @@
             "last_daily": "2026-08-02",
             "timeout": 0,
             "achievements": [
-                "first_win"
+                "first_win",
+                "jackpot"
             ],
             "bet_history": [
                 {
