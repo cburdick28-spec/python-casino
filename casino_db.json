@@ -1571,7 +1571,8 @@
                 "first_win",
                 "jackpot",
                 "silver_tier",
-                "diamond_tier"
+                "diamond_tier",
+                "millionaire"
             ],
             "bet_history": [
                 {
