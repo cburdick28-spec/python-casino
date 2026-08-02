@@ -1569,7 +1569,8 @@
             "timeout": 0,
             "achievements": [
                 "first_win",
-                "jackpot"
+                "jackpot",
+                "silver_tier"
             ],
             "bet_history": [
                 {
