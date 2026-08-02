@@ -1794,14 +1794,21 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "08/02 21:40"
+                },
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "08/02 21:41"
                 }
             ],
             "stats": {
-                "games_played": 31,
-                "games_won": 8,
+                "games_played": 32,
+                "games_won": 9,
                 "games_lost": 23,
-                "total_wagered": 880,
-                "total_won": 250000000001771,
+                "total_wagered": 890,
+                "total_won": 250000000001781,
                 "biggest_win": 250000000001666,
                 "daily_streak": 0
             }
