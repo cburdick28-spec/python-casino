@@ -1564,7 +1564,7 @@
         },
         "Connorb": {
             "password": "532eaabd9574880dbf76b9b8cc00832c20a6ec113d682299550d7a6e0f345e25",
-            "money": 250000000001988,
+            "money": 250000000001980,
             "last_daily": "2026-08-02",
             "timeout": 0,
             "achievements": [
@@ -1573,8 +1573,7 @@
                 "silver_tier",
                 "diamond_tier",
                 "millionaire",
-                "gold_tier",
-                "platinum_tier"
+                "gold_tier"
             ],
             "bet_history": [
                 {
@@ -1688,20 +1687,13 @@
                     "outcome": "win",
                     "net": 5,
                     "time": "08/02 21:33"
-                },
-                {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "08/02 21:33"
                 }
             ],
             "stats": {
-                "games_played": 17,
+                "games_played": 16,
                 "games_won": 5,
-                "games_lost": 12,
-                "total_wagered": 250,
+                "games_lost": 11,
+                "total_wagered": 240,
                 "total_won": 250000000001741,
                 "biggest_win": 250000000001666,
                 "daily_streak": 0
