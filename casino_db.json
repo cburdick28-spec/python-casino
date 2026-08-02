@@ -1864,15 +1864,22 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "08/02 21:45"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 250000000001692,
+                    "time": "08/02 21:45"
                 }
             ],
             "stats": {
-                "games_played": 41,
-                "games_won": 11,
+                "games_played": 42,
+                "games_won": 12,
                 "games_lost": 30,
-                "total_wagered": 980,
-                "total_won": 250000000001811,
-                "biggest_win": 250000000001666,
+                "total_wagered": 990,
+                "total_won": 500000000003513,
+                "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
         }
