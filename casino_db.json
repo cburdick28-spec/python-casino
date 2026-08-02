@@ -1570,7 +1570,8 @@
             "achievements": [
                 "first_win",
                 "jackpot",
-                "silver_tier"
+                "silver_tier",
+                "platinum_tier"
             ],
             "bet_history": [
                 {
