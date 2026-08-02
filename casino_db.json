@@ -1567,7 +1567,9 @@
             "money": 600,
             "last_daily": "2026-08-02",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "first_win"
+            ],
             "bet_history": [],
             "stats": {
                 "games_played": 0,
