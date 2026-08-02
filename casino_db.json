@@ -1899,20 +1899,27 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "08/02 21:47"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "08/02 21:48"
                 }
             ],
             "stats": {
-                "games_played": 46,
+                "games_played": 47,
                 "games_won": 13,
-                "games_lost": 33,
-                "total_wagered": 1030,
+                "games_lost": 34,
+                "total_wagered": 1040,
                 "total_won": 500000000003533,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
         }
     },
-    "jackpot": 1008,
+    "jackpot": 1006,
     "chat": [
         {
             "user": "Connor",
