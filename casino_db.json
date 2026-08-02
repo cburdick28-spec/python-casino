@@ -1568,8 +1568,7 @@
             "last_daily": "2026-08-02",
             "timeout": 0,
             "achievements": [
-                "first_win",
-                "jackpot"
+                "first_win"
             ],
             "bet_history": [
                 {
@@ -1605,7 +1604,7 @@
             }
         }
     },
-    "jackpot": 250000000001606,
+    "jackpot": 1000,
     "chat": [
         {
             "user": "Connor",
