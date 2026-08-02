@@ -1564,15 +1564,12 @@
         },
         "Connorb": {
             "password": "532eaabd9574880dbf76b9b8cc00832c20a6ec113d682299550d7a6e0f345e25",
-            "money": 250000000002336,
+            "money": 250000000002236,
             "last_daily": "2026-08-02",
             "timeout": 0,
             "achievements": [
                 "first_win",
-                "jackpot",
-                "silver_tier",
-                "diamond_tier",
-                "millionaire"
+                "jackpot"
             ],
             "bet_history": [
                 {
