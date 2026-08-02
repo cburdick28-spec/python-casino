@@ -1567,9 +1567,7 @@
             "money": 600,
             "last_daily": "2026-08-02",
             "timeout": 0,
-            "achievements": [
-                "first_win"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
@@ -1577,14 +1575,21 @@
                     "outcome": "win",
                     "net": 10,
                     "time": "08/02 21:25"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
+                    "time": "08/02 21:26"
                 }
             ],
             "stats": {
-                "games_played": 1,
-                "games_won": 1,
+                "games_played": 2,
+                "games_won": 2,
                 "games_lost": 0,
-                "total_wagered": 10,
-                "total_won": 20,
+                "total_wagered": 20,
+                "total_won": 40,
                 "biggest_win": 20,
                 "daily_streak": 0
             }
