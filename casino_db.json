@@ -1572,7 +1572,8 @@
                 "jackpot",
                 "silver_tier",
                 "diamond_tier",
-                "millionaire"
+                "millionaire",
+                "platinum_tier"
             ],
             "bet_history": [
                 {
