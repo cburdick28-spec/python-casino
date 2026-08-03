@@ -1582,13 +1582,6 @@
                 {
                     "game": "\ud83c\udfa1 Roulette",
                     "bet": 10,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "08/02 21:41"
-                },
-                {
-                    "game": "\ud83c\udfa1 Roulette",
-                    "bet": 10,
                     "outcome": "loss",
                     "net": -10,
                     "time": "08/02 21:43"
@@ -1928,13 +1921,20 @@
                     "outcome": "loss",
                     "net": -15000,
                     "time": "08/03 17:07"
+                },
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "08/03 17:07"
                 }
             ],
             "stats": {
-                "games_played": 81,
+                "games_played": 82,
                 "games_won": 27,
-                "games_lost": 54,
-                "total_wagered": 55530,
+                "games_lost": 55,
+                "total_wagered": 55540,
                 "total_won": 500000000044834,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
