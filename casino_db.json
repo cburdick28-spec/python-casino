@@ -1580,13 +1580,6 @@
             ],
             "bet_history": [
                 {
-                    "game": "\ud83c\udfa1 Roulette",
-                    "bet": 10,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "08/02 21:43"
-                },
-                {
                     "game": "\ud83c\udfb0 Slots",
                     "bet": 10,
                     "outcome": "loss",
@@ -1928,20 +1921,27 @@
                     "outcome": "loss",
                     "net": -15000,
                     "time": "08/03 17:10"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 15000,
+                    "outcome": "loss",
+                    "net": -15000,
+                    "time": "08/03 17:10"
                 }
             ],
             "stats": {
-                "games_played": 83,
+                "games_played": 84,
                 "games_won": 27,
-                "games_lost": 56,
-                "total_wagered": 85530,
+                "games_lost": 57,
+                "total_wagered": 100530,
                 "total_won": 500000000044834,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
         }
     },
-    "jackpot": 19000,
+    "jackpot": 15250,
     "chat": [
         {
             "user": "Connor",
