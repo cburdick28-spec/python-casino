@@ -1580,13 +1580,6 @@
             ],
             "bet_history": [
                 {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 10,
-                    "outcome": "win",
-                    "net": 10,
-                    "time": "08/03 16:57"
-                },
-                {
                     "game": "\ud83c\udfa1 Roulette",
                     "bet": 10,
                     "outcome": "win",
@@ -1928,14 +1921,21 @@
                     "outcome": "win",
                     "net": 10,
                     "time": "08/03 21:48"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
+                    "time": "08/03 21:48"
                 }
             ],
             "stats": {
-                "games_played": 112,
-                "games_won": 38,
+                "games_played": 113,
+                "games_won": 39,
                 "games_lost": 74,
-                "total_wagered": 239785,
-                "total_won": 500000000220034,
+                "total_wagered": 239795,
+                "total_won": 500000000220054,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
