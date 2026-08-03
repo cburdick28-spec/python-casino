@@ -1564,7 +1564,7 @@
         },
         "Connorb": {
             "password": "532eaabd9574880dbf76b9b8cc00832c20a6ec113d682299550d7a6e0f345e25",
-            "money": 500000000004148,
+            "money": 500000000004138,
             "last_daily": "2026-08-02",
             "timeout": 0,
             "achievements": [
@@ -1578,6 +1578,13 @@
                 "blackjack_ace"
             ],
             "bet_history": [
+                {
+                    "game": "\ud83c\udfb3 Plinko",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "08/02 21:32"
+                },
                 {
                     "game": "\ud83c\udfb3 Plinko",
                     "bet": 10,
@@ -1920,20 +1927,13 @@
                     "outcome": "win",
                     "net": 10,
                     "time": "08/03 16:57"
-                },
-                {
-                    "game": "\ud83c\udfa1 Roulette",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "08/03 16:57"
                 }
             ],
             "stats": {
-                "games_played": 64,
+                "games_played": 63,
                 "games_won": 21,
-                "games_lost": 43,
-                "total_wagered": 1210,
+                "games_lost": 42,
+                "total_wagered": 1200,
                 "total_won": 500000000004757,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
