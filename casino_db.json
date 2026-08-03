@@ -1564,7 +1564,7 @@
         },
         "Connorb": {
             "password": "532eaabd9574880dbf76b9b8cc00832c20a6ec113d682299550d7a6e0f345e25",
-            "money": 500000000000040,
+            "money": 500000000032149,
             "last_daily": "2026-08-02",
             "timeout": 0,
             "achievements": [
@@ -1579,6 +1579,13 @@
                 "high_roller"
             ],
             "bet_history": [
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 1000,
+                    "outcome": "win",
+                    "net": 6857,
+                    "time": "08/03 17:00"
+                },
                 {
                     "game": "\ud83c\udfb0 Slots",
                     "bet": 1000,
@@ -1921,20 +1928,13 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "08/03 21:50"
-                },
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "08/03 21:50"
                 }
             ],
             "stats": {
-                "games_played": 124,
+                "games_played": 123,
                 "games_won": 43,
-                "games_lost": 81,
-                "total_wagered": 239905,
+                "games_lost": 80,
+                "total_wagered": 239895,
                 "total_won": 500000000252213,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
