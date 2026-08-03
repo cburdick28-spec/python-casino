@@ -1587,13 +1587,6 @@
                     "time": "08/02 21:38"
                 },
                 {
-                    "game": "\ud83c\udccf Blackjack",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "08/02 21:38"
-                },
-                {
                     "game": "\ud83c\udfa1 Roulette",
                     "bet": 10,
                     "outcome": "loss",
@@ -1928,14 +1921,21 @@
                     "outcome": "loss",
                     "net": -2500,
                     "time": "08/03 17:00"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 5000,
+                    "outcome": "win",
+                    "net": 5000,
+                    "time": "08/03 17:01"
                 }
             ],
             "stats": {
-                "games_played": 78,
-                "games_won": 26,
+                "games_played": 79,
+                "games_won": 27,
                 "games_lost": 52,
-                "total_wagered": 10530,
-                "total_won": 500000000014834,
+                "total_wagered": 15530,
+                "total_won": 500000000024834,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
