@@ -1564,7 +1564,7 @@
         },
         "Connorb": {
             "password": "532eaabd9574880dbf76b9b8cc00832c20a6ec113d682299550d7a6e0f345e25",
-            "money": 500000000004158,
+            "money": 500000000002158,
             "last_daily": "2026-08-02",
             "timeout": 0,
             "achievements": [
@@ -1579,6 +1579,13 @@
                 "high_roller"
             ],
             "bet_history": [
+                {
+                    "game": "\ud83c\udccf Blackjack",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "08/02 21:36"
+                },
                 {
                     "game": "\ud83c\udccf Blackjack",
                     "bet": 10,
@@ -1921,27 +1928,20 @@
                     "outcome": "loss",
                     "net": -500,
                     "time": "08/03 17:00"
-                },
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 500,
-                    "outcome": "loss",
-                    "net": -500,
-                    "time": "08/03 17:00"
                 }
             ],
             "stats": {
-                "games_played": 73,
+                "games_played": 72,
                 "games_won": 24,
-                "games_lost": 49,
-                "total_wagered": 3530,
+                "games_lost": 48,
+                "total_wagered": 3030,
                 "total_won": 500000000004977,
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
         }
     },
-    "jackpot": 1482,
+    "jackpot": 1607,
     "chat": [
         {
             "user": "Connor",
