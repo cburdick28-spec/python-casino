@@ -177,6 +177,8 @@ st.markdown("""
 | 🃏 Blackjack | Beat the dealer without going over 21 |
 | 🎡 Roulette | Pick red, black, or a number and spin |
 | ♠️ Poker | Texas Hold'em vs the dealer |
+| 🪙 Coin Flip | Pick heads or tails for a quick 50/50 bet |
+| 🔼 Higher Lower | Guess whether the next card is higher or lower |
 | 📊 Stats | View your stats, VIP tier and achievements |
 """)
 
