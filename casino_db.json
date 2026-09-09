@@ -1939,6 +1939,23 @@
                 "biggest_win": 250000000001702,
                 "daily_streak": 0
             }
+        },
+        "assdlfkjaslkj": {
+            "password": "c06b9809725854691f5a5573d422aa99d8218577d99ffaa539aa044a2e219033",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 32047,
