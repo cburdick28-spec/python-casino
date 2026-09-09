@@ -1945,7 +1945,9 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "first_win"
+            ],
             "bet_history": [],
             "stats": {
                 "games_played": 0,
