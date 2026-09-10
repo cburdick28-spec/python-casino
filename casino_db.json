@@ -1945,9 +1945,7 @@
             "money": 691,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [
-                "high_roller"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udccf Blackjack",
@@ -2004,13 +2002,20 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "09/10 09:22"
+                },
+                {
+                    "game": "\ud83c\udccf Blackjack",
+                    "bet": 691,
+                    "outcome": "loss",
+                    "net": -691,
+                    "time": "09/10 09:23"
                 }
             ],
             "stats": {
-                "games_played": 8,
+                "games_played": 9,
                 "games_won": 3,
-                "games_lost": 5,
-                "total_wagered": 360,
+                "games_lost": 6,
+                "total_wagered": 1051,
                 "total_won": 270,
                 "biggest_win": 250,
                 "daily_streak": 0
