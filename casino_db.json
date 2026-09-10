@@ -1945,7 +1945,9 @@
             "money": 681,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "first_win"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udccf Blackjack",
