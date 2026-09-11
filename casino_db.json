@@ -1114,13 +1114,20 @@
                     "outcome": "loss",
                     "net": -100000,
                     "time": "09/11 08:13"
+                },
+                {
+                    "game": "\ud83c\udccf Blackjack",
+                    "bet": 100000,
+                    "outcome": "loss",
+                    "net": -100000,
+                    "time": "09/11 08:14"
                 }
             ],
             "stats": {
-                "games_played": 34,
+                "games_played": 35,
                 "games_won": 8,
-                "games_lost": 26,
-                "total_wagered": 264240,
+                "games_lost": 27,
+                "total_wagered": 364240,
                 "total_won": 2191313,
                 "biggest_win": 2071198,
                 "daily_streak": 0
