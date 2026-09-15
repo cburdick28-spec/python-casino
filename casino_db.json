@@ -385,7 +385,7 @@
         },
         "Dev1": {
             "password": "0749f99a886362c0b777a17487389f3e91db04f6c20c9314f0c9f8861ce89231",
-            "money": 1000000019,
+            "money": 2999999997,
             "last_daily": "2026-03-19",
             "timeout": 0,
             "achievements": [
@@ -393,9 +393,7 @@
                 "gold_tier",
                 "platinum_tier",
                 "millionaire",
-                "high_roller",
-                "silver_tier",
-                "diamond_tier"
+                "high_roller"
             ],
             "stats": {
                 "games_played": 12,
