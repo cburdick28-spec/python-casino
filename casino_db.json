@@ -394,7 +394,8 @@
                 "platinum_tier",
                 "millionaire",
                 "high_roller",
-                "silver_tier"
+                "silver_tier",
+                "diamond_tier"
             ],
             "stats": {
                 "games_played": 12,
