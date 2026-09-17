@@ -2077,6 +2077,23 @@
                 "biggest_win": 250,
                 "daily_streak": 0
             }
+        },
+        "greenbean22": {
+            "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 250032050,
