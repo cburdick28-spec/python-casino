@@ -2080,14 +2080,11 @@
         },
         "greenbean22": {
             "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-            "money": 250032708,
+            "money": 250032718,
             "last_daily": "2026-09-18",
             "timeout": 0,
             "achievements": [
-                "gold_tier",
-                "platinum_tier",
-                "diamond_tier",
-                "millionaire"
+                "first_win"
             ],
             "bet_history": [
                 {
@@ -2201,21 +2198,14 @@
                     "outcome": "win",
                     "net": 250032104,
                     "time": "09/18 06:53"
-                },
-                {
-                    "game": "\ud83c\udfa1 Roulette",
-                    "bet": 10,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "09/18 07:02"
                 }
             ],
             "stats": {
-                "games_played": 17,
-                "games_won": 5,
+                "games_played": 16,
+                "games_won": 4,
                 "games_lost": 12,
-                "total_wagered": 170,
-                "total_won": 250032184,
+                "total_wagered": 160,
+                "total_won": 250032174,
                 "biggest_win": 250032114,
                 "daily_streak": 0
             }
