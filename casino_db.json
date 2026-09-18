@@ -2159,13 +2159,6 @@
                     "time": "09/18 11:51"
                 },
                 {
-                    "game": "\ud83c\udfc7 Horse Racing",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "09/18 11:51"
-                },
-                {
                     "game": "\ud83e\ude99 Coin Flip",
                     "bet": 10000,
                     "outcome": "loss",
@@ -2500,14 +2493,21 @@
                     "outcome": "loss",
                     "net": -4000000,
                     "time": "09/18 12:00"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 4000000,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 12:00"
                 }
             ],
             "stats": {
-                "games_played": 75,
-                "games_won": 23,
+                "games_played": 76,
+                "games_won": 24,
                 "games_lost": 52,
-                "total_wagered": 43563999,
-                "total_won": 274259846,
+                "total_wagered": 47563999,
+                "total_won": 278259846,
                 "biggest_win": 250032114,
                 "daily_streak": 0
             }
