@@ -2083,7 +2083,9 @@
             "money": 250032608,
             "last_daily": "2026-09-18",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "silver_tier"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
