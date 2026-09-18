@@ -2083,9 +2083,7 @@
             "money": 500,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [
-                "first_win"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
@@ -2170,14 +2168,21 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "09/18 06:52"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 10,
+                    "time": "09/18 06:52"
                 }
             ],
             "stats": {
-                "games_played": 12,
-                "games_won": 1,
+                "games_played": 13,
+                "games_won": 2,
                 "games_lost": 11,
-                "total_wagered": 120,
-                "total_won": 20,
+                "total_wagered": 130,
+                "total_won": 40,
                 "biggest_win": 20,
                 "daily_streak": 0
             }
