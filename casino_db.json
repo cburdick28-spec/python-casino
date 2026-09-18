@@ -2416,13 +2416,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "09/18 11:52"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1000,
+                    "outcome": "loss",
+                    "net": -1000,
+                    "time": "09/18 11:52"
                 }
             ],
             "stats": {
-                "games_played": 38,
+                "games_played": 39,
                 "games_won": 8,
-                "games_lost": 30,
-                "total_wagered": 551449,
+                "games_lost": 31,
+                "total_wagered": 552449,
                 "total_won": 250248174,
                 "biggest_win": 250032114,
                 "daily_streak": 0
