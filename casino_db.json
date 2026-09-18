@@ -2084,7 +2084,8 @@
             "last_daily": "2026-09-18",
             "timeout": 0,
             "achievements": [
-                "gold_tier"
+                "gold_tier",
+                "platinum_tier"
             ],
             "bet_history": [
                 {
