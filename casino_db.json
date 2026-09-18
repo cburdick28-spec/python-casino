@@ -2138,7 +2138,7 @@
         },
         "greenbean22": {
             "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-            "money": 4056488724983,
+            "money": 4056488724984,
             "last_daily": "2026-09-18",
             "timeout": 0,
             "achievements": [
@@ -2151,20 +2151,6 @@
                 "high_roller"
             ],
             "bet_history": [
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 18000000,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "09/18 12:55"
-                },
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 1,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "09/18 12:55"
-                },
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 1,
@@ -2500,14 +2486,28 @@
                     "outcome": "loss",
                     "net": -1,
                     "time": "09/18 13:09"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 13:09"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 13:09"
                 }
             ],
             "stats": {
-                "games_played": 285,
-                "games_won": 176,
+                "games_played": 287,
+                "games_won": 178,
                 "games_lost": 109,
-                "total_wagered": 4536519564297,
-                "total_won": 4472634260068,
+                "total_wagered": 4536519564299,
+                "total_won": 4472634260070,
                 "biggest_win": 2000000000000,
                 "daily_streak": 0
             },
