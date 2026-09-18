@@ -2381,13 +2381,20 @@
                     "outcome": "loss",
                     "net": -100000,
                     "time": "09/18 11:51"
+                },
+                {
+                    "game": "\ud83e\ude99 Coin Flip",
+                    "bet": 100000,
+                    "outcome": "loss",
+                    "net": -100000,
+                    "time": "09/18 11:52"
                 }
             ],
             "stats": {
-                "games_played": 33,
+                "games_played": 34,
                 "games_won": 6,
-                "games_lost": 27,
-                "total_wagered": 151439,
+                "games_lost": 28,
+                "total_wagered": 251439,
                 "total_won": 250048174,
                 "biggest_win": 250032114,
                 "daily_streak": 0
