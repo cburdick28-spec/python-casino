@@ -2144,7 +2144,8 @@
             "achievements": [
                 "first_win",
                 "silver_tier",
-                "gold_tier"
+                "gold_tier",
+                "platinum_tier"
             ],
             "bet_history": [
                 {
