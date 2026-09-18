@@ -2490,15 +2490,15 @@
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 4000000,
-                    "outcome": "win",
-                    "net": 0,
+                    "outcome": "loss",
+                    "net": -4000000,
                     "time": "09/18 12:01"
                 },
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 4000000,
-                    "outcome": "loss",
-                    "net": -4000000,
+                    "outcome": "win",
+                    "net": 0,
                     "time": "09/18 12:01"
                 }
             ],
