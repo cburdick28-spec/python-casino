@@ -2148,8 +2148,7 @@
                 "platinum_tier",
                 "diamond_tier",
                 "millionaire",
-                "high_roller",
-                "jackpot"
+                "high_roller"
             ],
             "bet_history": [
                 {
@@ -2514,7 +2513,7 @@
             }
         }
     },
-    "jackpot": 1052,
+    "jackpot": 1000,
     "chat": [
         {
             "user": "Connor",
