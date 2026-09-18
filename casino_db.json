@@ -2161,13 +2161,6 @@
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 1,
-                    "outcome": "loss",
-                    "net": -1,
-                    "time": "09/18 12:10"
-                },
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 1,
                     "outcome": "win",
                     "net": 0,
                     "time": "09/18 12:10"
@@ -2500,14 +2493,21 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "09/18 12:48"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 12:48"
                 }
             ],
             "stats": {
-                "games_played": 181,
-                "games_won": 97,
+                "games_played": 182,
+                "games_won": 98,
                 "games_lost": 84,
-                "total_wagered": 8089564044,
-                "total_won": 8204259875,
+                "total_wagered": 8089564045,
+                "total_won": 8204259876,
                 "biggest_win": 4000000000,
                 "daily_streak": 0
             },
