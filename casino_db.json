@@ -2083,9 +2083,7 @@
             "money": 250032708,
             "last_daily": "2026-09-18",
             "timeout": 0,
-            "achievements": [
-                "first_win"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
@@ -2198,14 +2196,21 @@
                     "outcome": "win",
                     "net": 250032104,
                     "time": "09/18 06:53"
+                },
+                {
+                    "game": "\ud83c\udfa1 Roulette",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 07:02"
                 }
             ],
             "stats": {
-                "games_played": 16,
-                "games_won": 4,
+                "games_played": 17,
+                "games_won": 5,
                 "games_lost": 12,
-                "total_wagered": 160,
-                "total_won": 250032174,
+                "total_wagered": 170,
+                "total_won": 250032184,
                 "biggest_win": 250032114,
                 "daily_streak": 0
             }
