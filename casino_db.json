@@ -2138,7 +2138,7 @@
         },
         "greenbean22": {
             "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-            "money": 958724824,
+            "money": 958724810,
             "last_daily": "2026-09-18",
             "timeout": 0,
             "achievements": [
@@ -2160,20 +2160,6 @@
                 },
                 {
                     "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 20000000,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "09/18 12:08"
-                },
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 20000000,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "09/18 12:08"
-                },
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
                     "bet": 1,
                     "outcome": "loss",
                     "net": -1,
@@ -2464,6 +2450,20 @@
                     "bet": 1,
                     "outcome": "loss",
                     "net": -1,
+                    "time": "09/18 12:13"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 12:13"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
                     "time": "09/18 12:13"
                 },
                 {
@@ -2503,11 +2503,11 @@
                 }
             ],
             "stats": {
-                "games_played": 160,
-                "games_won": 80,
+                "games_played": 162,
+                "games_won": 82,
                 "games_lost": 80,
-                "total_wagered": 989564027,
-                "total_won": 1104259862,
+                "total_wagered": 989564029,
+                "total_won": 1104259864,
                 "biggest_win": 250032114,
                 "daily_streak": 0
             }
