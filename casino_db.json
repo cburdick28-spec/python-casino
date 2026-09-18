@@ -2161,13 +2161,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "09/18 06:52"
+                },
+                {
+                    "game": "\ud83c\udfb3 Plinko",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "09/18 06:52"
                 }
             ],
             "stats": {
-                "games_played": 11,
+                "games_played": 12,
                 "games_won": 1,
-                "games_lost": 10,
-                "total_wagered": 110,
+                "games_lost": 11,
+                "total_wagered": 120,
                 "total_won": 20,
                 "biggest_win": 20,
                 "daily_streak": 0
