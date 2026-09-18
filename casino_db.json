@@ -2138,7 +2138,7 @@
         },
         "greenbean22": {
             "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-            "money": 8058724840,
+            "money": 8058724837,
             "last_daily": "2026-09-18",
             "timeout": 0,
             "achievements": [
@@ -2151,13 +2151,6 @@
                 "high_roller"
             ],
             "bet_history": [
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 1,
-                    "outcome": "loss",
-                    "net": -1,
-                    "time": "09/18 12:10"
-                },
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 1,
@@ -2500,14 +2493,21 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "09/18 12:48"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 12:48"
                 }
             ],
             "stats": {
-                "games_played": 182,
-                "games_won": 98,
+                "games_played": 183,
+                "games_won": 99,
                 "games_lost": 84,
-                "total_wagered": 8089564045,
-                "total_won": 8204259876,
+                "total_wagered": 8089564046,
+                "total_won": 8204259877,
                 "biggest_win": 4000000000,
                 "daily_streak": 0
             },
