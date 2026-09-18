@@ -2143,6 +2143,9 @@
             "timeout": 0,
             "achievements": [
                 "first_win",
+                "silver_tier",
+                "gold_tier",
+                "platinum_tier",
                 "diamond_tier",
                 "millionaire"
             ],
