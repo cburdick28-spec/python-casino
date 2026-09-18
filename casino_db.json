@@ -2143,7 +2143,8 @@
             "timeout": 0,
             "achievements": [
                 "first_win",
-                "diamond_tier"
+                "diamond_tier",
+                "millionaire"
             ],
             "bet_history": [
                 {
