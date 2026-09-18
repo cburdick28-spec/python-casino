@@ -2152,13 +2152,6 @@
             ],
             "bet_history": [
                 {
-                    "game": "\ud83c\udccf Blackjack",
-                    "bet": 1000,
-                    "outcome": "loss",
-                    "net": -1000,
-                    "time": "09/18 11:53"
-                },
-                {
                     "game": "\ud83e\ude99 Coin Flip",
                     "bet": 1000000,
                     "outcome": "loss",
@@ -2500,14 +2493,21 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "09/18 12:02"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 4000000,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 12:02"
                 }
             ],
             "stats": {
-                "games_played": 95,
-                "games_won": 35,
+                "games_played": 96,
+                "games_won": 36,
                 "games_lost": 60,
-                "total_wagered": 123563999,
-                "total_won": 322259846,
+                "total_wagered": 127563999,
+                "total_won": 326259846,
                 "biggest_win": 250032114,
                 "daily_streak": 0
             }
