@@ -2083,7 +2083,9 @@
             "money": 494,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "silver_tier"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
