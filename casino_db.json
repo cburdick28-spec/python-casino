@@ -2138,7 +2138,7 @@
         },
         "greenbean22": {
             "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-            "money": 250037533,
+            "money": 250037543,
             "last_daily": "2026-09-18",
             "timeout": 0,
             "achievements": [
@@ -2331,13 +2331,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "09/18 11:51"
+                },
+                {
+                    "game": "\ud83c\udfc7 Horse Racing",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "09/18 11:51"
                 }
             ],
             "stats": {
-                "games_played": 26,
+                "games_played": 27,
                 "games_won": 5,
-                "games_lost": 21,
-                "total_wagered": 1429,
+                "games_lost": 22,
+                "total_wagered": 1439,
                 "total_won": 250038174,
                 "biggest_win": 250032114,
                 "daily_streak": 0
