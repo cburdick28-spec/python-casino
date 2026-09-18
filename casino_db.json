@@ -2083,9 +2083,7 @@
             "money": 494,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [
-                "jackpot"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udfb0 Slots",
@@ -2204,7 +2202,7 @@
             }
         }
     },
-    "jackpot": 250032054,
+    "jackpot": 1000,
     "chat": [
         {
             "user": "Connor",
