@@ -2085,7 +2085,8 @@
             "timeout": 0,
             "achievements": [
                 "gold_tier",
-                "platinum_tier"
+                "platinum_tier",
+                "diamond_tier"
             ],
             "bet_history": [
                 {
