@@ -2142,7 +2142,8 @@
             "last_daily": "2026-09-18",
             "timeout": 0,
             "achievements": [
-                "first_win"
+                "first_win",
+                "silver_tier"
             ],
             "bet_history": [
                 {
