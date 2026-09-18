@@ -2152,13 +2152,6 @@
             ],
             "bet_history": [
                 {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 10,
-                    "outcome": "loss",
-                    "net": -10,
-                    "time": "09/18 11:50"
-                },
-                {
                     "game": "\ud83c\udfc7 Horse Racing",
                     "bet": 1000,
                     "outcome": "win",
@@ -2500,14 +2493,21 @@
                     "outcome": "loss",
                     "net": -4000000,
                     "time": "09/18 11:59"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 4000000,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 11:59"
                 }
             ],
             "stats": {
-                "games_played": 73,
-                "games_won": 22,
+                "games_played": 74,
+                "games_won": 23,
                 "games_lost": 51,
-                "total_wagered": 35563999,
-                "total_won": 270259846,
+                "total_wagered": 39563999,
+                "total_won": 274259846,
                 "biggest_win": 250032114,
                 "daily_streak": 0
             }
