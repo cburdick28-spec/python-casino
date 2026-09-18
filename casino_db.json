@@ -2154,13 +2154,6 @@
                 {
                     "game": "\ud83e\ude99 Coin Flip",
                     "bet": 10000,
-                    "outcome": "loss",
-                    "net": -10000,
-                    "time": "09/18 11:51"
-                },
-                {
-                    "game": "\ud83e\ude99 Coin Flip",
-                    "bet": 10000,
                     "outcome": "win",
                     "net": 0,
                     "time": "09/18 11:51"
@@ -2497,17 +2490,24 @@
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 4000000,
-                    "outcome": "loss",
-                    "net": -4000000,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/18 12:00"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 4000000,
+                    "outcome": "win",
+                    "net": 0,
                     "time": "09/18 12:00"
                 }
             ],
             "stats": {
-                "games_played": 79,
-                "games_won": 24,
-                "games_lost": 55,
-                "total_wagered": 59563999,
-                "total_won": 278259846,
+                "games_played": 80,
+                "games_won": 26,
+                "games_lost": 54,
+                "total_wagered": 63563999,
+                "total_won": 286259846,
                 "biggest_win": 250032114,
                 "daily_streak": 0
             }
