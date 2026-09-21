@@ -2497,17 +2497,17 @@
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 1,
-                    "outcome": "win",
-                    "net": 0,
+                    "outcome": "loss",
+                    "net": -1,
                     "time": "09/21 11:47"
                 }
             ],
             "stats": {
                 "games_played": 400,
-                "games_won": 257,
-                "games_lost": 143,
+                "games_won": 256,
+                "games_lost": 144,
                 "total_wagered": 66348532793269797,
-                "total_won": 66348468907965338,
+                "total_won": 66348468907965337,
                 "biggest_win": 9007199254740991,
                 "daily_streak": 0
             },
