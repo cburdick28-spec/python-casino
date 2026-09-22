@@ -2165,13 +2165,6 @@
                     "bet": 9007199254740991,
                     "outcome": "win",
                     "net": 0,
-                    "time": "09/21 11:48"
-                },
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 9007199254740991,
-                    "outcome": "win",
-                    "net": 0,
                     "time": "09/21 11:49"
                 },
                 {
@@ -2502,13 +2495,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "09/22 08:55"
+                },
+                {
+                    "game": "\ud83c\udccf Blackjack",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "09/22 08:55"
                 }
             ],
             "stats": {
-                "games_played": 462,
+                "games_played": 463,
                 "games_won": 308,
-                "games_lost": 154,
-                "total_wagered": 489686897766097577,
+                "games_lost": 155,
+                "total_wagered": 489686897766097587,
                 "total_won": 489686833880792145,
                 "biggest_win": 9007199254740991,
                 "daily_streak": 0
