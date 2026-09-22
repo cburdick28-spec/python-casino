@@ -526,22 +526,15 @@
                 "daily_7"
             ],
             "stats": {
-                "games_played": 297,
-                "games_won": 208,
+                "games_played": 298,
+                "games_won": 209,
                 "games_lost": 89,
-                "total_wagered": 162283340690265281,
-                "total_won": 300732581186126823,
+                "total_wagered": 163283340690265281,
+                "total_won": 302732581186126823,
                 "biggest_win": 45467730000002661,
                 "daily_streak": 0
             },
             "bet_history": [
-                {
-                    "game": "\ud83c\udfb3 Plinko",
-                    "bet": 100000,
-                    "outcome": "loss",
-                    "net": -100000,
-                    "time": "09/09 09:44"
-                },
                 {
                     "game": "\ud83c\udfb3 Plinko",
                     "bet": 100000,
@@ -884,6 +877,13 @@
                     "outcome": "win",
                     "net": 5000000000001000,
                     "time": "09/22 07:55"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 1000000000000000,
+                    "outcome": "win",
+                    "net": 1000000000000000,
+                    "time": "09/22 07:56"
                 }
             ],
             "profile": {
