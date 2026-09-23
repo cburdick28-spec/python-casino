@@ -2155,13 +2155,6 @@
             "bet_history": [
                 {
                     "game": "\u2660\ufe0f Poker",
-                    "bet": 100,
-                    "outcome": "win",
-                    "net": 100,
-                    "time": "09/22 08:52"
-                },
-                {
-                    "game": "\u2660\ufe0f Poker",
                     "bet": 10,
                     "outcome": "loss",
                     "net": -10,
@@ -2502,14 +2495,21 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "09/23 08:55"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 9007199254740991,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/23 08:55"
                 }
             ],
             "stats": {
-                "games_played": 507,
-                "games_won": 341,
+                "games_played": 508,
+                "games_won": 342,
                 "games_lost": 166,
-                "total_wagered": 660823683606176459,
-                "total_won": 660823619720870988,
+                "total_wagered": 669830882860917450,
+                "total_won": 669830818975611979,
                 "biggest_win": 9007199254740991,
                 "daily_streak": 0
             },
