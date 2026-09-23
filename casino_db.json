@@ -2140,7 +2140,7 @@
         },
         "greenbean22": {
             "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
-            "money": 534146414008960738,
+            "money": 534146414008960733,
             "last_daily": "2026-09-23",
             "timeout": 0,
             "achievements": [
@@ -2153,20 +2153,6 @@
                 "high_roller"
             ],
             "bet_history": [
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 1,
-                    "outcome": "loss",
-                    "net": -1,
-                    "time": "09/22 08:49"
-                },
-                {
-                    "game": "\ud83d\udd3c Higher Lower",
-                    "bet": 9007199254740991,
-                    "outcome": "win",
-                    "net": 0,
-                    "time": "09/22 08:49"
-                },
                 {
                     "game": "\ud83d\udd3c Higher Lower",
                     "bet": 9007199254740991,
@@ -2502,14 +2488,28 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "09/23 08:53"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/23 08:53"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 1,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "09/23 08:53"
                 }
             ],
             "stats": {
-                "games_played": 485,
-                "games_won": 319,
+                "games_played": 487,
+                "games_won": 321,
                 "games_lost": 166,
-                "total_wagered": 507701296275579607,
-                "total_won": 507701232390274136,
+                "total_wagered": 507701296275579609,
+                "total_won": 507701232390274138,
                 "biggest_win": 9007199254740991,
                 "daily_streak": 0
             },
