@@ -2599,13 +2599,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "09/24 10:15"
+                },
+                {
+                    "game": "\ud83c\udfb0 Slots",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "09/24 10:15"
                 }
             ],
             "stats": {
-                "games_played": 8,
+                "games_played": 9,
                 "games_won": 1,
-                "games_lost": 7,
-                "total_wagered": 100,
+                "games_lost": 8,
+                "total_wagered": 110,
                 "total_won": 20,
                 "biggest_win": 20,
                 "daily_streak": 0
