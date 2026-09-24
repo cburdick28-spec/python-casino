@@ -2543,8 +2543,7 @@
             "last_daily": "",
             "timeout": 0,
             "achievements": [
-                "first_win",
-                "high_roller"
+                "first_win"
             ],
             "bet_history": [
                 {
@@ -2630,13 +2629,20 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "09/24 10:18"
+                },
+                {
+                    "game": "\ud83c\udccf Blackjack",
+                    "bet": 400,
+                    "outcome": "loss",
+                    "net": -400,
+                    "time": "09/24 10:19"
                 }
             ],
             "stats": {
-                "games_played": 12,
+                "games_played": 13,
                 "games_won": 3,
-                "games_lost": 9,
-                "total_wagered": 140,
+                "games_lost": 10,
+                "total_wagered": 540,
                 "total_won": 40,
                 "biggest_win": 20,
                 "daily_streak": 0
