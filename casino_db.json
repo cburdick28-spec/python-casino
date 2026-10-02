@@ -2674,7 +2674,9 @@
             "money": 820,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "high_roller"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udccf Blackjack",
