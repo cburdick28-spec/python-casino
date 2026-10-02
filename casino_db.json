@@ -2674,7 +2674,9 @@
             "money": 820,
             "last_daily": "",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "first_win"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udccf Blackjack",
@@ -2759,27 +2761,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "10/02 10:15"
-                },
-                {
-                    "game": "\ud83c\udfb0 Slots",
-                    "bet": 10,
-                    "outcome": "win",
-                    "net": 10,
-                    "time": "10/02 10:15"
                 }
             ],
             "stats": {
-                "games_played": 13,
-                "games_won": 9,
+                "games_played": 12,
+                "games_won": 8,
                 "games_lost": 4,
-                "total_wagered": 580,
-                "total_won": 460,
+                "total_wagered": 570,
+                "total_won": 440,
                 "biggest_win": 100,
                 "daily_streak": 0
             }
         }
     },
-    "jackpot": 1012,
+    "jackpot": 1014,
     "chat": [
         {
             "user": "Connor",
