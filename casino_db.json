@@ -2668,6 +2668,23 @@
                 "biggest_win": 57,
                 "daily_streak": 0
             }
+        },
+        "Lucas S": {
+            "password": "2de09cd060ff7965691616a78af91fc80c4296e7848bc457e6dae71a91bf8303",
+            "money": 500,
+            "last_daily": "",
+            "timeout": 0,
+            "achievements": [],
+            "bet_history": [],
+            "stats": {
+                "games_played": 0,
+                "games_won": 0,
+                "games_lost": 0,
+                "total_wagered": 0,
+                "total_won": 0,
+                "biggest_win": 0,
+                "daily_streak": 0
+            }
         }
     },
     "jackpot": 1008,
