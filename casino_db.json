@@ -2785,9 +2785,7 @@
             "money": 590,
             "last_daily": "2026-10-05",
             "timeout": 0,
-            "achievements": [
-                "first_win"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udccf Blackjack",
@@ -2816,14 +2814,21 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "10/05 11:09"
+                },
+                {
+                    "game": "\ud83e\ude99 Coin Flip",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "10/05 11:10"
                 }
             ],
             "stats": {
-                "games_played": 4,
-                "games_won": 2,
+                "games_played": 5,
+                "games_won": 3,
                 "games_lost": 2,
-                "total_wagered": 40,
-                "total_won": 20,
+                "total_wagered": 50,
+                "total_won": 30,
                 "biggest_win": 10,
                 "daily_streak": 0
             }
