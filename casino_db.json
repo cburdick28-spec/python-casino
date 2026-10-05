@@ -2856,13 +2856,20 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "10/05 11:10"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "10/05 11:11"
                 }
             ],
             "stats": {
-                "games_played": 10,
+                "games_played": 11,
                 "games_won": 5,
-                "games_lost": 5,
-                "total_wagered": 100,
+                "games_lost": 6,
+                "total_wagered": 110,
                 "total_won": 50,
                 "biggest_win": 10,
                 "daily_streak": 0
