@@ -2785,9 +2785,7 @@
             "money": 560,
             "last_daily": "2026-10-05",
             "timeout": 0,
-            "achievements": [
-                "first_win"
-            ],
+            "achievements": [],
             "bet_history": [
                 {
                     "game": "\ud83c\udccf Blackjack",
@@ -2921,14 +2919,21 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "10/05 11:12"
+                },
+                {
+                    "game": "\ud83c\udfb3 Plinko",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "10/05 11:12"
                 }
             ],
             "stats": {
-                "games_played": 19,
-                "games_won": 9,
+                "games_played": 20,
+                "games_won": 10,
                 "games_lost": 10,
-                "total_wagered": 190,
-                "total_won": 90,
+                "total_wagered": 200,
+                "total_won": 100,
                 "biggest_win": 10,
                 "daily_streak": 0
             }
