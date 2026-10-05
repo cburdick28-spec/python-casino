@@ -2782,7 +2782,7 @@
         },
         "migibughead": {
             "password": "24c23c1179f7971ebfc772b50019e912cca68b7472c0eec04a3ae9c7c52fb214",
-            "money": 540,
+            "money": 550,
             "last_daily": "2026-10-05",
             "timeout": 0,
             "achievements": [],
@@ -2863,14 +2863,21 @@
                     "outcome": "loss",
                     "net": -10,
                     "time": "10/05 11:11"
+                },
+                {
+                    "game": "\ud83d\udd3c Higher Lower",
+                    "bet": 10,
+                    "outcome": "win",
+                    "net": 0,
+                    "time": "10/05 11:11"
                 }
             ],
             "stats": {
-                "games_played": 11,
-                "games_won": 5,
+                "games_played": 12,
+                "games_won": 6,
                 "games_lost": 6,
-                "total_wagered": 110,
-                "total_won": 50,
+                "total_wagered": 120,
+                "total_won": 60,
                 "biggest_win": 10,
                 "daily_streak": 0
             }
