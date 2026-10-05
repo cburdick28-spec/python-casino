@@ -2785,7 +2785,9 @@
             "money": 580,
             "last_daily": "2026-10-05",
             "timeout": 0,
-            "achievements": [],
+            "achievements": [
+                "first_win"
+            ],
             "bet_history": [
                 {
                     "game": "\ud83c\udccf Blackjack",
