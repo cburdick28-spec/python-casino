@@ -2842,13 +2842,20 @@
                     "outcome": "win",
                     "net": 0,
                     "time": "10/05 11:10"
+                },
+                {
+                    "game": "\ud83e\ude99 Coin Flip",
+                    "bet": 10,
+                    "outcome": "loss",
+                    "net": -10,
+                    "time": "10/05 11:10"
                 }
             ],
             "stats": {
-                "games_played": 8,
+                "games_played": 9,
                 "games_won": 5,
-                "games_lost": 3,
-                "total_wagered": 80,
+                "games_lost": 4,
+                "total_wagered": 90,
                 "total_won": 50,
                 "biggest_win": 10,
                 "daily_streak": 0
